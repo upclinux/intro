@@ -1,14 +1,80 @@
 # Site settings
-title: Your awesome test title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+title: UPC Linux
+email: upclinux@163.com
+footnote: > # this means to ignore newlines until "baseurl:"
+  &copy; 2015 中国石油大学 (华东) Linux 协会<br>自豪地采用 GitHub Pages 和 Jekyll
+baseurl: "/intro/" # the subpath of your site, e.g. /blog/
+url: "http://upclinux.github.io" # the base hostname & protocol for your site
+permalink: /:categories/:title
+# twitter_username: jekyllrb
+github_username:  upclinux
+qqqun_name: "QQ 群 (279310694)"
+qqqun_idkey: e47c6b546d3373c09f7eaa8d4173728a513975ed2d0ec20106e83cfb11a3bf08
 
 # Build settings
 markdown: kramdown
+
+#defaults:
+#    - 
+#        scope:
+#            path: ""
+#            type: "posts"
+#        values:
+#            layout: "page"
+#            comments: "true"
+#    - 
+#        scope:
+#            path: "lua"
+#        values:
+#            category: "lua"
+#    - 
+#        scope:
+#            path: "life"
+#        values:
+#            category: "life"
+#    - 
+#        scope:
+#            path: "linux"
+#        values:
+#            category: "linux"
+#    - 
+#        scope:
+#            path: "java"
+#        values:
+#            category: "java"
+#    - 
+#        scope:
+#            path: "python"
+#        values:
+#            category: "python"
+#    - 
+#        scope:
+#            path: "hadoop"
+#        values:
+#            category: "hadoop"
+#    - 
+#        scope:
+#            path: "hbase"
+#        values:
+#            category: "hbase"
+#    - 
+#        scope:
+#            path: "bigdata"
+#        values:
+#            category: "bigdata"
+#    - 
+#        scope:
+#            path: "design"
+#        values:
+#            category: "design"
+#    - 
+#        scope:
+#            path: "vim"
+#        values:
+#            category: "vim"
+#    - 
+#        scope:
+#            path: "dada"
+#        values:
+#            layout: "dada_page"
+#            category: "小牛牛的happiness"

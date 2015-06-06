@@ -10,83 +10,52 @@
     position: relative;
 }
 
-.site-title {
-    font-size: 26px;
-    line-height: 56px;
-    letter-spacing: -1px;
-    margin-bottom: 0;
-    float: left;
-
-    &,
-    &:visited {
-        color: $grey-color-dark;
+.navbar-default {
+    min-height: 50px;
+    border-radius: 0px;
+    
+    box-shadow: 0px 1px 2px #828282;
+    
+    .navbar-brand {
+        font-size: 19px;
+        height: 30px;
+        padding: 15px 15px;
+    }
+    
+    .navbar-toggle {
+        margin-top: 7px;
+        margin-bottom: 5px;
     }
 }
 
-.site-nav {
-    float: right;
-    line-height: 56px;
-
-    .menu-icon {
-        display: none;
-    }
-
-    .page-link {
-        color: $text-color;
-        line-height: $base-line-height;
-
-        // Gaps between nav items, but not on the first one
-        &:not(:first-child) {
-            margin-left: 20px;
-        }
-    }
-
-    @include media-query($on-palm) {
-        position: absolute;
-        top: 9px;
-        right: 30px;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
-        border-radius: 5px;
-        text-align: right;
-
-        .menu-icon {
-            display: block;
-            float: right;
-            width: 36px;
-            height: 26px;
-            line-height: 0;
-            padding-top: 10px;
-            text-align: center;
-
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $grey-color-dark;
-                }
-            }
-        }
-
-        .trigger {
-            clear: both;
-            display: none;
-        }
-
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        .page-link {
-            display: block;
-            padding: 5px 10px;
-        }
+@media screen and (min-width: 768px) {
+    .navbar-nav > li > a {
+        font-size: 15px;
+        padding: 15px 15px;
     }
 }
 
+.jumbotron {
+    margin-top: -20px;
+    padding: 40px 0;
+    
+    h1 {
+        font-size: 55px;
+        padding-bottom: 12px;
+    }    
+    p {
+        font-size: 22px;
+        color: #828282;
+    }
+}
 
+.breadcrumb {
+    margin-left: 0px;
+    padding-left: 0px;
+    background-color: #fff;
+    border-radius: 0px;
+    border-bottom: 1px solid #ccc;
+}
 
 /**
  * Site footer
@@ -94,6 +63,8 @@
 .site-footer {
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
+    font-size: 15px;
+    color: $grey-color;
 }
 
 .footer-heading {
@@ -198,9 +169,9 @@
 }
 
 .post-title {
-    font-size: 42px;
+    font-size: 36px;
     letter-spacing: -1px;
-    line-height: 1;
+    line-height: 1.5;
 
     @include media-query($on-laptop) {
         font-size: 36px;
@@ -233,4 +204,89 @@
             font-size: 18px;
         }
     }
+}
+
+/**
+ * 文章目录相关
+ */
+#content {
+	max-width: 392px;
+}
+#content .content-text {
+	padding: 10px 0; 
+}
+
+#content ul {
+	padding-left: 0px;
+    
+    > li {
+        font-size: 15px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+
+    li a {
+        color: #666;
+        &:hover {
+            background-color: transparent;
+            border-left: 1px solid $highlight-color;
+            color: $highlight-color;
+        }
+    }
+    
+    li.active {
+        > a {
+            border-left: 2px solid $highlight-color;
+            color: $highlight-color;
+            font-weight: 700;
+        }
+        
+        > ul {
+            display: block;
+            li {
+                font-size: 13px;
+                ul {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    li > a {
+        padding: .2em 20px;
+        &:hover {
+            padding: .2em 19px;
+        }
+    }
+    
+    > li.active > a {
+        padding: .2em 18px;
+    }
+    
+    li ul {
+        display: none;
+        margin-left: 0;
+        list-style: none;
+        
+        > li a {
+            padding: .2em 40px;         
+            &:hover {
+                padding: .2em 39px;
+                text-decoration: none;
+            }
+        }
+        
+        > li.active a {
+            padding: .2em 38px;
+        }
+    }
+}
+
+#content .affix {
+    position: fixed;
+    top: 20px;
+}
+
+#content .affix-bottom {
+    position: absolute;
 }

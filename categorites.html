@@ -1,0 +1,41 @@
+---
+title: Categorites
+layout: default
+comments: false
+permalink: /categorites/
+---
+<div class="row">
+  <div class="col-md-9" role="main">    
+    <h1 class="page-header" id="categorization">All</h1>
+    <ul class="post-list" data-list-cate="All">
+      {% for post in site.posts %}
+      <li>
+        <span class="text-muted">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+      </li>
+      {% endfor %}
+    </ul>
+    
+    {% for category in site.categories %}
+    <ul class="post-list" data-list-cate="{{category | first}}">
+      {% for posts in category  %}
+        {% for post in posts %}
+          {% if post.url %}
+            <li>
+              <span class="text-muted">{{ post.date | date: "%b %-d, %Y" }}</span>
+              <h3>
+                <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+              </h3>
+            </li>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  
+    
+  </div>
+  
+  <div class="col-sm-3">    
+  </div>
+</div>

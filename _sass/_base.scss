@@ -85,24 +85,6 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-/**
- * Links
- */
-a {
-    color: $brand-color;
-    text-decoration: none;
-
-    &:visited {
-        color: darken($brand-color, 15%);
-    }
-
-    &:hover {
-        color: $text-color;
-        text-decoration: underline;
-    }
-}
-
-
 
 /**
  * Blockquotes
@@ -127,10 +109,10 @@ blockquote {
  */
 pre,
 code {
-    font-size: 15px;
+    font-size: 14px;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
-    background-color: #eef;
+    background-color: #f8f8f8;
 }
 
 code {
@@ -138,14 +120,22 @@ code {
 }
 
 pre {
-    padding: 8px 12px;
-    overflow-x: scroll;
+    /* padding: 8px 12px; */
+    /* overflow-x: scroll; */
 
     > code {
         border: 0;
         padding-right: 0;
         padding-left: 0;
     }
+}
+
+.highlight pre code {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    color: #333;
+    background: #f8f8f8;
 }
 
 

@@ -1,23 +1,64 @@
 ---
-layout: default
+layout: indexpage
 ---
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>入门指导</h1>
+    <p>有些时候，你只是需要一点点<span class="text-success">提示</span>，剩下的可以<span class="text-info">自己探索</span>。</p>
+  </div>
+</div>
+      
+<div role="main" class="container main">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 form-inline">
+      <input type="email" class="form-control" id="search" placeholder="搜索" style="width:75%;">
+      <button type="button" class="btn btn-primary" style="width:15%;">搜索</button>
+    </div>
+  </div>
 
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+  <br class="clear">
+  
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default" id="faq">
+        <div class="panel-heading">
+          <h3 class="panel-title">FAQ</h3>
+        </div>
+        <div class="panel-body">
+          没有内容
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <br class="clear">
+  
+  <div class="row" style="padding-bottom: 20px;">
+    <div class="col-md-8">
+      <ul id="markdown-toc" style="display: none;">
+      {% for category in site.categories %}
+      <li><a href="#section-{{ category | first}}">{{ category | first }}</a>
       </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+      {% endfor %}
+      </ul>
+      
+      {% for category in site.categories %}
+        {% assign cate = category | first %}
+        {% assign u = "/categorites/?c=" | prepend: site.baseurl | append: cate %}
+        <h3 id="section-{{ category | first}}"><a href="{{ u }}">{{ category | first }}</a></h3>
+        <ul>
+          {% for posts in category %}
+            {% for post in posts %}
+              {% if post.url %}
+                <li>
+                  <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    </div>
+    <div id="content" class="col-sm-3 hidden-xs hidden-sm" data-index="index"></div>
+  </div>
 </div>
