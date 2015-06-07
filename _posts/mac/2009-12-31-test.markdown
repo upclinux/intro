@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "MacBook 仅仅是奢侈品吗"
+date:   2009-12-31 00:00:00
+---
+* content
+{:toc}
+
