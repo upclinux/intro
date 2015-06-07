@@ -1,14 +1,20 @@
 /*
  * Thanks for liberize (https://github.com/liberize/liberize.github.com)
  */
+requireFillScreen();
 
 var entries = null;
 var keyword = $.request.queryString['s'];
 
-$('#keyword').val(keyword);
-document.title = "Search";
-
+$('#keyword').text(keyword);
+$('#searchbox1').val(keyword);
+$('#searchbox2').val(keyword);
 $('#searchlist').hide();
+
+$('#more_google').attr('href', 'https://www.google.com.hk/search?q=' + keyword);
+$('#more_gfsoso').attr('href', 'http://www.jwss.cc/?q=' + keyword);
+$('#more_bing').attr('href', 'http://cn.bing.com/search?q=' + keyword);
+$('#more_baidu').attr('href', 'https://www.baidu.com/s?wd=' + keyword);
 
 function htmlEscape(s) {
 	return String(s).replace(/[&<>"'\/]/g, function(s) {
@@ -24,11 +30,6 @@ function htmlEscape(s) {
 	});
 }
 
-function formatDate(date) {
-	var matches = date.match(/(\d{1,2}) ([A-Za-z]{3}) (\d{4})/);
-	return matches[2] + ' ' + matches[1] + ', ' + matches[3];
-} 
-
 function findEntries(q) {
 	var matches = [];
 	var rq = new RegExp(q, 'im');
@@ -38,23 +39,21 @@ function findEntries(q) {
 		var link = $(entry.getElementsByTagName('link')[0]).text();
 		var content = $(entry.getElementsByTagName('description')[0]).text();          
 		if (rq.test(title) || rq.test(content)) {
-			var updated = formatDate($(entry.getElementsByTagName('pubDate')[0]).text());
-			matches.push({'title': title, 'link': link, 'date': updated, 'content': content});
+			matches.push({'title': title, 'link': link, 'content': content});
 		}
 	}
 	var html = '';
 	for (var i = 0; i < matches.length; i++) {
 		var match = matches[i]; 
 		html += '<li>';
-		html += '<span class="text-muted">' + match.date + '</span>';
-		html += '<h3><a href="' + match.link + '">' + htmlEscape(match.title) + '</a></h3>';
+		html += '<a href="' + match.link + '">' + htmlEscape(match.title) + '</a>';
 		html += '</li>';
 	}
 	$('#searchlist').html(html);
 	$('#searchlist').show();
 }
 
-$.get('/feed.xml?r=' + (Math.random() * 99999999999), function(data) {
+$.get('/intro/feed.xml?r=' + (Math.random() * 99999999999), function(data) {
 	entries = data.getElementsByTagName('item');
 	findEntries(keyword);
 });

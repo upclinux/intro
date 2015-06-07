@@ -1,41 +1,58 @@
 ---
-title: Categorites
 layout: default
 comments: false
 permalink: /categorites/
 ---
 <div class="row">
-  <div class="col-md-9" role="main">    
-    <h1 class="page-header" id="categorization">All</h1>
-    <ul class="post-list" data-list-cate="All">
+  <div class="col-md-12">
+    <div class="breadcrumb-header">
+      <ol class="breadcrumb">
+        <li><a href="{{ site.baseurl }}">首页</a></li>
+        <li class="active" id="categorization"></li>
+      </ol>
+      <form class="search hidden-xs" method="get" action="{{ "search/" | prepend: site.baseurl }}">
+        <input type="text" placeholder="正则搜索" name="s" id="searchbox2">
+      </form>
+    </div>
+  </div>
+  <div class="col-md-8" role="main">
+    <ul class="post-list2" data-list-cate="All" style="display: none;">
       {% for post in site.posts %}
       <li>
-        <span class="text-muted">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </li>
       {% endfor %}
     </ul>
     
     {% for category in site.categories %}
-    <ul class="post-list" data-list-cate="{{category | first}}">
+    <ul class="post-list2" data-list-cate="{{category | first}}" style="display: none;">
       {% for posts in category  %}
         {% for post in posts %}
           {% if post.url %}
             <li>
-              <span class="text-muted">{{ post.date | date: "%b %-d, %Y" }}</span>
-              <h3>
-                <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-              </h3>
+              <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </li>
           {% endif %}
         {% endfor %}
       {% endfor %}
     </ul>
     {% endfor %}
-  
-    
   </div>
-  
-  <div class="col-sm-3">    
-  </div>
+  <div id="content" class="col-sm-3 hidden-xs hidden-sm"></div>
 </div>
+<br class="clear">
+<script type="text/javascript">
+$(function() {
+    requireFillScreen();
+    // 加载分类
+    $('.post-list2[data-list-cate!=All]').hide();
+    var s=$.request.queryString['c'];
+    if (s) {
+        $('.post-list2[data-list-cate!="' + s + '"]').hide();
+        $('.post-list2[data-list-cate="' + s + '"]').show();
+        $('#categorization').text(s);
+    } else {
+        $('#categorization').text('全部内容');
+    }
+});
+</script> 

@@ -10,22 +10,28 @@ layout: indexpage
       
 <div role="main" class="container main">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2 form-inline">
-      <input type="email" class="form-control" id="search" placeholder="搜索" style="width:75%;">
-      <button type="button" class="btn btn-primary" style="width:15%;">搜索</button>
-    </div>
+    <form class="col-md-8 col-md-offset-2 form-inline" method="get" action="{{ "search/" | prepend: site.baseurl }}">
+      <input type="text" class="form-control" id="searchbox2" placeholder="正则搜索" name="s" style="width: 81%; float: left;">
+      <button type="submit" class="btn btn-info" style="width: 18%; float: right;">搜索</button>
+    </form>
   </div>
 
   <br class="clear">
   
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-      <div class="panel panel-default" id="faq">
+      <div class="panel panel-success" id="faq">
         <div class="panel-heading">
           <h3 class="panel-title">FAQ</h3>
         </div>
-        <div class="panel-body">
-          没有内容
+        <div class="list-group">
+          {% for post in site.posts %}
+            {% if post.faq %}
+              {% for question in post.faq %}
+              <a href="{{ post.url | prepend: site.baseurl }}" class="list-group-item">{{ question }}</a>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -37,15 +43,15 @@ layout: indexpage
     <div class="col-md-8">
       <ul id="markdown-toc" style="display: none;">
       {% for category in site.categories %}
-      <li><a href="#section-{{ category | first}}">{{ category | first }}</a>
+      <li><a href="#section-{{ category | first | replace: ' ','' }}">{{ category | first }}</a>
       </li>
       {% endfor %}
       </ul>
       
       {% for category in site.categories %}
         {% assign cate = category | first %}
-        {% assign u = "/categorites/?c=" | prepend: site.baseurl | append: cate %}
-        <h3 id="section-{{ category | first}}"><a href="{{ u }}">{{ category | first }}</a></h3>
+        {% assign u = "categorites/?c=" | prepend: site.baseurl | append: cate %}
+        <h3 id="section-{{ category | first | replace: ' ','' }}" class="cate-header"><a href="{{ u }}">{{ category | first }}</a></h3>
         <ul>
           {% for posts in category %}
             {% for post in posts %}

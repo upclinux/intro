@@ -14,67 +14,56 @@ qqqun_idkey: e47c6b546d3373c09f7eaa8d4173728a513975ed2d0ec20106e83cfb11a3bf08
 # Build settings
 markdown: kramdown
 
-#defaults:
-#    - 
-#        scope:
-#            path: ""
-#            type: "posts"
-#        values:
-#            layout: "page"
-#            comments: "true"
-#    - 
-#        scope:
-#            path: "lua"
-#        values:
-#            category: "lua"
-#    - 
-#        scope:
-#            path: "life"
-#        values:
-#            category: "life"
-#    - 
-#        scope:
-#            path: "linux"
-#        values:
-#            category: "linux"
-#    - 
-#        scope:
-#            path: "java"
-#        values:
-#            category: "java"
-#    - 
-#        scope:
-#            path: "python"
-#        values:
-#            category: "python"
-#    - 
-#        scope:
-#            path: "hadoop"
-#        values:
-#            category: "hadoop"
-#    - 
-#        scope:
-#            path: "hbase"
-#        values:
-#            category: "hbase"
-#    - 
-#        scope:
-#            path: "bigdata"
-#        values:
-#            category: "bigdata"
-#    - 
-#        scope:
-#            path: "design"
-#        values:
-#            category: "design"
-#    - 
-#        scope:
-#            path: "vim"
-#        values:
-#            category: "vim"
-#    - 
-#        scope:
-#            path: "dada"
-#        values:
-#            layout: "dada_page"
-#            category: "小牛牛的happiness"
+defaults:
+- 
+    scope:
+        path: ""
+        type: "posts"
+    values:
+        layout: "page"
+        comments: "true"
+- 
+    scope:
+        path: "novice"
+    values:
+        category: "我是新手"
+- 
+    scope:
+        path: "c"
+    values:
+        category: "just for C 语言"
+- 
+    scope:
+        path: "try"
+    values:
+        category: "准备接触 Linux"
+- 
+    scope:
+        path: "configuration"
+    values:
+        category: "配置系统"
+- 
+    scope:
+        path: "work"
+    values:
+        category: "工作与学习"
+- 
+    scope:
+        path: "development"
+    values:
+        category: "开发者"
+- 
+    scope:
+        path: "toy"
+    values:
+        category: "Linux 玩具"
+- 
+    scope:
+        path: "future"
+    values:
+        category: "深入学习"
+- 
+    scope:
+        path: "mac"
+    values:
+        category: "苹果"

@@ -17,7 +17,7 @@
           {% else %}
           <li>
           {% endif %}
-          <a href="{{ site.baseurl }}/">入门指引</a>
+          <a href="{{ site.baseurl }}">入门指引</a>
           </li>
           
           {% for p in site.pages %}
@@ -37,13 +37,11 @@
           {% endfor %}
         </ul>
         
-        <!--
-        <form class="navbar-form navbar-right" method="get" action="{{ "/search/" | prepend: site.baseurl }}">
+        <form class="navbar-form navbar-right hidden-sm hidden-md hidden-lg" method="get" action="{{ "search/" | prepend: site.baseurl }}">
           <div class="form-group">
-            <input type="text" placeholder="Regexp" class="form-control" name="s" id="keyword">            
+            <input type="text" placeholder="正则搜索" class="form-control" name="s" id="searchbox1">            
           </div>
         </form>
-        -->
       </div>
     </div>
   </nav>

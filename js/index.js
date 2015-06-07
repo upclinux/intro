@@ -31,37 +31,9 @@ $.request = (function () {
 })();
 
 $(document).ready(function() {
-    categoryDisplay();
     generateContent();
     backToTop();
 });
-
-/**
- * 分类展示
- * 点击右侧的分类展示时
- * 左侧的相关裂变展开或者收起
- * @return {[type]} [description]
- */
-function categoryDisplay() {
-    return false;
-    
-    /*only show All*/
-    $('.post-list[data-list-cate!=All]').hide();
-    /*show category when click categories list*/
-    $('.categories-list-item').click(function() {
-        var cate = $(this).data('cate'); //get category's name
-
-        $('.post-list[data-list-cate!=' + cate + ']').hide(250);
-        $('.post-list[data-list-cate=' + cate + ']').show(400);
-        
-        $('#categorization').text(cate);
-    });
-    
-    var s=$.request.queryString['c'];
-    if (s) { 
-        $('.categories-list-item[data-cate='+s+']').click(); 
-    }
-}
 
 /**
  * 回到顶部
@@ -97,7 +69,7 @@ function generateContent() {
         $('#content').hide();
     } else {
         $('#content').html('<ul class="nav" id="myaffix">' + $('#markdown-toc').html() + '</ul>');
-        $('body').scrollspy({ target: '#content' })
+        $('body').scrollspy({ target: '#content' });
         $('#myaffix').affix({
             offset: {
                 top: function () {
@@ -111,4 +83,12 @@ function generateContent() {
             }
         });
     }
+}
+
+/**
+ * 防止页面太小
+ */
+function requireFillScreen() {
+    $('html,body').css('height','100%');
+    $('#main').css('height', 'auto').css('min-height', '60%');
 }
