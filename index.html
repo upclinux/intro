@@ -27,12 +27,16 @@ layout: indexpage
           <h3 class="panel-title">FAQ</h3>
         </div>
         <div class="list-group">
-          {% for post in site.posts %}
-            {% if post.faq %}
-              {% for question in post.faq %}
-              <a href="{{ post.url | prepend: site.baseurl }}" class="list-group-item">{{ question }}</a>
-              {% endfor %}
-            {% endif %}
+          {% for default in site.defaults %}
+            {% assign title = default.values.category %}
+            {% assign cate = title | downcase %}
+            {% for post in site.categories[cate] %}
+              {% if post.faq %}
+                {% for question in post.faq %}
+                <a href="{{ post.url | prepend: site.baseurl }}" class="list-group-item">{{ question }}</a>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
           {% endfor %}
         </div>
       </div>
