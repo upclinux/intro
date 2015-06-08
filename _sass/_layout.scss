@@ -67,4 +67,16 @@
     }
 }
 
-
+/**
+ Others
+ */
+.btn-inverse {
+    border-color: $navbar-dark;
+    background-color: transparent;
+    color: $navbar-dark;
+    
+    &:hover {
+        background-color: $navbar-dark;
+        color: white;        
+    }
+}
