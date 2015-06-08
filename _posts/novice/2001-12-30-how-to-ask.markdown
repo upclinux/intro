@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "提问的艺术"
+date:   2001-12-30 00:00:00
+faq: ["为什么我问问题，要么没人理我，要么有人鄙视我？"]
+---
+* content
+{:toc}
+
+无论是用 Linux 还是用 Windows，遇到问题是很正常的。
+
+不过有些人问的问题啊，too simple，sometimes naive。
+
+所以了解一下提问的技巧是很有必要的。
+
+<a href="{{ "images/novice/how-to-ask.png" | prepend: site.baseurl }}" target="_blank">点此查看</a>
