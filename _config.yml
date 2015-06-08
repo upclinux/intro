@@ -31,11 +31,6 @@ defaults:
         category: "我是新手"
 - 
     scope:
-        path: "c"
-    values:
-        category: "just for C 语言"
-- 
-    scope:
         path: "try"
     values:
         category: "准备接触 Linux"
@@ -46,14 +41,29 @@ defaults:
         category: "配置系统"
 - 
     scope:
+        path: "c"
+    values:
+        category: "just for C 语言"
+- 
+    scope:
         path: "work"
     values:
         category: "工作与学习"
+-
+    scope:
+        path: "entertainment"
+    values:
+        category: "娱乐"
 - 
     scope:
         path: "development"
     values:
         category: "开发者"
+-
+    scope:
+        path: "others"
+    values:
+        category: "其他"
 - 
     scope:
         path: "toy"

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "MacBook 仅仅是奢侈品吗"
+title:  "树莓派"
 date:   2009-12-31 00:00:00
 ---
 * content

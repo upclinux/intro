@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "在 Linux 里建立 C 语言学习环境"
-date:   2002-12-30 00:00:00
+date:   2004-12-30 00:00:00
 ---
 * content
 {:toc}
