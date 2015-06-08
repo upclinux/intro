@@ -10,7 +10,7 @@ layout: indexpage
       
 <div role="main" class="container main">
   <div class="row">
-    <form class="col-md-8 col-md-offset-2 form-inline" method="get" action="{{ "search/" | prepend: site.baseurl }}">
+    <form class="col-md-8 col-md-offset-2 form-inline" method="get" action="{{ "/search/" | prepend: site.baseurl }}">
       <input type="text" class="form-control" id="searchbox2" placeholder="正则搜索" name="s" style="width: 81%; float: left;">
       <button type="submit" class="btn btn-info" style="width: 18%; float: right;">搜索</button>
     </form>
@@ -42,25 +42,27 @@ layout: indexpage
   <div class="row" style="padding-bottom: 20px;">
     <div class="col-md-8">
       <ul id="markdown-toc" style="display: none;">
-      {% for category in site.categories %}
-      <li><a href="#section-{{ category | first | replace: ' ','' }}">{{ category | first }}</a>
-      </li>
+      {% for default in site.defaults %}
+        {% if default.scope.path == "" %}{% continue %}{% endif %}
+        <li><a href="#section-{{ default.scope.path }}">{{ default.values.category }}</a>
+        </li>
       {% endfor %}
       </ul>
       
-      {% for category in site.categories %}
-        {% assign cate = category | first %}
-        {% assign u = "categorites/?c=" | prepend: site.baseurl | append: cate %}
-        <h3 id="section-{{ category | first | replace: ' ','' }}" class="cate-header"><a href="{{ u }}">{{ category | first }}</a></h3>
+      {% for default in site.defaults %}
+        {% if default.scope.path == "" %}{% continue %}{% endif %}
+        {% assign tag = default.scope.path %}
+        {% assign title = default.values.category %}
+        {% assign cate = title | downcase %}
+        {% assign u = "/categorites/?c=" | prepend: site.baseurl | append: tag %}
+        <h3 id="section-{{ tag }}" class="cate-header"><a href="{{ u }}">{{ title }}</a></h3>
         <ul>
-          {% for posts in category %}
-            {% for post in posts %}
-              {% if post.url %}
-                <li>
-                  <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
+          {% for post in site.categories[cate] %}
+            {% if post.url %}
+              <li>
+                <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+              </li>
+            {% endif %}
           {% endfor %}
         </ul>
       {% endfor %}

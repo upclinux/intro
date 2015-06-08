@@ -3,14 +3,23 @@ layout: default
 ---
 <div class="row">
   <div class="col-md-12">
+    {% for default in site.defaults %}
+      {% assign title = default.values.category %}
+      {% assign tag = title | downcase %}
+      {% if page.categories[0] == tag %}
+        {% assign c = default.scope.path %}
+        {% assign t = title %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
     <div class="breadcrumb-header">
       <ol class="breadcrumb">
         <li><a href="{{ site.baseurl }}">首页</a></li>
-        {% assign u = "categorites/?c=" | prepend: site.baseurl | append: page.categories[0] %}
-        <li><a href="{{ u }}">{{ page.categories[0] }}</a></li>
+        {% assign u = "/categorites/?c=" | prepend: site.baseurl | append: c %}
+        <li><a href="{{ u }}">{{ t }}</a></li>
         <li class="active">{{ page.title }}</li>
       </ol>
-      <form class="search hidden-xs" method="get" action="{{ "search/" | prepend: site.baseurl }}">
+      <form class="search hidden-xs" method="get" action="{{ "/search/" | prepend: site.baseurl }}">
         <input type="text" placeholder="正则搜索" name="s" id="searchbox2">
       </form>
     </div>

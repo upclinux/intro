@@ -10,7 +10,7 @@ permalink: /categorites/
         <li><a href="{{ site.baseurl }}">首页</a></li>
         <li class="active" id="categorization"></li>
       </ol>
-      <form class="search hidden-xs" method="get" action="{{ "search/" | prepend: site.baseurl }}">
+      <form class="search hidden-xs" method="get" action="{{ "/search/" | prepend: site.baseurl }}">
         <input type="text" placeholder="正则搜索" name="s" id="searchbox2">
       </form>
     </div>
@@ -24,18 +24,20 @@ permalink: /categorites/
       {% endfor %}
     </ul>
     
-    {% for category in site.categories %}
-    <ul class="post-list2" data-list-cate="{{category | first}}" style="display: none;">
-      {% for posts in category  %}
-        {% for post in posts %}
+    {% for default in site.defaults %}
+      {% if default.scopes.path == "" %}{% continue %}{% endif %}
+      {% assign tag = default.scope.path %}
+      {% assign title = default.values.category %}
+      {% assign cate = title | downcase %}
+      <ul class="post-list2" data-list-cate="{{ tag }}" data-cate-title="{{ title }}" style="display: none;">
+        {% for post in site.categories[cate] %}
           {% if post.url %}
             <li>
               <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </li>
           {% endif %}
         {% endfor %}
-      {% endfor %}
-    </ul>
+      </ul>
     {% endfor %}
   </div>
   <div id="content" class="col-sm-3 hidden-xs hidden-sm"></div>
@@ -45,14 +47,13 @@ permalink: /categorites/
 $(function() {
     requireFillScreen();
     // 加载分类
-    $('.post-list2[data-list-cate!=All]').hide();
     var s=$.request.queryString['c'];
     if (s) {
-        $('.post-list2[data-list-cate!="' + s + '"]').hide();
-        $('.post-list2[data-list-cate="' + s + '"]').show();
-        $('#categorization').text(s);
+        var c=$('.post-list2[data-list-cate="' + s + '"]');
+        c.show();
+        $('#categorization').text(c.data('cate-title'));
     } else {
         $('#categorization').text('全部内容');
     }
 });
-</script> 
+</script>
