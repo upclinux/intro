@@ -8,7 +8,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{ site.baseurl }}">{{ site.title }}</a>
+        <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
@@ -17,7 +17,7 @@
           {% else %}
           <li>
           {% endif %}
-          <a href="{{ site.baseurl }}">入门指引</a>
+          <a href="{{ site.baseurl }}/">入门指引</a>
           </li>
           
           {% for p in site.pages %}
@@ -37,6 +37,23 @@
           {% endfor %}
         </ul>
         
+        <ul class="nav navbar-nav navbar-right hidden-sm hidden-md hidden-lg">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">分类 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="{{ "/#faq" | prepend: site.baseurl }}">FAQ</a></li>
+              <li class="divider"></li>
+              {% for default in site.defaults %}
+                {% if default.scope.path == "" %}{% continue %}{% endif %}
+                {% assign tag = default.scope.path %}
+                {% assign title = default.values.category %}
+                {% assign cate = title | downcase %}
+                {% assign u = "/categorites/?c=" | prepend: site.baseurl | append: tag %}
+                <li><a href="{{ u }}">{{ title }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+        </ul>
         <form class="navbar-form navbar-right hidden-sm hidden-md hidden-lg" method="get" action="{{ "/search/" | prepend: site.baseurl }}">
           <div class="form-group">
             <input type="text" placeholder="正则搜索" class="form-control" name="s" id="searchbox1">            

@@ -19,7 +19,7 @@
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $on-palm) {
     .navbar-nav > li > a {
         font-size: 15px;
         padding: 15px 15px;
@@ -54,29 +54,45 @@
         color: #fff;
         box-shadow: 0px 0px 4px $navbar-dark;
     }
+    
+    @include media-query($on-palm) {
+        h1 {
+            font-size: 36px;
+        }   
+        .logo {
+            font-size: 32px;
+        }
+        p {
+            font-size: 15px;
+        }
+    }
 }
 
 .breadcrumb-header {
-    height: 41px;
+    min-height: 41px;
     margin-bottom: 19px;
     border-bottom: 1px solid $grey-color-medium;   
 }
 
 .breadcrumb-header .breadcrumb {
-    margin-left: 0px;
+    margin: 0px;
     padding-left: 0px;
-    position: absolute;
     overflow: hidden;
     z-index: 1;
     background-color: transparent;
     border: none;
+    width: 75%;
+    
+    @include media-query($on-palm) {
+        width: 100%;
+    }
 }
 
 .breadcrumb-header .searchbox {        
-    margin-top: 7px;
     width: calc(25% - 20px);
-    float: right;
-    position: relative;
+    position: absolute;
+    right: 15px;
+    top: 7px;
     z-index: 2;
     line-height: 1;
     

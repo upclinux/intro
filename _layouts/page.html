@@ -5,7 +5,7 @@ layout: default
   <div class="col-md-12">
     <div class="breadcrumb-header">
       <ol class="breadcrumb">
-        <li><a href="{{ site.baseurl }}">首页</a></li>
+        <li><a href="{{ site.baseurl }}/">首页</a></li>
         {% assign u = "/categorites/?c=" | prepend: site.baseurl | append: c %}
         <li><a href="{{ u }}">{{ t }}</a></li>
         <li class="active">{{ page.title }}</li>
