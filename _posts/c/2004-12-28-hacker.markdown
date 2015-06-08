@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "我 C 语言考了满分，为什么还有人鄙视我？"
+date:   2004-12-29 00:00:00
+---
+* content
+{:toc}
+
+下面这些程序都用到了 C 语言（因为还用到了其他语言）：
+
+* Unix
+* [gcc](https://github.com/gcc-mirror/gcc)。没错，C 语言编译器就是用 C 语言编译器来编译的。
+* [emacs](https://github.com/emacs-mirror/emacs)。外号“神的编辑器”，这是一个披着编辑器外衣的“操作系统”。
+* [Linux 内核](https://github.com/torvalds/linux)。不解释。
+* ……
+
+为什么列举这几个软件呢？因为你应该了解一下这些软件的作者。
