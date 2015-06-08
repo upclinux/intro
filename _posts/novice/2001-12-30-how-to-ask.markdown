@@ -13,4 +13,4 @@ faq: ["为什么我问问题，要么没人理我，要么有人鄙视我？"]
 
 所以了解一下提问的技巧是很有必要的。
 
-<a href="{{ "images/novice/how-to-ask.png" | prepend: site.baseurl }}" target="_blank">点此查看</a>
+<a href="{{ "/images/novice/how-to-ask.png" | prepend: site.baseurl }}" target="_blank">点此查看</a>
