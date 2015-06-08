@@ -19,9 +19,7 @@ layout: default
         <li><a href="{{ u }}">{{ t }}</a></li>
         <li class="active">{{ page.title }}</li>
       </ol>
-      <form class="search hidden-xs" method="get" action="{{ "/search/" | prepend: site.baseurl }}">
-        <input type="text" placeholder="正则搜索" name="s" id="searchbox2">
-      </form>
+      {% include searchbox.html %}
     </div>
     <h1 class="post-title">{{ page.title }}</h1>
   </div>

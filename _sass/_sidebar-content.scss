@@ -1,0 +1,85 @@
+/**
+ * 文章目录相关
+ */
+#content {
+	max-width: 392px;
+    
+    .content-text {
+    	padding: 10px 0; 
+    }
+    
+    .affix {
+        position: fixed;
+        top: 20px;
+    }
+    
+    .affix-bottom {
+        position: absolute;
+    }    
+}
+
+#content ul {
+	padding-left: 0px;
+    
+    > li {
+        font-size: 15px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+
+    li a {
+        color: $grey-color;
+        &:hover {
+            background-color: transparent;
+            border-left: 1px solid $highlight-color;
+            color: $highlight-color;
+        }
+    }
+    
+    li.active {
+        > a {
+            border-left: 2px solid $highlight-color;
+            color: $highlight-color;
+            font-weight: 700;
+        }
+        
+        > ul {
+            display: block;
+            li {
+                font-size: 13px;
+                ul {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    li > a {
+        padding: .2em 20px;
+        &:hover {
+            padding: .2em 19px;
+        }
+    }
+    
+    > li.active > a {
+        padding: .2em 18px;
+    }
+    
+    li ul {
+        display: none;
+        margin-left: 0;
+        list-style: none;
+        
+        > li a {
+            padding: .2em 40px;         
+            &:hover {
+                padding: .2em 39px;
+                text-decoration: none;
+            }
+        }
+        
+        > li.active a {
+            padding: .2em 38px;
+        }
+    }
+}

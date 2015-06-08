@@ -15,10 +15,10 @@ $spacing-unit:     30px;
 
 $text-color:       #111;
 $background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
+$grey-color-medium:lighten($grey-color, 30%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
@@ -29,24 +29,18 @@ $on-laptop:        800px;
 
 $highlight-color:  #18bc9c;
 
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
         @content;
     }
 }
 
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
         "layout",
-        "syntax-highlighting"
+        "header",
+        "sidebar-content",
+        "syntax-highlighting",
+        "back-to-top"
 ;

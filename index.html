@@ -55,7 +55,7 @@ layout: indexpage
         {% assign title = default.values.category %}
         {% assign cate = title | downcase %}
         {% assign u = "/categorites/?c=" | prepend: site.baseurl | append: tag %}
-        <h3 id="section-{{ tag }}" class="cate-header"><a href="{{ u }}">{{ title }}</a></h3>
+        <h3 id="section-{{ tag }}" class="category-header"><a href="{{ u }}">{{ title }}</a></h3>
         <ul>
           {% for post in site.categories[cate] %}
             {% if post.url %}

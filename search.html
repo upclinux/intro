@@ -10,9 +10,7 @@ permalink: /search/
         <li><a href="{{ site.baseurl }}">首页</a></li>
         <li class="active">“<span id="keyword"></span>”的搜索结果</li>
       </ol>
-      <form class="search hidden-xs" method="get" action="{{ "/search/" | prepend: site.baseurl }}">
-        <input type="text" placeholder="正则搜索" name="s" id="searchbox2">
-      </form>
+      {% include searchbox.html %}
     </div>
   </div>
 

@@ -10,13 +10,11 @@ permalink: /categorites/
         <li><a href="{{ site.baseurl }}">首页</a></li>
         <li class="active" id="categorization"></li>
       </ol>
-      <form class="search hidden-xs" method="get" action="{{ "/search/" | prepend: site.baseurl }}">
-        <input type="text" placeholder="正则搜索" name="s" id="searchbox2">
-      </form>
+      {% include searchbox.html %}
     </div>
   </div>
   <div class="col-md-8" role="main">
-    <ul class="post-list2" data-list-cate="All" style="display: none;">
+    <ul class="post-list" data-list-cate="All" style="display: none;">
       {% for post in site.posts %}
       <li>
         <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
@@ -29,7 +27,7 @@ permalink: /categorites/
       {% assign tag = default.scope.path %}
       {% assign title = default.values.category %}
       {% assign cate = title | downcase %}
-      <ul class="post-list2" data-list-cate="{{ tag }}" data-cate-title="{{ title }}" style="display: none;">
+      <ul class="post-list" data-list-cate="{{ tag }}" data-cate-title="{{ title }}" style="display: none;">
         {% for post in site.categories[cate] %}
           {% if post.url %}
             <li>
@@ -49,7 +47,7 @@ $(function() {
     // 加载分类
     var s=$.request.queryString['c'];
     if (s) {
-        var c=$('.post-list2[data-list-cate="' + s + '"]');
+        var c=$('.post-list[data-list-cate="' + s + '"]');
         c.show();
         $('#categorization').text(c.data('cate-title'));
     } else {
