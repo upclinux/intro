@@ -33,6 +33,7 @@ $.request = (function () {
 $(document).ready(function() {
     generateContent();
     backToTop();
+    fixTables();
 });
 
 /**
@@ -91,4 +92,14 @@ function generateContent() {
 function requireFillScreen() {
     $('html,body').css('height','100%');
     $('#main').css('height', 'auto').css('min-height', '60%');
+}
+
+/**
+ * 处理文章内表格
+ */
+function fixTables() {
+    $('.post-content table').each(function() {
+        if (!$(this).hasClass('table'))
+            $(this).addClass('table table-striped table-bordered');
+    });
 }
