@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "常用数学软件"
+date:   2005-12-29 00:00:00
+---
+* content
+{:toc}
+
+下面是一些常见的商业数学软件。对于天朝子民来说，花俩大洋用正版应该不成问题。但是如果有坚持用自由和开源软件的强迫症，不妨试试替代品。
+
+商业软件     | 是否支持 Linux | 是否支持 OS X | 开源/免费替代品
+------------|---------------|-------------|----------
+Excel       | 否            | 是           | LibreOffice Calc (开源)，WPS (闭源)……
+MATLAB      | 是            | 是           | Octave、QtOctave (图形界面版本)<br>Scilab<br>GNUplot (绘图软件，不开源)
+Mathematica | 是            | 是           | Mathics
+Maple       | 是            | 是           | Maxima
+SPSS        | 是            | 是           | GNU PSPP
+S-Plus      | 是			   | ？           | GNU R
+Origin	    | 否            | 是           | qtiplot、GNUplot (闭源)
+Lingo       | 否            | 是 (目前无破解版) | 无
+
+此外，写论文的时候可能会用一些软件：
+
+商业软件     | 开源/免费替代品
+------------|------------------
+Word        | LibreOffice Writer (开源)、WPS (闭源)<br>LaTeX
+PowerPoint  | LibreOffice Impress、WPS (闭源)<br>LaTeX (beamer)
+MathType	| MathMagic Lite (MathMagic 免费版)
+Endnote     | JabRef、Mendeley
+Photoshop   | GIMP
+Illustrator | Inkscape
+
+R 和 LaTeX 是两种语言。除了下载对应的编译器 (解释器)，还需要相关的编辑器或什么软件，例如 R 语言有 RStudio，LaTeX 语言有 TexStudio。

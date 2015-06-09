@@ -6,11 +6,11 @@ date:   2005-12-30 00:00:00
 * content
 {:toc}
 
-LaTeX 是一个强大的排版语言。如果掌握了这门语言，可以很容易地产生一篇漂亮的论文 (和幻灯片)。
+LaTeX 是一个强大的排版语言。掌握了这门语言，可以很容易地写出一篇漂亮的论文 (和幻灯片)。
 
-如果经常用 Word 写大型文档，你一定很清楚 Word 改格式有多么麻烦。尤其是数学公式，简直就是噩梦。而 LaTeX 最擅长的就是科技和数学文档。
+如果经常用 Word 写大型文档，你一定很清楚即使用了“样式”，拿 Word 维护格式仍然很麻烦。尤其是数学公式，简直就是噩梦。而 LaTeX 最擅长的就是科技和数学文档，而且以代码的形式书写论文，书写的时候只需要关注内容，格式会由系统自动生成。
 
-在本文，我们不打算区分 TeX、LaTeX、LaTeX2e、AMSLaTeX、XeLaTeX、TexLive、MikTex……的概念。我们会直接用 `LaTeX` 来指代这些东西。
+在本文，我们不打算区分 TeX、LaTeX、LaTeX2e、AMSLaTeX、XeLaTeX、TexLive、MikTeX……的概念。我们会直接用 `LaTeX` 来指代这些东西。
 
 ## LaTeX 的配置
 
@@ -21,7 +21,7 @@ LaTeX 也是编译器，所以需要安装和配置才能用。而且这个软�
 Windows 下的配置是最轻松的：
 
 1. 下载并安装 [CTEX](http://www.ctex.org/CTeXDownload)。建议下载完整版，免得麻烦。
-2. CTEX 附带的两个编辑器很不好用。你可以自己下载 `TexStudio`。
+2. CTEX 附带的两个编辑器很不好用，其中一个还要钱 (不仅要钱而且对 UTF-8 支持还很差劲)。你可以自己下载 `TexStudio`。
 
 ### Linux
 
@@ -30,9 +30,9 @@ Windows 下的配置是最轻松的：
 1. 安装 `texlive-full` 软件包。
 2. 安装 `texstudio` 软件包。
 3. 这时候可以编译英文文档了，但是中文文档还不可以，因为缺中文字体。
-	1. 到 Windows 安装目录中寻找宋、楷、黑、仿四种字体。
-	2. 把这四种字体复制到 `/usr/share/texlive/texmf-dist/fonts/truetype/public` 中，不要改名。
-	3. 运行 `sudo texconfig`，选择其中的 `HASH`，使系统检测到刚复制的四个字体。 
+	* 到 Windows 系统盘的 Windows\Fonts 目录中找到宋体 (SIMSUN.ttc)、楷体 (SIMKAI.ttf)、黑体 (SIMHEI.ttf)、仿宋 (SIMFANG.ttf) 四种字体。
+	* 把这四种字体复制到 `/usr/share/texlive/texmf-dist/fonts/truetype/public` 中，不要改名。
+	* 运行 `sudo texconfig`，选择其中的 `REHASH`，使系统检测到刚复制的四个字体。 
 
 ### OS X
 
@@ -42,7 +42,8 @@ Windows 下的配置是最轻松的：
 
    因为我只用 XeLaTeX 编译器，因此我只改了 `/usr/local/texlive/2014/texmf-dist/tex/latex/ctex/fontset/ctex-xecjk-winfonts.def`，并做了以下改动：
    
-<pre><code class="latex">\setCJKmainfont[BoldFont={STHeiti},ItalicFont={Kaiti SC}]
+{% highlight latex %}
+\setCJKmainfont[BoldFont={STHeiti},ItalicFont={Kaiti SC}]
   {Songti SC}
 \setCJKsansfont{Songti SC}
 \setCJKmonofont{STFangsong}
@@ -57,7 +58,7 @@ Windows 下的配置是最轻松的：
 \newcommand*{\kaishu}{\CJKfamily{zhkai}}  % 楷书
 \newcommand*{\fangsong}{\CJKfamily{zhfs}} % 仿宋
 \endinput
-</code></pre>
+{% endhighlight %}
 
    
 
@@ -71,7 +72,7 @@ Windows 下的配置是最轻松的：
 
 很多教程是从外文翻译过来的，所以对于中日韩三个国家的人来说就麻烦了。
 
-所以，你需要在文档的导言区加一句：
+所以，在文档的导言区加一句：
 
 	\usepackage[UTF8,hyperref]{ctexcap}
 
@@ -94,3 +95,7 @@ Windows 下的配置是最轻松的：
 ### 复杂表格
 
 对于非常复杂的表格，我们可以拿 Word 做好，保存成 PDF 格式，用 Illustrator 或其他矢量图软件进行适当处理，然后插入到文档中。
+
+但是这样字体看着就不匹配了，怎么办？
+
+去 LaTeX 安装目录里找 `texgyrepagella` 字体，把它装上，然后到 Word 里把字体设成 `TeX Gyre Pagella`。
