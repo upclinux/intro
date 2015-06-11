@@ -13,6 +13,9 @@ qqqun_idkey: e47c6b546d3373c09f7eaa8d4173728a513975ed2d0ec20106e83cfb11a3bf08
 
 host: 0.0.0.0 
 
+# force https
+force_https: upclinux.github.io
+
 # Build settings
 markdown: kramdown
 

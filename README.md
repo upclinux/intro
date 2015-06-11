@@ -1,6 +1,6 @@
 # intro
 
-[upclinux.github.io/intro](http://upclinux.github.io/intro)
+[upclinux.github.io/intro](https://upclinux.github.io/intro)
 
 网站上总结了一些新手常见的问题。
 

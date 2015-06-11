@@ -3,6 +3,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  {% if site.force_https %}
+  <script type="text/javascript">
+    var host = "{{ site.force_https }}";
+    if ((host == window.location.host) && (window.location.protocol != "https:")) {
+        window.stop ? window.stop() : document.execCommand("Stop");
+        window.location.protocol = "https";
+    }
+  </script>
+  {% endif %}
+  
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 

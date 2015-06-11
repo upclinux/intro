@@ -13,7 +13,7 @@ $('#searchlist').hide();
 
 $('#more_google').attr('href', 'https://www.google.com.hk/search?q=' + keyword);
 $('#more_gfsoso').attr('href', 'http://www.jwss.cc/?q=' + keyword);
-$('#more_bing').attr('href', 'http://cn.bing.com/search?q=' + keyword);
+$('#more_bing').attr('href', 'https://cn.bing.com/search?q=' + keyword);
 $('#more_baidu').attr('href', 'https://www.baidu.com/s?wd=' + keyword);
 
 function htmlEscape(s) {
