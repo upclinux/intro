@@ -1,0 +1,30 @@
+---
+layout: post
+title:  "Arduino"
+date:   2009-12-30 00:00:00
+---
+* content
+{:toc}
+
+Arduino 不仅仅是全球最流行的开源硬件，也是一个优秀的硬件开发平台。如果想玩单片机，并且不希望学那些高深的东西，可以通过 Arduino 快速入门。当然，高手同样也可以用 Arduino 来制作原型产品。
+
+## 比 51 单片机优秀的地方
+
+1. 开发环境跨平台：Arduino IDE 支持 Windows、Linux 和 OS X。
+2. 简单清晰：不需要太多的单片机基础。只需简单的学习即可快速开发。
+3. 开放性：Arduino 的硬件原理图、电路图、IDE 软件及核心库文件都是开源的。
+4. 用户广泛：全世界都有 Arduino 的用户。
+
+## 入手
+
+Arduino 有很多种类，最经典的应该还是 Arduino UNO 了。建议从 UNO 或 Leonardo 开始 (Leonardo 支持模拟键盘鼠标操作)。
+
+可以去淘宝直接购买 Arduino 入门套装，价格不会超过 150 元。套装会包含常见的电子元件。
+
+Arduino UNO R3 本身在 30 元左右。
+
+## 支持 Linux 系统的 Arduino
+
+那些入门级 Arduino 肯定不支持现代操作系统。
+
+不过有些开发板可以运行 Linux 系统，例如 Arduino Yún。但是与那些价格低廉的单板电脑比，太贵了，似乎不太值，所以要谨慎入手。
