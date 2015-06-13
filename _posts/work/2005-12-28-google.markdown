@@ -1,0 +1,97 @@
+---
+layout: post
+title:  "如何使用 Google？"
+date:   2005-12-28 00:00:00
+faq: ["如何使用 Google？"]
+---
+* content
+{:toc}
+
+大家应该都知道这篇文章在说什么事儿。先引用蔡明在小品里的一句话：“这事儿不能说太细。”
+
+![Mr. Fang]({{ "/images/work/fbx.jpg" | prepend: site.baseurl }})
+
+## Do less, Get less
+
+### 免快递方法
+
+如果真心搜索学术和技术信息，可以找[谷粉搜搜](http://www.jwss.com)，这个网站是备过案的，所以不需要翻墙，当然不该出现的东西也不会出现。
+
+### 在线
+
+去百度上搜“在线代理”，总有一个能用的。只不过，一方面这个东西经常被墙，另一方面可能有植入广告什么的，影响体验（甚至隐私安全）。
+
+## Do less, Get more
+
+### Hosts
+
+有一些常见的被墙的网站，例如中文维基百科、Twitter、GitHub Gist，只是域名被墙了，所以只要找到正确的 IP (IPv4 & IPv6) 就能用了。
+
+因此方法也很简单，只要去网上找到合适的 Hosts，然后替换你电脑上对应的文件 (Linux 和 OS X 是`/etc/hosts`，而 Windows 是 C:\Windows\System32\drivers\etc\hosts)，就可以网站了。如果还不能网站，检查一下 Hosts 里面到底有没有，或者用 https 协议重新浏览。
+
+但是 Google 比较特殊，因为 Google 的 IP 要经常换。比方说发现了某个 IP，可能昨天好使，今天就不好使，但是明天又好使了。
+
+因此对于 Google 本身我们还需要一样神器——[GoGoTester](https://github.com/azzvx/gogotester/releases)。
+
+### VPN
+
+VPN 有免费的和收费的。一般情况下，收费当然比免费靠谱。
+
+有的 VPN 有专用软件。如果没有专用软件，那么只需要到系统的网络设置里点“添加”即可。
+
+### 畅游无限浏览器 (仅 Windows)
+
+其本质是一个配置好的 GoAgent + Chrome。懒人专用。
+
+### 轮子
+
+轮子也研发了两个软件，这里不提名字了。由于这两个软件在启动之后会显示他们的首页，而他们从来都在 yy，所以不建议使用。
+
+## Do more, Get more
+
+先解释一下原理：外国没有长城，所以只要我们能弄到一个外国的、没被墙的 Server（或者 App Engine），那么我们就可以自给自足了。
+
+自给自足就需要一套传输软件，分别是服务器端和客户端。服务器端在国外，把那些东西打包好，然后由你在天朝的客户端来接收。客户端毕竟不是浏览器，所以还要把系统或浏览器的代理设置指向本机（127.0.0.1）的某个端口。
+
+当然，这些都是现成的，只要你把它们配置好就可以了。
+
+### GoAgent
+
+按照上述原理，GoAgent 的 Server 实际上是 GAE (Google App Engine)。
+
+有人会发现 GoAgent 好像不能用。
+
+实际上它是可以用的，但是由于 Google 早就被墙了，而且能用的 IP 还经常变化，所以在解决 GoAgent 问题之前需要先解决 Google 的问题。
+
+这岂不是一个死循环？
+
+别忘了神器 [GoGoTester](https://github.com/azzvx/gogotester/releases)。
+
+注意事项：
+
+1. 配置好之后，别忘了导入证书，就像 12306 那样，否则某些浏览器会拒绝访问。
+2. 和改 Hosts 一样，IP 是需要经常更换的。
+3. 免费的 App 有流量限制。一个 App 是 1GB/天 (每天 15 时清零)，一个谷歌账号可以建立 10 个 App，所以一天最多可以用 10 GB。这个对于绝大多数人来说应该够了。
+4. GoAgent 不能匿名。
+
+
+### Shadowsocks
+
+Shadowsocks 实际上也是一套 Server/Client 软件。如果你手头有服务器，可以尝试自己架设 Server。
+
+介绍一个 Server：用学生邮箱注册 GitHub Education，然后就能领一个充了 $100 的 DigitalOcean 服务器了。
+
+找不到 Server？不会或者懒得配置 Server？花点钱总是没错的——[https://shadowsocks.com](https://shadowsocks.com)。
+
+没钱？自己搜免费账号，人品好的话没准就 OK 了，要不然你就老老实实自己架设 Server 吧……
+
+### 注意事项
+
+1. 和其他浏览器不同，Firefox 浏览器有着自己的代理设置。
+2. Proxy SwitchySharp 和 AutoProxy 等插件是用来“选择性代理”的。也就是说，这不是必需的，但是用了能安全一些。
+
+## Express (快递)
+
+不管你走到哪里，我们相信，只要你做了某些特定的事儿，顺丰快递永远都能及时准确地送达。
+
+![SF]({{ "/images/work/sfexpress.jpg" | prepend: site.baseurl }})

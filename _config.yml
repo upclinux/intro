@@ -64,9 +64,9 @@ defaults:
         category: "开发者"
 -
     scope:
-        path: "others"
+        path: "network"
     values:
-        category: "其他"
+        category: "网络"
 - 
     scope:
         path: "toy"
@@ -82,3 +82,8 @@ defaults:
         path: "mac"
     values:
         category: "苹果"
+-
+    scope:
+        path: "others"
+    values:
+        category: "其他"
