@@ -25,9 +25,9 @@ faq: ["如何使用 Google？"]
 
 ### Hosts
 
-有一些常见的被墙的网站，例如中文维基百科、Twitter、GitHub Gist，只是域名被墙了，所以只要找到正确的 IP (IPv4 & IPv6) 就能用了。
+有一些常见的被墙的网站，例如中文维基百科、Twitter、GitHub Gist，只是域名被墙了，所以只要找到正确的 IP (IPv4 or IPv6) 就能用了。
 
-因此方法也很简单，只要去网上找到合适的 Hosts，然后替换你电脑上对应的文件 (Linux 和 OS X 是`/etc/hosts`，而 Windows 是 C:\Windows\System32\drivers\etc\hosts)，就可以网站了。如果还不能网站，检查一下 Hosts 里面到底有没有，或者用 https 协议重新浏览。
+因此方法也很简单，只要去网上找到合适的 Hosts，然后替换你电脑上对应的文件 (Linux 和 OS X 是`/etc/hosts`，而 Windows 是 C:\Windows\System32\drivers\etc\hosts)，就可以网站了。如果还不能网站，检查一下 Hosts 里面到底有没有那个域名，或者用 https 协议重新浏览。
 
 但是 Google 比较特殊，因为 Google 的 IP 要经常换。比方说发现了某个 IP，可能昨天好使，今天就不好使，但是明天又好使了。
 
@@ -43,9 +43,11 @@ VPN 有免费的和收费的。一般情况下，收费当然比免费靠谱。
 
 其本质是一个配置好的 GoAgent + Chrome。懒人专用。
 
-### 轮子
+### 轮子 (Windows / wine)
 
 轮子也研发了两个软件，这里不提名字了。由于这两个软件在启动之后会显示他们的首页，而他们从来都在 yy，所以不建议使用。
+
+轮子的软件只有 Windows 版，但是轮子官方支持 wine。所以在 Linux/OS X 里装一下 wine 和 MFC42 库就能用了。代理需要手动配置。
 
 ## Do more, Get more
 

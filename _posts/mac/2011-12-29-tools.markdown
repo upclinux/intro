@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "OS X 自带的一些工具"
+date:   2011-12-29 00:00:00
+---
+* content
+{:toc}
+
+相信 Linuxer 们知道本文在讲什么事儿。
+
+以下版本号来自 OS X 10.10.3。
+
+* BSD 命令行工具
+* Shell: bash (3.2.57)、csh (6.17.00)、ksh (93u+)、zsh (5.0.5)
+* Apache2 (2.4.10)
+* PHP (5.5.20)
+* Ruby (2.0.0p481)
+* Perl (5.16.3)
+* Python (2.7.6)
+* nano (2.0.6)
+* Vim (7.3)
+* Emacs (22.1.1, 纯文本模式)
+* Git (2.3.2)
+* SVN (1.8.13)
+* ……
+
+部分软件比较老了，所以可能需要安装新版才能玩得更 Hi。这时候软件包管理器 (MacPorts / Homebrew) 就派上用场了。
+
+gcc 和 clang 不是系统自带的。在第一次输入 gcc 或 clang 时，系统会提示你是否下载安装。

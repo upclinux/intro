@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "OS X 的软件包管理器"
+date:   2011-12-30 00:00:00
+---
+* content
+{:toc}
+
+OS X 的内核叫做 Darwin，也是一个 BSD 系统。
+
+用过 Linux/BSD 的应该知道，那些系统一般都带个软件包管理器，例如 Ubuntu 的 apt 与 dpkg、Red Hat 的 yum 与 rpm、FreeBSD 的 Ports……
+
+苹果系统没带这个东西。但是如果还想像 Ports 一样装些软件，怎么办？
+
+推荐两个软件包管理器：一个是 MacPorts，另一个是 Homebrew。
+
+装完之后，也可以像 Linux 系统那样装一些自由软件了……
