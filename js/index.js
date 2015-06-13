@@ -34,6 +34,8 @@ $(document).ready(function() {
     generateContent();
     backToTop();
     fixTables();
+}).bind('DOMNodeInserted', function() {
+    fixLinks();
 });
 
 /**
@@ -101,5 +103,14 @@ function fixTables() {
     $('.post-content table').each(function() {
         if (!$(this).hasClass('table'))
             $(this).addClass('table table-striped table-bordered');
+    });
+}
+
+/**
+ * 处理页面链接
+ */
+function fixLinks() {
+    $('a[href^="http"]').each(function() {
+        $(this).attr('target', '_blank');
     });
 }
