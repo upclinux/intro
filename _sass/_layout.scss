@@ -64,6 +64,58 @@
     }
 }
 
+.callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+    
+    h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+    
+    ol, ul, dl, pre, .highlight, p {
+        margin-bottom: 0px;
+    }
+}
+
+.callout-primary {
+    border-left-color: $primary-color;
+    h4 { 
+        color: $primary-color;
+    }
+}
+
+.callout-success {
+    border-left-color: $success-color;
+    h4 { 
+        color: $success-color;
+    }
+}
+
+.callout-info {
+    border-left-color: $info-color;
+    h4 { 
+        color: $info-color;
+    }
+}
+
+.callout-warning {
+    border-left-color: $warning-color;
+    h4 { 
+        color: $warning-color;
+    }
+}
+
+.callout-danger {
+    border-left-color: $danger-color;
+    h4 { 
+        color: $danger-color;
+    }
+}
+
 /**
  Others
  */

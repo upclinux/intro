@@ -27,6 +27,12 @@ $on-large-screen:  1200px;
 $navbar-dark:      #2c3e50; 
 $highlight-color:  #18bc9c;
 
+$primary-color:    #2c3e50;
+$success-color:    #128f76;
+$info-color:       #3498db;
+$warning-color:    #f39c12;
+$danger-color:     #e74c3c;
+
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
         @content;
