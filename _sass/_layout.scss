@@ -26,6 +26,11 @@
     a {
         color: $grey-color-dark;
         font-size: 20px;
+        
+        i.fa {
+            padding-right: .4em;
+            color: $grey-color;
+        }
     }
 }
 

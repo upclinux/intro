@@ -32,58 +32,70 @@ defaults:
         path: "novice"
     values:
         category: "我是新手"
+        icon: "fa fa-github-alt"
 - 
     scope:
         path: "try"
     values:
         category: "准备接触 Linux"
+        icon: "fa fa-linux"
 - 
     scope:
         path: "configuration"
     values:
         category: "配置系统"
+        icon: "fa fa-cogs"
 - 
     scope:
         path: "c"
     values:
         category: "just for C 语言"
+        icon: "fa fa-bug"
 - 
     scope:
         path: "work"
     values:
         category: "工作与学习"
+        icon: "fa fa-graduation-cap"
 -
     scope:
         path: "entertainment"
     values:
         category: "娱乐"
+        icon: "fa fa-gamepad"
 - 
     scope:
         path: "development"
     values:
         category: "开发者"
+        icon: "fa fa-code"
 -
     scope:
         path: "network"
     values:
         category: "网络"
+        icon: "fa fa-wifi"
 - 
     scope:
         path: "toy"
     values:
         category: "Linux 玩具"
+        icon: "fa fa-puzzle-piece"
 - 
     scope:
         path: "future"
     values:
         category: "深入学习"
+        icon: "fa fa-book"
 - 
     scope:
         path: "mac"
     values:
         category: "苹果"
+        icon: "fa fa-apple"
 -
     scope:
         path: "others"
     values:
         category: "其他"
+        icon: "fa fa-smile-o"

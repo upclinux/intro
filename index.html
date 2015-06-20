@@ -59,9 +59,10 @@ layout: indexpage
         {% if default.scope.path == "" %}{% continue %}{% endif %}
         {% assign tag = default.scope.path %}
         {% assign title = default.values.category %}
+        {% assign icon = default.values.icon %}
         {% assign cate = title | downcase %}
         {% assign u = "/categorites/?c=" | prepend: site.baseurl | append: tag %}
-        <h3 id="section-{{ tag }}" class="category-header"><a href="{{ u }}">{{ title }}</a></h3>
+        <h3 id="section-{{ tag }}" class="category-header"><a href="{{ u }}">{% if icon %}<i class="{{ icon }}"></i>{% endif %}{{ title }}</a></h3>
         <ul>
           {% for post in site.categories[cate] %}
             {% if post.url %}
