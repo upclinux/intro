@@ -54,6 +54,11 @@ date:   2002-12-31 00:00:00
 有些电脑会<strong>拒绝</strong>启动 U 盘，这是因为电脑开启了 Secure Boot 功能。进入 BIOS 设置将其关闭即可引导。关闭 Secure Boot 不会对 Windows 造成影响。
 </div>
 
+<div class="callout callout-info">
+<h4>苹果电脑</h4>
+苹果电脑和普通电脑是一样的，除了只有 EFI。苹果电脑选择启动磁盘的方法是开机时按 <kbd>Option</kbd> 键。GRUB 2 启动器可以直接引导原生苹果系统。
+</div>
+
 ### 运行安装程序
 
 这里要解释很多东西。

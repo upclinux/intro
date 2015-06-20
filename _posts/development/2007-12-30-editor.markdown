@@ -1,0 +1,73 @@
+---
+layout: post
+title:  "常见文本编辑器"
+date:   2007-12-30 00:00:00
+---
+* content
+{:toc}
+
+本文介绍几个常见的能在 Linux 系统中运行的文本编辑器。可以到[维基百科](https://en.wikipedia.org/wiki/Comparison_of_text_editors)查看更详细的信息。
+
+<div class="callout callout-warning">
+<h4>缺资料</h4>
+本文很多编辑器的资料不完整，例如编辑器特色、对工具链的支持等。
+</div>
+
+## 本文不予考虑的情况
+
+* 只支持特定语言，如 TexStudio 是 LaTeX 语言的编辑器。
+* IDE (集成开发环境)，如 Eclipse。
+* 不支持 Linux 系统，如 UltraEdit、Notepad++ 只能在 Windows 系统上运行。
+
+## 系统自带
+
+### vi
+
+“编辑器之神”，不解释。
+
+### nano
+
+纯文本模式，除了 vi，一般还会有一个 nano。nano 的操作方式是比较正常的。
+
+### ed
+
+ed 是一个比较奇葩的文本编辑器。它是 vi 的前身。
+
+一般情况下，正常人不会用 ed 去编辑文本。但是正常人会在脚本文件中使用 sed 编辑文本。
+
+## 自由软件
+
+### Vim/Emacs
+
+“编辑器之神”和“神的编辑器”。不解释。
+
+### gedit
+
+这是 GNOME 桌面环境默认的文本编辑器。支持一些插件，可定制外部工具。
+
+### Kate
+
+KDE 桌面环境优秀的文本编辑器。支持插件。
+
+### Atom
+
+[Atom](https://atom.io) 是 GitHub 推出的文本编辑器。
+
+* 跨平台：支持
+* 插件：支持
+
+## 非自由软件
+
+### Sublime Text
+
+[Sublime Text](https://www.sublimetext.com) 一个非常有名的和受欢迎的编辑器。此编辑器需要购买才能使用。
+
+* 跨平台：支持
+* 插件：支持
+
+### Visual Studio Code
+
+[Visual Studio Code](https://code.visualstudio.com) 是微软推出的支持三大操作系统的、免费的文本编辑器。不过此软件有抄袭 Atom 的嫌疑。
+
+* 跨平台：支持
+* 插件：不支持

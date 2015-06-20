@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "一定要听说过的脚本语言"
+date:   2007-12-28 00:00:00
+---
+* content
+{:toc}
+
+Linux/OS X 系统自带很多脚本语言 (解释器)。作为 Linux/Unix 用户，如果不会写几句脚本，那实在是说不过去啊……(Windows 用户笑了：“我们不写脚本。”)
+
+## shell
+
+OS X 和多数 Linux 使用 bash。当然，shell 是可以换的。
+
+因为 shell 本身和操作系统没有太大关系，因此你甚至可以弄一本 Unix 系统的教材。
+
+### awk
+
+awk 以及后面提到的 grep、sed、bc 都是 *nix 系统的一个命令，而且都是一种语言。
+
+awk 是三位著名计算机科学家 (Alfred Aho、Peter Weinberger、Brian Kernighan) 姓氏首字母的合称。
+
+awk 是一个强大的`文本处理工具`，也是一门编程语言。
+
+### grep
+
+grep 最早由 Ken Thompson 写成。它用于文本的`正则表达式匹配`。
+
+### sed
+
+ed 是一个文本编辑器，所以 sed 的意思是“流编辑器”。
+
+sed 可以进行`文本编辑`、`正则匹配`和`替换`。它和 vi 的某些语法是类似的。
+
+### bc
+
+bc 是一个`高精度计算器`。由于 shell 不支持小数，所以可以使用管道。
+
+## Python
+
+Python 是流行的脚本语言，语法非常简单，功能很强大。
+
+Python 的设计哲学是“优雅”、“明确”、“简单”。Python 开发者的哲学是“用一种方法，最好是只有一种方法来做一件事”。
+
+Python 有两大类，一类是 Python 2，另一类是 Python 3。尽管 Python 2 已经很旧但是仍然被广泛使用。
+
+Linux 和 OS X 自带的 Python 是 Python 2。
+
+可以使用 `pip` 命令安装软件包 (OS X 需手动安装)。
+
+## Ruby
+
+Ruby 也是一个脚本语言，受 Perl、Smalltalk 等语言启发，作者为松本行弘。
+
+Ruby 的理念是“减少编程时候的不必要的琐碎时间，令编写程序的人高兴”。
+
+GitHub 一开始就是 Ruby 的社区。GitHub 本身有很多地方也用 Ruby 语言进行开发。
+
+可以使用 `gem` 命令安装软件包。由于天朝网络原因，可能需要逛一下[淘宝](http://ruby.taobao.org) (没错，就是淘宝搞的镜像) 才能正常下载。
+
+## Perl
+
+Perl 借用了 C、sed、awk、shell 脚本以及很多其他编程语言的特性。最重要的是，Perl 集成了正则表达式的功能。
+
+Perl 的中心思想是：“There's More Than One Way To Do It. (不只一种方法来做一件事。)” 所以同样一个程序可能有 N 种写法。
+
+和 Python 类似，Perl 5 和 Perl 6 也有很大区别。
+
+可以使用 `cpan` 命令安装软件包。 
+
+## PHP
+
+PHP 是流行的脚本语言，非常适合`网络开发`。它的语法和 C 语言、Java 及 Perl 类似，非常容易学习。
+
+OS X 自带 PHP。但是无论是 Linux 还是 OS X，都需要一些配置才能通过 Web Server 调用 PHP。
+
+可以使用 `pear` 命令安装软件包 (需手动安装)。
+
+## Makefile
+
+make 是一个`自动化构建软件`。虽然 IDE 可以轻松完成同样的事儿，但是在 Linux 中 make 仍然是一个常用的工具。
+
+在 Makefile 里面写好`规则`（依赖关系、编译器调用等），执行 make 命令后，make 会读取该文件并按照规则进行编译。
+
+## AppleScript
+
+AppleScript 当然只支持 OS X。它可以用来`控制 OS X 的程序`。

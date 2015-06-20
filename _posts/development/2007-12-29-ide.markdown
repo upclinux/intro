@@ -1,0 +1,44 @@
+---
+layout: post
+title:  "常见 IDE (集成开发环境)"
+date:   2007-12-29 00:00:00
+---
+* content
+{:toc}
+
+本文介绍一些常见的、能在 Linux 系统中运行的 IDE。详情可见[维基百科](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments)。
+
+<div class="callout callout-warning">
+<h4>信息仅供参考</h4>
+本文的某些信息未经验证，可能有错误 (例如某些 IDE 并不能自动编译项目)。仅供参考。更准确的信息应该参考维基百科和用户评价。
+</div>
+
+## 本文不予考虑的情况
+
+* 文本编辑器，如 Vim。IDE 应该包括编程语言编辑器、自动建立工具，通常还包括调试器。
+* 不支持 Linux 系统，如 Visual Studio、Xcode。
+
+## IDE
+
+此处的“跨平台”是以 Linux 为中心，如果这个 IDE 支持除 Linux 以外的系统，我们认为它“跨平台”。
+
+能在 Linux 中运行的软件，可能也能在 Unix 系统 (例如 FreeBSD) 中运行。
+
+软件              | 是否为自由软件 | 编程语言                | 软件的跨平台支持 | GUI 开发支持
+-----------------|--------------|------------------------|---------------|-------------
+Anjuta           | 是           | C/C++                  | 否             | 是
+Code::Blocks     | 是           | C/C++                  | 是             | 是
+Eclipse          | 是           | Java 和其他 (视插件而定)  | 是            | 是
+Free Pascal IDE  | 是           | Pascal                 | 是             | 否
+Gambas           | 是           | Basic                  | 否             | 是
+Geany            | 是           | C/C++/Java……           | 是             | 否
+IDLE             | 是           | Python                 | 是             | 否
+KDevelop         | 是           | C/C++/Java……           | 不支持 Windows | 是
+Lazarus          | 是           | Pascal                 | 是             | 是
+MonoDevelop      | 是           | C#                     | 是             | 是
+NetBeans         | 是           | Java                   | 是             | 是
+PyCharm          | 多重授权      | Python                 | 是             | 否
+Qt Creator       | 多重授权      | C/C++                  | 是             | 是
+TexStudio        | 是           | LaTeX                  | 是             | 否
+Xojo             | 否 (付费)     | 类似 Basic             | 是             | 是
+Zend Studio      | 否 (付费)     | PHP                    | 是             | ×
