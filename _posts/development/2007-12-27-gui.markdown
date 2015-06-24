@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "编写图形界面程序 (PC/Mac)"
+date:   2007-12-27 00:00:00
+---
+* content
+{:toc}
+
+一般人如果想开发一个图形界面程序，应该选择一个已有的框架。如果你想按照 X 协议自己去画一个窗口对话框，请不要看本文。
+
+本文以 Linux 系统为中心。
+
+## 框架
+
+框架/库     | 编程软件          | 编程语言     | 跨平台支持 | 界面设计器
+-----------|------------------|-------------|----------------|---------------
+Qt C++     | Qt Creator       | C++         | 是      | 内置
+GTK+       | Anjuta 等        | C 语言*      | 是      | 有 (Glade)
+AWT/Swing  | Eclipse          | Java        | 是      | 需要插件**
+wxWidgets  |                  | C++         | 是      | 有 (wxGlade 等)
+Gtk#       | MonoDevelop、<br>Xamarin Studio | C# | 是 | 内置
+Free Pascal| Lazarus          | Pascal      | 是      | 内置
+Electron   |                  | node.js、前端*** | 是  | N/A
+Gambas     | Gambas           | Basic       | 否      | 内置
+
+<small>
+\* 经过封装，Python、Perl、PHP 等语言也可以使用 GTK+ 库。<br>
+** 有些 Java 的 IDE，例如 NetBeans 或 MyEclipse 自带界面设计器。<br>
+*** 前端：指图形界面使用网页前端语言，即 HTML、CSS、JavaScript 等语言实现。
+</small>
+
+## Python
+
+以下是把一些框架用 Python 语言封装之后的产物，它们都是跨平台的：
+
+* PyQt (Qt)
+* PyGTK (GTK+)
+* wxPython (wxWidgets)
+
+## shell
+
+shell (bash/zsh/ksh...) 当然不能用来开发图形界面程序，但是在 Linux 里可以通过 `zenity` (基于 GTK+ 的桌面环境) 和 `kdialog` (KDE 桌面环境) 命令来编写带有对话框的脚本。

@@ -26,6 +26,10 @@ awk 是一个强大的`文本处理工具`，也是一门编程语言。
 
 grep 最早由 Ken Thompson 写成。它用于文本的`正则表达式匹配`。
 
+下面命令可以从进程列表中寻找 httpd：
+
+    ps ax | grep httpd
+
 ### sed
 
 ed 是一个文本编辑器，所以 sed 的意思是“流编辑器”。
@@ -34,7 +38,9 @@ sed 可以进行`文本编辑`、`正则匹配`和`替换`。它和 vi 的某些
 
 ### bc
 
-bc 是一个`高精度计算器`。由于 shell 不支持小数，所以可以使用管道。
+bc 是一个`高精度计算器`。由于 shell 不支持小数，所以可以以管道到 bc 的方式进行计算：
+
+    num=$(echo "scale=6; 5/3" | bc)
 
 ## Python
 
@@ -66,7 +72,7 @@ Perl 的中心思想是：“There's More Than One Way To Do It. (不只一种�
 
 和 Python 类似，Perl 5 和 Perl 6 也有很大区别。
 
-可以使用 `cpan` 命令安装软件包。 
+可以使用 `cpan` 命令安装软件包。
 
 ## PHP
 
