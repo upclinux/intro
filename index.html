@@ -6,10 +6,10 @@ layout: indexpage
     <h1><span class="logo">#!</span> 入门指引</h1>
     <p>有些时候，你只是需要一点点<span class="text-success">提示</span>，剩下的可以<span class="text-info">自己探索</span>。</p>
     <p><a class="btn btn-inverse" href="https://github.com/upclinux/intro"><i class="fa fa-github"></i> GitHub 项目主页</a><br>
-      <small>最后更新: {{ site.time | date: "%Y-%m-%d" }}</small></p> 
+      <small>最后更新: {{ site.time | date: "%Y-%m-%d" }}</small></p>
   </div>
 </div>
-      
+
 <div role="main" class="container main">
   <div class="row">
     <form class="col-md-8 col-md-offset-2 form-inline" method="get" action="{{ "/search/" | prepend: site.baseurl }}">
@@ -19,14 +19,15 @@ layout: indexpage
   </div>
 
   <br class="clear">
-  
+
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-success" id="faq">
-        <div class="panel-heading">
+        <div class="panel-heading" id="faq-panel-heading" style="cursor: pointer;">
+          <span class="fa fa-angle-up pull-right" id="faq-panel-arrow"></span>
           <h3 class="panel-title">FAQ</h3>
         </div>
-        <div class="list-group">
+        <div class="list-group hidden-xs" id="faq-list">
           {% for default in site.defaults %}
             {% assign title = default.values.category %}
             {% assign cate = title | downcase %}
@@ -42,9 +43,9 @@ layout: indexpage
       </div>
     </div>
   </div>
-  
+
   <br class="clear">
-  
+
   <div class="row" style="padding-bottom: 20px;">
     <div class="col-md-8">
       <ul id="markdown-toc" style="display: none;">
@@ -54,7 +55,7 @@ layout: indexpage
         </li>
       {% endfor %}
       </ul>
-      
+
       {% for default in site.defaults %}
         {% if default.scope.path == "" %}{% continue %}{% endif %}
         {% assign tag = default.scope.path %}
@@ -77,3 +78,6 @@ layout: indexpage
     <div id="content" class="col-sm-3 hidden-xs hidden-sm" data-index="index"></div>
   </div>
 </div>
+<script type="text/javascript" src="{{ site.baseurl }}/js/faq.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/anchor.min.js"></script>
+<script type="text/javascript">anchors.options.placement="right";anchors.add('.category-header');</script>

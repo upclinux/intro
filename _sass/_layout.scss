@@ -138,3 +138,11 @@
         color: white;
     }
 }
+
+.anchorjs-link {
+    color: $grey-color;
+    &:hover {
+        color: $grey-color;
+        text-decoration: none;
+    }
+}
