@@ -41,4 +41,7 @@ PyCharm          | 多重授权      | Python                 | 是             
 Qt Creator       | 多重授权      | C/C++                  | 是             | 是
 TexStudio        | 是           | LaTeX                  | 是             | 否
 Xojo             | 否 (付费)     | 类似 Basic             | 是             | 是
+Visual Studio Code* | 否 (免费)  | C#/node.js             | 是             | 否
 Zend Studio      | 否 (付费)     | PHP                    | 是             | ×
+
+<small>* Visual Studio Code 是文本编辑器。但是对于 C# 和 node.js 来说，Code 内置调试功能。</small>

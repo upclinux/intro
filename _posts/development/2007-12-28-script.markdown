@@ -66,7 +66,7 @@ GitHub 一开始就是 Ruby 的社区。GitHub 本身有很多地方也用 Ruby 
 
 ## Perl
 
-Perl 借用了 C、sed、awk、shell 脚本以及很多其他编程语言的特性。最重要的是，Perl 集成了正则表达式的功能。
+Perl 借用了 C、sed、awk、shell 脚本以及很多其他编程语言的特性。最重要的是，Perl 集成了正则表达式的功能。Perl 更擅长`文本处理`。
 
 Perl 的中心思想是：“There's More Than One Way To Do It. (不只一种方法来做一件事。)” 所以同样一个程序可能有 N 种写法。
 
