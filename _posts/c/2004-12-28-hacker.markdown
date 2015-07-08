@@ -1,16 +1,24 @@
 ---
 layout: post
-title:  "我 C 语言考了满分，为什么还有人鄙视我？"
+title:  "C 语言很简单吗？"
 date:   2004-12-29 00:00:00
 ---
 * content
 {:toc}
 
-下面这些程序都用到了 C 语言（因为还用到了其他语言）：
+# C 语言杰作
+
+下面这些程序都用到了 C 语言：
 
 * Unix
-* [gcc](https://github.com/gcc-mirror/gcc)。没错，C 语言编译器就是用 C 语言编译器来编译的。
-* [Linux 内核](https://github.com/torvalds/linux)。不解释。
+* [gcc](https://github.com/gcc-mirror/gcc)（没错，C 语言编译器就是用 C 语言编译器来编译的）
+* [Linux 内核](https://github.com/torvalds/linux)
 * ……
 
-为什么列举这几个软件呢？因为你应该了解一下这些软件的作者。
+这几个软件的作者在计算机发展史上都具有重要地位。
+
+# C 语言竞赛
+
+OI 系列 (信息学奥赛) 和 ACM 系列分别是高中生和大学生参加的重要算法竞赛。与此相关的还有由商业公司举办的比赛。这些比赛的重点的数据结构与算法，而 C/C++/Java/Pascal 仅仅是实现算法的工具，因此对数学的要求很高，但是对语言层面的要求不高。
+
+此外还有一个著名的比赛——[IOCCC](http://ioccc.org) (国际混乱 C 语言代码大赛)。这是针对语言本身的竞赛。

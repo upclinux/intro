@@ -12,11 +12,11 @@ Linux/OS X 系统自带很多脚本语言 (解释器)。作为 Linux/Unix 用户
 
 OS X 和多数 Linux 使用 bash。当然，shell 是可以换的。
 
-因为 shell 本身和操作系统没有太大关系，因此你甚至可以弄一本 Unix 系统的教材。
+因为 shell 本身和操作系统没有太大关系，因此你甚至可以通过一本 Unix 系统的教材来学习。
 
 ### awk
 
-awk 以及后面提到的 grep、sed、bc 都是 *nix 系统的一个命令，而且都是一种语言。
+awk 以及后面提到的 grep、sed、bc 都是 Linux/Unix 系统的一个命令，而且都是一种语言。
 
 awk 是三位著名计算机科学家 (Alfred Aho、Peter Weinberger、Brian Kernighan) 姓氏首字母的合称。
 
@@ -42,6 +42,8 @@ bc 是一个`高精度计算器`。由于 shell 不支持小数，所以可以�
 
     num=$(echo "scale=6; 5/3" | bc)
 
+除了计算，bc 也支持条件语句、循环语句、函数等功能。
+
 ## Python
 
 Python 是流行的脚本语言，语法非常简单，功能很强大。
@@ -60,9 +62,9 @@ Ruby 也是一个脚本语言，受 Perl、Smalltalk 等语言启发，作者为
 
 Ruby 的理念是“减少编程时候的不必要的琐碎时间，令编写程序的人高兴”。
 
-GitHub 一开始就是 Ruby 的社区。GitHub 本身有很多地方也用 Ruby 语言进行开发。
+GitHub 最早是 Ruby 的社区。GitHub 本身有很多组件使用 Ruby 语言进行开发。
 
-可以使用 `gem` 命令安装软件包。由于天朝网络原因，可能需要逛一下[淘宝](http://ruby.taobao.org) (没错，就是淘宝搞的镜像) 才能正常下载。
+可以使用 `gem` 命令安装软件包。由于你懂得的网络原因，可能需要将软件源设置成[淘宝](http://ruby.taobao.org) (没错，就是淘宝搞的镜像) 才能正常下载。
 
 ## Perl
 

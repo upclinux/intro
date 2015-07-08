@@ -1,24 +1,26 @@
 ---
 layout: post
-title:  "【未完成】QQ"
+title:  "QQ"
 date:   2003-12-30 00:00:00
 faq: ["QQ!"]
 ---
 * content
 {:toc}
 
-某讯公司为了商业利益，放弃了 QQ for Linux 的开发。但是天朝子民又不得不用 QQ，于是 Linux 世界出现了三种解决方案：
+某公司为了商业利益，放弃了 QQ for Linux 的开发。但是中国人又不得不用 QQ，于是 Linux 世界出现了三种解决方案：
 
-## WebQQ
+# WebQQ
 
 WebQQ 已停止开发。现在是 [Smart QQ](http://w.qq.com)。
 
-## 分析协议并实现
+# 分析协议并实现
 
-有人分析了 QQ 协议 (一般是 WebQQ 因为更容易分析)，并开发了替代品。但是由于风险较大，本文不推荐。
+有人分析了 QQ 协议 (一般是 WebQQ 因为更容易分析) 并开发了替代品。但是由于风险较大 (容易被认定为“异常登录”)，所以不推荐。
 
-## wineQQ
+# wineQQ
 
-wineQQ 不稳定但是功能最全。
+wineQQ 不稳定但是功能最全，因为它设法直接让 Windows 版 QQ 运行。
 
-Ubuntu 软件仓库的 wine 版本比较旧 (1.4)，需要添加软件源并将 wine 更新到最新版本 (1.7)。
+Ubuntu 软件仓库的 wine 版本比较旧 (1.4)，需要添加软件源 (ppa:ubuntu-wine/ppa) 并将 wine 更新到最新版本 (1.7)。
+
+目前最稳定的 wineQQ 是由[深度团队](http://packages.linuxdeepin.com/deepin/pool/non-free/d/deepinwine-qq/)制作的。不过软件包只针对 Deepin 系统，无法直接在其他系统中安装。因此需要一些黑科技 (只提取其中的文件)。

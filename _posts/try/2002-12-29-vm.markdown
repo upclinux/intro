@@ -11,46 +11,58 @@ faq: ["如何在不造成任何影响的前提下试用 Linux？"]
 
 很多人只是想见见 Linux 长什么样，并不打算真正使用 Linux。这种情况下，虚拟机是一个可行的方案。
 
-<div class="callout callout-warning">
-<h4>虚拟机性能</h4>
-某些操作系统，如 Ubuntu (Unity 桌面环境)、Kubuntu (KDE 桌面环境)、Deepin (Deepin 桌面环境)，其桌面环境在虚拟机上面表现很差，经常卡顿。因此建议刻录成启动 U 盘（此类系统可以在不安装的情况下进行试用），不要在虚拟机里尝试这些系统。如果你坚持用虚拟机进行体验，建议换用对显卡要求不高的发行版（如 Ubuntu MATE）或提高虚拟机的显卡配置。
-</div>
+[% callout style=warning %]
 
-由于在天朝不得不用一些 Windows 软件（例如必须用 QQ 进行聊天，必须用版本精确到个位数的 Word，必须用版本精确到小数点后一位的 IE 浏览器……），因此装完 Linux 之后很可能要装一个带有 Windows 系统的虚拟机。当然，一般情况下 XP 就够了。
+#### 虚拟机性能
 
-## 常用虚拟机软件
+某些操作系统，如 Ubuntu (Unity 桌面环境)、Kubuntu (KDE 桌面环境)、Deepin (Deepin 桌面环境)，其桌面环境在虚拟机上面表现很差，经常卡顿。
+因此建议将它们刻录成启动 U 盘，尽量避免在虚拟机中尝试此类系统。这些系统可以在不安装的前提下试用。
 
-### Windows
+如果坚持用虚拟机进行体验，建议换用对显卡要求不高的发行版（如 Ubuntu MATE），或者提高虚拟机的显卡配置。
+
+[% endcallout %]
+
+由于在天朝不得不用一些 Windows 软件（例如必须用 QQ、Word、IE 浏览器等），因此装完 Linux 系统之后很可能需要一个带有 Windows 系统的虚拟机。从性能角度来讲，Windows XP 性价比最高，如果电脑条件允许，也可以安装更高版本系统。
+
+# 常用虚拟机软件
+
+## Windows
 
 Windows 和 Linux 中最常用的虚拟机软件是 `VMware Workstation`。这是个收费软件，所以你需要搞到一个序列号。有一个免费版本是 `VMware Player` (Workstation 自带)，但是功能很少。
 
 还有一个软件叫 `VirtualBox`，这是一个自由软件。
 
-Windows 7 的可选插件 Windows Virtual PC 不支持 Linux。Windows 8/8.1 附带的 Hyper-V 虚拟机支持 Linux，但用户体验不太好。
+[% callout %]
 
-### Linux
+#### Windows 自带的虚拟机
 
-VMware Workstation 和 VirtualBox 都有 Linux 版。由于 VirtualBox 是自由软件，所以很容易通过系统的软件包管理器进行安装。
+Windows 7 有可选组件 Windows Virtual PC，而 Windows 8/8.1 有可选组件 Hyper-V。前者不支持 Linux 系统，后者对 Linux 系统的支持有限，用户体验不太好。
 
-QEMU 比较神奇，因为它甚至可以模拟在其他处理器上运行的系统。如果想玩 KVM，不妨试试。 
+[% endcallout %]
 
-### OS X
+## Linux
 
-VMware Workstation 对应到苹果系统之后叫 `VMware Fusion`。
+VMware Workstation 和 VirtualBox 都有 Linux 版。
 
-VirtualBox 支持 OS X。
+由于 VirtualBox 是自由软件，所以很容易通过系统的软件包管理器进行安装。
 
-此外 OS X 有一个和系统集成度更高的虚拟机软件，叫做 `Parallels Desktop`。这个也是付费软件。
+此外还有一个虚拟机叫做 QEMU，它被用于解决方案 KVM 中。QEMU 神奇之处在于可以模拟在其他处理器 (如 ARM) 上运行的系统。但是 QEMU 对现代操作系统的支持可能不好。
 
-## 虚拟机服务器 (Linux)
+## OS X
 
-如果手头有一堆服务器，想搞个虚拟机服务器玩玩，就像云计算那样，可以考虑以下软件：
+VMware Workstation 和 VirtualBox 都支持苹果系统，但是 VMware 的名字叫做 `VMware Fusion`。
+
+除此之外，OS X 有一个和系统集成度更高、用户体验更好的虚拟机软件，叫做 `Parallels Desktop`。它和 VMware Fusion 都是付费软件。
+
+# 虚拟机服务器 (Linux)
+
+如果拥有一些服务器，想尝试像云计算基础设施一样架设虚拟机服务器，可以考虑以下软件：
 
 * VMware vSphere Hypervisor
 * VirtualBox
 * KVM
 
-这些软件可以在纯文本模式下运行。当然，使用解决方案是更好的：
+这些软件可以在纯文本模式下运行。不过使用解决方案是更好的：
 
-* OpenVZ
+* OpenVZ (即将过时)
 * OpenStack

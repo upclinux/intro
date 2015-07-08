@@ -8,19 +8,22 @@ date:   2007-12-29 00:00:00
 
 本文介绍一些常见的、能在 Linux 系统中运行的 IDE。详情可见[维基百科](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments)。
 
-<div class="callout callout-warning">
-<h4>信息仅供参考</h4>
-本文的某些信息未经验证，可能有错误 (例如某些 IDE 并不能自动编译项目)。仅供参考。更准确的信息应该参考维基百科和用户评价。
-</div>
+[% callout style=warning %]
 
-## 本文不予考虑的情况
+#### 信息仅供参考
+
+本文的某些信息未经验证，可能有错误 (例如某些 IDE 不能自动编译项目)。仅供参考。如果想获得准确信息，请亲自实践一下。
+
+[% endcallout %]
+
+# 本文不予考虑的情况
 
 * 文本编辑器，如 Vim。IDE 应该包括编程语言编辑器、自动建立工具，通常还包括调试器。
 * 不支持 Linux 系统，如 Visual Studio、Xcode。
 
 ## IDE
 
-此处的“跨平台”是以 Linux 为中心，如果这个 IDE 支持除 Linux 以外的系统，我们认为它“跨平台”。
+此处的“跨平台”是以 Linux 为中心，如果这个 IDE 支持除 Linux 以外的系统 (Windows/OS X)，我们认为它“跨平台”。
 
 能在 Linux 中运行的软件，可能也能在 Unix 系统 (例如 FreeBSD) 中运行。
 
@@ -38,10 +41,13 @@ Lazarus          | 是           | Pascal                 | 是             | �
 MonoDevelop      | 是           | C#                     | 是             | 是
 NetBeans         | 是           | Java                   | 是             | 是
 PyCharm          | 多重授权      | Python                 | 是             | 否
-Qt Creator       | 多重授权      | C/C++                  | 是             | 是
+Qt Creator       | 多重授权*     | C/C++                  | 是             | 是
 TexStudio        | 是           | LaTeX                  | 是             | 否
-Xojo             | 否 (付费)     | 类似 Basic             | 是             | 是
-Visual Studio Code* | 否 (免费)  | C#/node.js             | 是             | 否
+Xojo             | 否 (付费)     | Basic                  | 是             | 是
+Visual Studio Code** | 否 (免费) | ASP.NET (C#)/node.js   | 是             | 否
 Zend Studio      | 否 (付费)     | PHP                    | 是             | ×
 
-<small>* Visual Studio Code 是文本编辑器。但是对于 C# 和 node.js 来说，Code 内置调试功能。</small>
+<small>
+* Qt 分为社区版和商业版。社区版免费，但只能用于开发基于 GPL 和 LGPL 协议的软件。商业版可开发私有软件且功能更多，但需要购买授权。<br>
+** Visual Studio Code 是文本编辑器。但是对于 ASP.NET (C#) 和 node.js 来说，Code 内置调试功能。
+</small>

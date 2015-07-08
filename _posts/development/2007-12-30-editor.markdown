@@ -8,66 +8,88 @@ date:   2007-12-30 00:00:00
 
 本文介绍几个常见的能在 Linux 系统中运行的文本编辑器。可以到[维基百科](https://en.wikipedia.org/wiki/Comparison_of_text_editors)查看更详细的信息。
 
-<div class="callout callout-warning">
-<h4>缺资料</h4>
-本文很多编辑器的资料不完整，例如编辑器特色、对工具链的支持等。
-</div>
+[% callout %]
 
-## 本文不予考虑的情况
+#### 缺资料
+
+本文很多编辑器的资料不完整，例如编辑器特色、对工具链的支持等。
+
+[% endcallout %]
+
+# 本文不予考虑的情况
 
 * 只支持特定语言，如 TexStudio 是 LaTeX 语言的编辑器。
 * IDE (集成开发环境)，如 Eclipse。
 * 不支持 Linux 系统，如 UltraEdit、Notepad++ 只能在 Windows 系统上运行。
 
-## 系统自带
+# 自由软件
 
-### vi
+## vi
 
-“编辑器之神”，不解释。
+vi 是“编辑器之神”，但是功能不如其改进版 Vim 丰富。由于它是几乎所有 Linux 系统 (包括 initramfs) 自带的编辑器，因此掌握 vi 的用法对救急非常有意义。
 
-### nano
+有些发行版已经把 vi 换成精简版 Vim。
 
-纯文本模式，除了 vi，一般还会有一个 nano。nano 的操作方式是比较正常的。
+## nano
 
-### ed
+在纯文本模式，除了 vi，一般还会有 nano。nano 是一个操作方式“比较正常”的编辑器，但是功能不太多。
+
+## ed
 
 ed 是一个比较奇葩的文本编辑器。它是 vi 的前身。
 
-一般情况下，正常人不会用 ed 去编辑文本。但是正常人会在脚本文件中使用 sed 编辑文本。
+正常人不会用 ed 去编辑文本。但是 ed 有一个支持文本流的版本——sed，正常人可以在脚本文件中利用 sed 来编辑文本。支持正则表达式。
 
-## 自由软件
+## Vim/Emacs
 
-### Vim/Emacs
+Vim 和 Emacs 分别被称为“编辑器之神”和“神的编辑器”。
 
-“编辑器之神”和“神的编辑器”。不解释。
+## gedit
 
-### gedit
+这是 GNOME 桌面环境默认的文本编辑器。功能不太多，支持几个插件。支持通过 shell 脚本来定制“外部工具”。
 
-这是 GNOME 桌面环境默认的文本编辑器。支持一些插件，可定制外部工具。
+## Kate
 
-### Kate
+KDE 桌面环境优秀的文本编辑器。支持插件，支持 Vim 编辑方式。
 
-KDE 桌面环境优秀的文本编辑器。支持插件。
-
-### Atom
+## Atom
 
 [Atom](https://atom.io) 是 GitHub 推出的文本编辑器。
 
-* 跨平台：支持
-* 插件：支持
+Atom 的特色如下：
 
-## 非自由软件
+* Atom 采用 Electron 框架，本质上是个本地化的 Web App。
+* 跨平台支持
+* 模块化
+* 支持插件、主题定制等 (可使用 CoffeeScript 开发插件)
+* 支持 GitHub
+* 免费 (Sublime Text 收费)
+* 命令列表
+* 大量操作技巧
 
-### Sublime Text
+# 非自由软件
 
-[Sublime Text](https://www.sublimetext.com) 一个非常有名的和受欢迎的编辑器。此编辑器需要购买才能使用。
+## Sublime Text
 
-* 跨平台：支持
-* 插件：支持
+[Sublime Text](https://www.sublimetext.com) 一个非常有名的和受欢迎的编辑器。此编辑器的授权费为 $59 (可以无限期试用)。最新版本是 Sublime Text 3。
 
-### Visual Studio Code
+Sublime Text 的特色如下：
 
-[Visual Studio Code](https://code.visualstudio.com) 是微软推出的支持三大操作系统的、免费的文本编辑器。不过此软件有抄袭 Atom 的嫌疑。
+* 跨平台支持
+* 快速定位
+* 代码地图
+* 配置文件和插件支持 (Python)
+* 大量操作技巧
+* 命令面板
 
-* 跨平台：支持
-* 插件：不支持
+## Visual Studio Code
+
+[Visual Studio Code](https://code.visualstudio.com) 是微软推出的支持三大操作系统的、免费的文本编辑器。这也是微软为数不多的支持 Linux 的软件之一。不过，此软件有抄袭 Atom 的嫌疑。
+
+Visual Studio Code 仍处于预览版，因此不清楚将来是否会支持插件。目前 (0.3.0) 的特色如下：
+
+* 跨平台支持
+* 原生支持 ASP.NET 和 node.js 的调试功能。
+* 对 C# 而言支持上下文补全等功能。
+* 集成 Git 支持。
+* 大量操作技巧
