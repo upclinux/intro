@@ -21,6 +21,9 @@ WebQQ 已停止开发。现在是 [Smart QQ](http://w.qq.com)。
 
 wineQQ 不稳定但是功能最全，因为它设法直接让 Windows 版 QQ 运行。
 
-Ubuntu 软件仓库的 wine 版本比较旧 (1.4)，需要添加软件源 (ppa:ubuntu-wine/ppa) 并将 wine 更新到最新版本 (1.7)。
+目前最稳定的 wineQQ 是由[深度团队](http://packages.linuxdeepin.com/deepin/pool/non-free/d/deepinwine-qq/)制作的。不过软件包只针对 Deepin 系统，无法直接在其他系统中安装。因此需要一些黑科技：
 
-目前最稳定的 wineQQ 是由[深度团队](http://packages.linuxdeepin.com/deepin/pool/non-free/d/deepinwine-qq/)制作的。不过软件包只针对 Deepin 系统，无法直接在其他系统中安装。因此需要一些黑科技 (只提取其中的文件)。
+1. Ubuntu 软件仓库的 wine 版本比较旧 (1.4)，需要添加软件源 (ppa:ubuntu-wine/ppa) 并将 wine 更新到最新版本 (1.7)。
+2. 下载 wineQQ [安装包](http://packages.linuxdeepin.com/deepin/pool/non-free/d/deepinwine-qq/)但是不要安装。
+3. 使用解压缩软件解压，再将名为 control 的包解压，将其中的 opt/cxoffice/support/Deepin-QQ 目录解压到某个目录，例如 ~/Deepin-QQ。
+4. 运行命令：`WINEPREFIX=~/Deepin-QQ wine "C:\Program Files\Tencent\QQ\Bin\QQ.exe"`。可以将这条命令制作成脚本或启动器。

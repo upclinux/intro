@@ -40,14 +40,17 @@ KDevelop         | 是           | C/C++/Java……           | 不支持 Window
 Lazarus          | 是           | Pascal                 | 是             | 是
 MonoDevelop      | 是           | C#                     | 是             | 是
 NetBeans         | 是           | Java                   | 是             | 是
-PyCharm          | 多重授权      | Python                 | 是             | 否
+PHPStorm         | 否 (付费)     | PHP                    | 是             | ×
+PyCharm          | 多重授权      | Python 等              | 是             | 否
+RubyMine         | 多重授权      | Ruby 等                | 是             | 否
 Qt Creator       | 多重授权*     | C/C++                  | 是             | 是
 TexStudio        | 是           | LaTeX                  | 是             | 否
+WebStorm         | 多重授权      | Node.js 等              | 是             | 否
 Xojo             | 否 (付费)     | Basic                  | 是             | 是
-Visual Studio Code** | 否 (免费) | ASP.NET (C#)/node.js   | 是             | 否
+Visual Studio Code** | 否 (免费) | ASP.NET (C#)/Node.js   | 是             | 否
 Zend Studio      | 否 (付费)     | PHP                    | 是             | ×
 
 <small>
 * Qt 分为社区版和商业版。社区版免费，但只能用于开发基于 GPL 和 LGPL 协议的软件。商业版可开发私有软件且功能更多，但需要购买授权。<br>
-** Visual Studio Code 是文本编辑器。但是对于 ASP.NET (C#) 和 node.js 来说，Code 内置调试功能。
+** Visual Studio Code 是文本编辑器。但是对于 ASP.NET (C#) 和 node.js 来说，Code 内置调试功能。并且对于 ASP.Net 有更多支持。
 </small>

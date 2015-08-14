@@ -1,0 +1,79 @@
+---
+layout: post
+title:  "Web 后端语言比较"
+date:   2007-12-23 00:00:00
+---
+* content
+{:toc}
+
+本文简单介绍常见的 Web 服务器端语言、框架和常见应用引擎的支持情况。
+
+# 语言
+
+## PHP
+
+PHP 是最流行的 Web 服务器语言。
+
+* 优点：语言简单且易于学习、可进行快速开发；实例多；易于部署
+* 缺点：代码不易维护，不适合大型系统；不支持多线程
+* 流行框架：Yii、Laravel、ThinkPHP 等。在特殊领域（例如微信公众号后台）也有大量解决方案。
+
+## Java
+
+Java 也是非常流行的 Web 服务器语言。
+
+* 优点：可伸缩性强
+* 缺点：不易上手；速度慢
+* 流行框架：Spring
+
+## ASP.Net
+
+ASP 和 ASP.Net 是微软推出的。ASP 技术已经过时，不建议使用。ASP.Net 一般用 C# 语言，一般部署在 Windows 服务器上。
+
+因为 Mono 项目，事实上 ASP.Net 应用也可以在 Linux 或 OS X 系统上运行。
+
+* 优点：易于学习、易于开发
+* 缺点：平台限于 Windows
+
+## Python
+
+Python 和 Ruby 都是轻巧的脚本语言，都对网络功能有良好的支持，因此它们都可以被用于服务器端的开发。
+
+* 优点：易于快速开发
+* 缺点：不如 PHP、Java 流行
+* 流行框架：Django
+
+## Ruby on Rails
+
+Ruby on Rails 是基于 Ruby 开发的框架。事实上，Ruby 不如其他语言流行。
+
+* 优点：易于快速开发
+* 缺点：Ruby 语言速度慢；不容易部署（RubyGems 被墙干扰）
+
+## Node.js
+
+Node.js 是服务器端的 JavaScript。创造 Node.js 就是为了解决高并发的问题，因此 Node.js 更适合高并发的应用。
+
+* 优点：事件驱动，有良好的高并发支持；可用于开发实时系统
+* 缺点：不适合数据量大的系统，特别是处理时间较长的应用
+* 流行框架：Express.js
+
+## 其他选择
+
+* Perl 语言也有一些解决方案。
+* OpenWrt 后端用 lua 语言写成。
+* 在嵌入式系统常用 C 语言（CGI）。
+
+# 应用引擎支持
+
+如果需要托管到应用引擎上面，建议使用 PHP、Java、Python。不过，由于 Java 对系统条件要求更高，所以 Java 的收费可能比其他语言高。
+
+## 国内
+
+* [SAE](http://sae.sina.com.cn): PHP (5.3/5.6)、Java (1.6/1.7)、Python (2.7)
+* [BAE](http://bce.baidu.com/product/bae.html): PHP (5.4)、Java (OpenJDK 7)、Python (2.7)、Node.js (0.10.21)
+
+## 国外（你懂得）
+
+* [GAE (Google App Engine)](https://appengine.google.com): PHP、Java、Python、Go。GAE 可免费使用但有一些限制（如流量限制）。
+* Microsoft Azure: ASP.NET、PHP、Node.js、Python
