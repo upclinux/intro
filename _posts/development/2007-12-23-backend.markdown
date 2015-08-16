@@ -50,6 +50,14 @@ Ruby on Rails 是基于 Ruby 开发的框架。事实上，Ruby 不如其他语�
 * 优点：易于快速开发
 * 缺点：Ruby 语言速度慢；不容易部署（RubyGems 被墙干扰）
 
+[% callout style=warning %]
+
+#### 方校长出没
+
+由于方校长的原因，RubyGems 不能正常下载软件包。因此需要通过[淘宝镜像](https://ruby.taobao.org)来解决这个问题。
+
+[% endcallout %]
+
 ## Node.js
 
 Node.js 是服务器端的 JavaScript。创造 Node.js 就是为了解决高并发的问题，因此 Node.js 更适合高并发的应用。
@@ -57,6 +65,14 @@ Node.js 是服务器端的 JavaScript。创造 Node.js 就是为了解决高并�
 * 优点：事件驱动，有良好的高并发支持；可用于开发实时系统
 * 缺点：不适合数据量大的系统，特别是处理时间较长的应用
 * 流行框架：Express.js
+
+[% callout style=warning %]
+
+#### 方校长出没
+
+由于方校长的原因，npm 可能无法正常下载软件包。因此可能需要通过[淘宝镜像](https://npm.taobao.org)来解决这个问题。
+
+[% endcallout %]
 
 ## 其他选择
 
