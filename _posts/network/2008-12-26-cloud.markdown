@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "常见的云服务器"
-date:   2007-12-22 00:00:00
+date:   2008-12-26 00:00:00
 ---
 * content
 {:toc}
