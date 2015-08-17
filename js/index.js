@@ -34,7 +34,7 @@ $(document).ready(function() {
     generateContent();
     backToTop();
     fixTables();
-}).bind('DOMNodeInserted', function() {
+//}).bind('DOMNodeInserted', function() {
     fixLinks();
 });
 
@@ -112,5 +112,10 @@ function fixTables() {
 function fixLinks() {
     $('a[href^="http"]').each(function() {
         $(this).attr('target', '_blank');
+    });
+
+    $('article a[href^="http"]').each(function() {
+        var h = $(this).html();
+        $(this).html(h + '<i class="fa fa-external-link external-link"></i>');
     });
 }
