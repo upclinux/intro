@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "码农必备的随身参考手册"
+---
+
+作为码农，每天当然要接触各种语言和各种库，还有各种框架。因为库和框架总会有一大堆类一大堆函数，而很多编辑器不像 Visual Studio 那样能够 IntelliSense，并且有些函数即使知道签名也不见得会用，所以当然需要一个参考手册——
+
+* Mac/iOS：Dash 是非常好用的参考手册，支持各种主流语言、类库和框架，支持代码片段管理，支持与主流编辑器集成。App Store 上可免费下载但付费后才能自由使用。
+* Windows：Dash 的 Windows 版叫 [Velocity](http://velocity.silverlakesoftware.com)。当然也要掏钱才行。
+* Linux：Dash 不出 Linux 版，所以有人开发了 [Zeal](http://zealdocs.org)。自由软件，与Dash文档兼容，不过功能稍微少点。
+* Android：[LovelyDocs](http://lovelydocs.io)，也要掏钱。
+* 在线：[DevDocs](http://devdocs.io)，免费。
+
+作为中国人，都应该知道怎样付钱用软件吧……
