@@ -1,0 +1,90 @@
+---
+layout: post
+title:  "【未完成】想开网站？不要造车轮了！"
+---
+* content
+{:toc}
+
+很多种类网站都已经有现成的解决方案了。如果不是为了练习编程，就不要自己造车轮了。
+
+[% callout style=warning %]
+
+#### 应用引擎
+
+因为像 SAE、BAE 那样的应用引擎不支持文件系统的写入，所以，对于可以在线安装的网站（如 WordPress），需要采用一些技巧才能装上。可以到搜索引擎上获取更详细的信息。
+
+[% endcallout %]
+
+# 博客
+
+最有名的非 WordPress 莫属。只要有服务器，把 WordPress 解压到网站某个目录，就可以在线安装了。
+
+还有一个轻型的博客叫做 Typecho。虽然体积小，功能同样强大。
+
+这两个博客均采用 PHP 开发，支持插件。
+
+## 静态博客
+
+GitHub Pages 是一个免费的网络空间，不过只支持静态网页。既然 GitHub Pages 提倡在里面放博客，那么怎么实现呢？
+
+有两个选择：
+
+* 一是 GitHub Pages 官方支持的 Jekyll。使用 Ruby 开发，可以直接把基于 Jekyll 系统的博客源代码放进去。
+* 另一个是 Hexo。使用 Node.js 开发，所以只能把生成好的博客放到 Pages 里。
+
+# 百科系统
+
+最有名的是维基百科所采用的 MediaWiki。采用 PHP 开发。
+
+服务器经过一系列配置之后可以显示数学公式（需要安装 LaTeX 等软件）。
+
+# CMS（内容管理系统）
+
+搜一下“CMS系统”，简直罄竹难书：
+
+先是国内的——
+
+* PHPCMS
+* DedeCMS（后台比较乱）
+* PHP168（适合快速建立门户网站）
+* SupeSite
+* 帝国CMS
+* AKCMS（轻量级）
+* VeryCMS
+
+还有国外的——
+
+* Joomla!（用户广泛但是对中文支持不太好）
+* Drupal
+* Plone（自备服务器、对 CSS 支持良好）
+* WordPress
+
+# SNS（社会化网络系统）
+
+* UCenter Home
+* SpaceBuilder（ASP.NET）
+* ThinkSNS
+* NetSNS（ASP.NET）
+* BoonEx
+* openpne
+* Community Server
+* ……
+
+# Online Judge（程序设计竞赛系统）
+
+* HustOJ：是使用最广泛的 Online Judge 系统。使用 PHP 开发。
+* Moodle 插件：Moodle 虽然不是程序测评系统，但是加入在线测评插件之后即可实现 Online Judge 功能。使用 PHP 开发。
+* Virtual Judge：是一个专门抓取其他 OJ 网站试题并到对应网站测评抓取测评结果的网站。使用 Java 开发。可从 GitHub 上获取[源代码](https://github.com/trcnkq/virtual-judge)。
+* ACdream：ACdream 自行开发了一套 OJ，使用 Node.js，可以从 GitHub 上面获取[源代码](https://github.com/KIDx/ACdream)。
+
+需要注意的是，这些 Online Judge 系统只支持 Linux 服务器。
+
+# 微信公众号后台
+
+因为微信公众号很火，所以后台也很火，并且有很多掏钱就派专业人士维护的服务。
+
+如果自行开发，推荐微擎，因为支持插件、高级关键词匹配（正则表达式）等功能。
+
+# 参考资料
+
+* [国内外php主流开源cms、SNS、DIGG、RSS、Wiki汇总](http://blog.csdn.net/hili2006/article/details/6116538)

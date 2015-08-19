@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "［未完成］算法竞赛简介"
+---
+* content
+{:toc}
+
+# 算法竞赛
+
+## NOIP
+
+## ACM/ICPC
+
+# ACM 社团
+
+# 辅导书
+
+# 在线测评网站
