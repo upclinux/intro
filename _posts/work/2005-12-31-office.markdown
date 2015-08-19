@@ -1,0 +1,45 @@
+---
+layout: post
+title:  "Office"
+---
+* content
+{:toc}
+
+Microsoft Office 有 Windows 版和 Mac 版，就是没有 Linux 版，所以……只有替代品。
+
+[% callout style=danger %]
+
+#### 官僚主义的公文
+
+尽管替代品的兼容性不会太差，但是，如果你在编辑来自上级行政部门的公文，请回到 Windows，用那个永远不会出现格式问题的 Microsoft Office 2003。
+
+[% endcallout %]
+
+[% callout style=danger %]
+
+#### 论文
+
+如果导师允许使用 LaTeX 写论文，那么当然要用 LaTeX 了，因为除了 Windows 版 Microsoft Office，其他软件都会出现所谓的“格式问题”。
+
+[% endcallout %]
+
+# 国产替代品
+
+虽然很多时候都是“外国的月亮圆”，但是在办公软件方面，倒是国产软件的兼容性更好。
+
+* 兼容性最好的是 WPS Office。不过目前还没有严格的正式版本，并且 WPS 表格的图表功能还无法使用。
+* 此外还有一个永中 Office，似乎不更新了，因为最新版是 2013。兼容性也不错。
+
+# 外国替代品
+
+* LibreOffice 是 Ubuntu 自带的办公软件。兼容性一般。LibreOffice 支持 Windows/Linux/Mac 三大系统。
+* KDE 官方的办公软件是 KOffice。兼容性一般。
+* GNOME 官方的办公软件是 Abiword 和 Gnumeric（没有 PowerPoint 的替代品）。兼容性不好。
+
+# LaTeX
+
+如果能够学会 LaTeX，那么有时候就不需要 Word 和 PowerPoint 了。
+
+# Wine
+
+如果安装了 PlayOnLinux，可以尝试通过 Wine 安装和运行 Microsoft Office，只不过没有人能保证它稳定运行。
