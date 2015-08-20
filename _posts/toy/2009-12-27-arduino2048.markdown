@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "［未完成］Arduino 2048"
+---
+* content
+{:toc}
+
+# 材料
+
+* Arduino、LCD12864 屏 (大约 30 块钱)、普通按钮x4、杜邦线若干
+
+# 操作
+
+## 安装 LCD 库
+
+## 编码
+
+# 延伸
+
+2048 是静态画面，太简单。不妨做个 Flappy Bird 玩玩？
