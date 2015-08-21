@@ -99,3 +99,5 @@ Windows 下的配置是最轻松的：
 但是这样字体看着就不匹配了，怎么办？
 
 去 LaTeX 安装目录里找 `texgyrepagella` 字体，把它装上，然后到 Word 里把字体设成 `TeX Gyre Pagella`。
+
+## Lyx
