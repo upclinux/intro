@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "（双系统）电脑时间总差 8 个小时，怎么回事儿？"
+faq: ["（双系统）电脑时间总差 8 个小时，怎么回事儿？"]
+---
+
+原因：Windows 和 Linux 采用不同的时间管理办法。Windows 认为 BIOS 的时间就是真正的时间（GMT+8），而 Linux 认为那是 GMT+0 的时间，因此两个系统的时间差了 8 小时。
+
+所以有两种解决方法：
+
+## 让 Linux 服从 Windows
+
+直接在 Linux 中输入以下命令：
+
+    sudo sed -i 's/UTC=yes/UTC=no/' /etc/default/rcS
+
+（命令解释：将 /etc/default/rcS 文件里的“UTC=yes”改成“UTC=no”。）
+
+重启之后重新对时即可解决问题。
+
+## 让 Windows 服从 Linux
+
+开始，运行，regedit，启动“注册表编辑器”。找到 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation`。在其中添加一个名为`RealTimeIsUniversal`的 REG_DWORD 类型的值，并设置为 1。重启后时间恢复正常。
