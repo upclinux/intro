@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "［未完成］抓包与模拟"
+---
+* content
+{:toc}
+
+# 抓包
+
+## Wireshark
+
+## Charles
+
+# 模拟
+
+这里只提模拟 HTTP 协议。
+
+## curl
+
+## PHP
+
+## Python

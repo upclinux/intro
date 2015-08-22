@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "［未完成］我的 CDEF 盘去哪儿了？"
+faq: ["我电脑的 C、D、E、F 盘去哪儿了？"]
+---
+* content
+{:toc}
+
+# Linux/Unix 怎么表示分区和路径
+
+## 路径
+
+### 扩展名
+
+## 分区
+
+# 挂载
+
+## mount
+
+## fstab
