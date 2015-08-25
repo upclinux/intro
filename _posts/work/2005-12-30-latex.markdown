@@ -101,3 +101,7 @@ Windows 下的配置是最轻松的：
 去 LaTeX 安装目录里找 `texgyrepagella` 字体，把它装上，然后到 Word 里把字体设成 `TeX Gyre Pagella`。
 
 ## Lyx
+
+Lyx 是一个类似 Word 的可视化编辑软件。
+
+Lyx 基于 LaTeX，用 Lyx 编辑的文本也使用 LaTeX 编译，因此 Lyx 适合“代码恐惧症”患者。

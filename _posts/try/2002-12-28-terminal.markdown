@@ -19,7 +19,7 @@ Linux (图形界面) 和 OS X 敲命令的地方是`“终端”` (Terminal)，�
 
 很多 Linux 发行版在启动图形界面之后还会带 6 个纯文本终端。按 <kbd>Ctrl+Alt+F1</kbd> 到 <kbd>Ctrl+Alt+F7</kbd> 在图形界面和这些终端中切换。
 
-如果“不慎”进到了全屏的命令行，可以尝试 Ctrl+Alt+F1 到 Ctrl+Alt+F7 中的一个按键返回图形界面。
+如果“不慎”进到了全屏的命令行，也可以尝试 Ctrl+Alt+F1 到 Ctrl+Alt+F7 中的一个按键返回图形界面。
 
 ## 中文问题
 

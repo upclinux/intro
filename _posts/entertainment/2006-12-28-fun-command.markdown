@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "用于娱乐的命令"
+title:  "有点意思的命令"
 date:   2006-12-28 00:00:00
 ---
 * content
@@ -182,3 +182,11 @@ lolcat 是 Gem 包，因此用 gem 命令安装。由于墙的原因，你需要
 ## oneko
 
 一只小猫跟着鼠标跑。按 Ctrl-C 停止。
+
+## Python
+
+不用学编程，只需要：
+
+    python -m SimpleHTTPSerever
+
+如果想通过局域网分享个大文件，这是个又快又省事儿的方法……当然别忘了先 cd 到文件所在的目录里去。

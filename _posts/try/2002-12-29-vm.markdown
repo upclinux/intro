@@ -15,8 +15,9 @@ faq: ["如何在不造成任何影响的前提下试用 Linux？"]
 
 #### 虚拟机性能
 
-某些操作系统，如 Ubuntu (Unity 桌面环境)、Kubuntu (KDE 桌面环境)、Deepin (Deepin 桌面环境)，其桌面环境在虚拟机上面表现很差，经常卡顿。
-因此建议将它们刻录成启动 U 盘，尽量避免在虚拟机中尝试此类系统。这些系统可以在不安装的前提下试用。
+某些操作系统，如 Ubuntu (Unity 桌面环境)、Kubuntu (KDE 桌面环境)、Deepin (Deepin 桌面环境)，其桌面环境**在虚拟机上面表现很差**，经常卡顿。这是因为这些系统对虚拟机显卡（不是电脑显卡）支持不好。
+
+因此建议将它们刻录成启动 U 盘，通过从 U 盘启动来进行体验。这些系统可以在不安装、不对电脑造成影响的前提下进行试用。
 
 如果坚持用虚拟机进行体验，建议换用对显卡要求不高的发行版（如 Ubuntu MATE），或者提高虚拟机的显卡配置。
 
@@ -40,7 +41,7 @@ faq: ["如何在不造成任何影响的前提下试用 Linux？"]
 
 Windows 和 Linux 中最常用的虚拟机软件是 `VMware Workstation`。这是个收费软件，所以你需要搞到一个序列号。有一个免费版本是 `VMware Player` (Workstation 自带)，但是功能很少。
 
-还有一个软件叫 `VirtualBox`，这是一个自由软件。
+还有一个软件叫 `VirtualBox`，这是一个自由软件，不要钱。
 
 [% callout %]
 
@@ -60,7 +61,7 @@ VMware Workstation 和 VirtualBox 都有 Linux 版。
 
 ## OS X
 
-VMware Workstation 和 VirtualBox 都支持苹果系统，但是 VMware 的名字叫做 `VMware Fusion`。
+VMware 和 VirtualBox 都支持苹果系统，但是 VMware 的名字叫做 `VMware Fusion`。
 
 除此之外，OS X 有一个和系统集成度更高、用户体验更好的虚拟机软件，叫做 `Parallels Desktop`。它和 VMware Fusion 都是付费软件。
 
