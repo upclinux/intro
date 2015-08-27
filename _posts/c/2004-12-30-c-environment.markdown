@@ -32,15 +32,15 @@ OS X 既不带 C 语言编译器又不带 IDE，所以都要自己装。
 
 在“终端”中输入下面命令（别忘了敲回车）：
 
-	gcc
+	xcode-select --install
 
-如果提示 `clang: error: no input files`，那么说明编译器已经装好，可以直接把窗口关掉了。如果弹出一个对话框并且要求你安装一些东西，那么你需要点击“安装”。安装过程需要联网下载软件。
+如果提示 `xcode-select: error: command line tools are already installed, use "Software Update" to install updates`，那么说明编译器已经装好，可以直接把窗口关掉了。如果弹出一个对话框并且要求你安装一些东西，那么你需要点击“安装”。安装过程需要联网下载软件。
 
 ## IDE
 
 App Store 里有 Xcode，价格免费。但是对于 C 语言学习而言，数 GB 大小的 Xcode 显得非常重，因此可以换成轻型的 Code::Blocks。
 
-Code::Blocks 同时支持 Windows、Linux、OS X 三个平台。
+Code::Blocks 同时支持 Windows、Linux、OS X 三个平台。由于版权问题，App Store 不提供 Code::Blocks 的下载，所以要自己搜索下载。
 
 # Android
 
