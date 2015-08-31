@@ -57,6 +57,18 @@ VMware Workstation 和 VirtualBox 都有 Linux 版。
 
 由于 VirtualBox 是自由软件，所以很容易通过系统的软件包管理器进行安装。
 
+[% callout %]
+
+#### VirtualBox
+
+一般情况下，VirtualBox 可能会出现无法加载 USB 设备的问题。这是因为你没有权限，所以需要：
+
+    sudo addgroup yourusername vboxusers
+
+其中“yourusername”要换成你的用户名。
+
+[% endcallout %]
+
 此外还有一个虚拟机叫做 QEMU，它被用于解决方案 KVM 中。QEMU 神奇之处在于可以模拟在其他处理器 (如 ARM) 上运行的系统。但是 QEMU 对现代操作系统的支持可能不好。
 
 ## OS X

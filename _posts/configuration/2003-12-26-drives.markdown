@@ -6,15 +6,66 @@ faq: ["我电脑的 C、D、E、F 盘去哪儿了？"]
 * content
 {:toc}
 
+大家应该都知道Windows用字母来区分不同分区——C盘、D盘、E盘……
+
+路径的形式也就类似于“C:\\Windows\\explorer.exe”
+
+但是Unix和Linux不是这样。在Linux中，从路径中根本看不出分区。
+
+Linux的路径是这个样子“/usr/bin/natilus”，没有CDEF盘，斜杠是正斜杠（Unix的历史比DOS早）。
+
+玩过Android的可能知道，/data/、/mnt/sdcard/、/system/就是截然不同的三个分区。光从路径上可看不出来。
+
 # Linux/Unix 怎么表示分区和路径
 
 ## 路径
 
+与 Windows 不同，Linux 和 Unix 不用 CDEF 表示盘符。而且路径用“/”分隔（Windows 是“\\”）。
+
+以下均是 Linux 和 Unix 风格的文件名：
+
+    /usr/bin/gcc
+    /home/ubuntu/a.jpg
+    /var/www/html/index.html
+
+上面三个文件分别是：
+
+* 根目录之下的 usr 目录（相当于“文件夹”）中的 bin 目录中的 gcc 文件
+* 根目录之下的 home 目录中的 ubuntu 目录中的 a.jpg 文件
+* 根目录之下的 var 目录中的 www 目录中的 html 目录中的 index.html 文件
+
+安卓和苹果（OS X、iOS）也是这样表示的。
+
 ### 扩展名
+
+顺便提一下，Linux 和 Unix 的文件也有扩展名，和 Windows 是相通的。不过一般情况下可执行文件等一般不加扩展名。
 
 ## 分区
 
+Linux/Unix 不使用盘符表示分区。分区（实体）是一些文件（Unix 哲学：一切都是文件）。
+
+一般情况下，
+
+* 第一块硬盘为“/dev/sda”，即根目录之下 dev 目录里的名为 sda 的文件。
+* 第一块硬盘的第一个主分区是“/dev/sda1”，是另一个文件。
+* 第一块硬盘的第二个主分区是“/dev/sda2”……以此类推。
+* 第一块硬盘的第一个逻辑分区是从 sda5 开始的。所以在不知道第二个分区（D 盘）是什么分区的情况下，可以用`ls /dev/sd*`命令看一下第二个分区到底是几。
+
+同样道理，第二块硬盘是“/dev/sdb”。第二块硬盘第一个分区是“/dev/sdb1”……
+
+[% callout %]
+
+#### Windows
+
+事实上 Windows 也在以文件的形式来操作分区实体，如`\Device\Harddisk0\Partition0`同 Linux 中的`/dev/sda1`。
+
+[% endcallout %]
+
 # 挂载
+
+很明显，Windows 不会把`\Device\Harddisk0\Partition0`用到路径里，当然 Linux 也不会把`/dev/sda1`用到路径里。
+
+Linux 和 Unix 采用的是一个名为“挂载”的方法：如果把
 
 ## mount
 
