@@ -1,56 +1,143 @@
 ---
 layout: post
-title:  "常见 IDE (集成开发环境)"
+title:  "IDE"
 date:   2007-12-29 00:00:00
 ---
 * content
 {:toc}
 
-本文介绍一些常见的、能在 Linux 系统中运行的 IDE。详情可见[维基百科](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments)。
+本文介绍一些常用的 IDE（当然包括好用的 Visual Studio）。如果犯了选择综合症，请到维基百科去[治疗](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments)。
 
-[% callout style=warning %]
+选择 IDE 和选择文本编辑器不同——你总得知道自己用什么编程语言，然后才能找到正确的 IDE 吧？
 
-#### 信息仅供参考
+# C/C++
 
-本文的某些信息未经验证，可能有错误 (例如某些 IDE 不能自动编译项目)。仅供参考。如果想获得准确信息，请亲自实践一下。
+C/C++ 是非常常见的语言。不过，因为很多时候用的是开发框架，并不是纯 C/C++ 语言，因此要根据实际情况选择合适的环境。
 
-[% endcallout %]
+下面是专门针对特定框架的 IDE：
 
-# 本文不予考虑的情况
+* Microsoft Visual Studio ([w])：功能非常强大的 IDE，专门针对 Windows 编程——Win32 和 MFC 等框架。
 
-* 文本编辑器，如 Vim。IDE 应该包括编程语言编辑器、自动建立工具，通常还包括调试器。
-* 不支持 Linux 系统，如 Visual Studio、Xcode。
+  VS 有两类版本，一类是商业版本，需要付费使用，功能强大；另一类是社区版本，可免费使用。
+    * Visual C++ Express：Express 版是免费的精简版本，不支持跨语言集成，没有 MFC。
+    * Visual C++ 6.0：这是一个很过时的软件。除了老师要求和怀旧以外，已经没有人愿意用了。
+* Qt Creator ([w] [l] [m])：功能强大的 IDE，专门针对 Qt C++。
 
-## IDE
+  Qt C++ 支持多种系统，如 Windows、Linux（包括嵌入式系统）、OS X、iOS、Android 等。
 
-此处的“跨平台”是以 Linux 为中心，如果这个 IDE 支持除 Linux 以外的系统 (Windows/OS X)，我们认为它“跨平台”。
+  Qt 有两种授权，一种可用于开发不开源的商业软件，但需付费使用；另一种可免费使用，基于 LGPL 协议，用于开发自由软件。此外商业版本功能更多。
+* C++ Builder ([w])：C++ Builder 是一个可视化集成开发工具，具有快速的可视化开发环境。C++ Builder 本身只能在 Windows 中运行，但是可为 OS X、iOS、Android 系统编译程序。
+* Anjuta ([l])：Anjuta 是一个在 Linux 中常用的集成开发环境，和界面设计器 Glade 配合，可方便地开发基于 GTK+ 的程序。
 
-能在 Linux 中运行的软件，可能也能在 Unix 系统 (例如 FreeBSD) 中运行。
+  Anjuta 是自由软件。在 Linux 中可通过软件包管理器直接安装。
+* Code::Blocks ([w] [l] [m])：初学者常用 IDE。尽管很多人只用于写纯 C/C++ 代码，但实际上 Code::Blocks 有一套针对 wxWidgets 框架的工具，例如界面设计器。
 
-软件              | 是否为自由软件 | 编程语言                | 软件的跨平台支持 | GUI 开发支持
------------------|--------------|------------------------|---------------|-------------
-Anjuta           | 是           | C/C++                  | 否             | 是
-Code::Blocks     | 是           | C/C++                  | 是             | 是
-Eclipse          | 是           | Java 和其他 (视插件而定)  | 是            | 是
-Free Pascal IDE  | 是           | Pascal                 | 是             | 否
-Gambas           | 是           | Basic                  | 否             | 是
-Geany            | 是           | C/C++/Java……           | 是             | 否
-IDLE             | 是           | Python                 | 是             | 否
-KDevelop         | 是           | C/C++/Java……           | 不支持 Windows | 是
-Lazarus          | 是           | Pascal                 | 是             | 是
-MonoDevelop      | 是           | C#                     | 是             | 是
-NetBeans         | 是           | Java                   | 是             | 是
-PHPStorm         | 否 (付费)     | PHP                    | 是             | ×
-PyCharm          | 多重授权      | Python 等              | 是             | 否
-RubyMine         | 多重授权      | Ruby 等                | 是             | 否
-Qt Creator       | 多重授权*     | C/C++                  | 是             | 是
-TexStudio        | 是           | LaTeX                  | 是             | 否
-WebStorm         | 多重授权      | Node.js 等              | 是             | 否
-Xojo             | 否 (付费)     | Basic                  | 是             | 是
-Visual Studio Code** | 否 (免费) | ASP.NET (C#)/Node.js   | 是             | 否
-Zend Studio      | 否 (付费)     | PHP                    | 是             | ×
+  Code::Blocks 是基于 GPL 的自由软件。在 Linux 中可通过软件包管理器直接安装，在其他系统中可免费下载。由于 Windows 没有 C 语言编译器，Code::Blocks 提供了集成 MinGW 的版本。
 
-<small>
-* Qt 分为社区版和商业版。社区版免费，但只能用于开发基于 GPL 和 LGPL 协议的软件。商业版可开发私有软件且功能更多，但需要购买授权。<br>
-** Visual Studio Code 是文本编辑器。但是对于 ASP.NET (C#) 和 node.js 来说，Code 内置调试功能。并且对于 ASP.Net 有更多支持。
-</small>
+  wxWidgets SDK 需要额外下载安装。
+* Xcode ([m])：苹果官方的开发工具，专门用于开发 OS X/iOS 应用。绝大多数人都拿它写 Objective-C（现在又多了一个 Swift）。虽然也可以用来写 C 语言，不过貌似没有人愿意为了写一个只有几 KB 的程序而下载一个高达几 GB 的软件（毕竟一般电脑才 128GB，划给 Windows 之后就没地方了）。
+
+下面是一些比较纯的 C/C++ 开发环境。注意，与上面列表有重复：
+
+开发环境       | 授权   | 操作系统      | 单文件支持 | 调试器 | 集成工具链 | 代码自动完成 | 代码分析 | 测试 | 备注
+-------------|--------|-------------|----------|-------|----------|------------|---------|-----|---------
+Anjuta       | GPL    | [l]         | [x]      | [v]   | [v]      | [v]        | [v]     | [x] |
+Code::Blocks | GPL    | [w] [l] [m] | [v]      | [v]   | [v]      | [v]        | [v]     | [v] | 支持多种编译器
+Dev-C++      | GPL    | [w]         | [v]      | [v]   | [v]      | [v]        | [v]     | [x] | 官方停止维护
+Eclipse CDT  | EPL    | [w] [l] [m] | [x]      | [v]   | [v]      | [v]        | [v]     | [v] | Eclipse 插件
+KDevelop     | GPL    | [l] [m]     | [x]      | [v]   | [v]      | [v]        | [v]     | [v] |
+MonoDevelop  | LGPL   | [w] [l] [m] | [x]      | [v]   | [v]      | [v]        | [x]     | [x] |
+
+# C#
+
+C# 是微软主导的语言，因此最好用的当然是微软的 Visual Studio。
+
+Mono 项目是 .Net 开源替代品，并且已受微软支持，因此在 Linux 或 Mac 环境中开发与使用 C#（ASP.NET）也是有可能的。
+
+* MonoDevelop 是一个跨平台的 C# 开发环境，可用于开发 ASP.NET、Gtk# 等应用。
+* 微软自己也开发了一个跨平台的 Visual Studio Code。这是一个文本编辑器，但对 C# 有着更多的支持。
+
+# Java
+
+Java 开发环境有很多，例如 Eclipse、MyEclipse（私有）、IntelliJ IDEA（开源/私有）等。
+
+由于 Java 本身是跨平台的，并且很多 Java 开发环境都是用 Java 写成，因此它们基本上都跨平台。
+
+# Web 语言 (PHP/Python/Ruby/Node.js)
+
+因为 PHP、Python、Ruby、Node.js 都和网站有关系，所以，一般情况下这四种语言的 IDE 同样适合网页前端语言。
+
+这些是常见的开发环境：
+
+软件               | 授权   | 操作系统      | 支持的后端语言          | 支持 CSS/JS 变体？        | 备注
+------------------|-------|--------------|----------------------|--------------------------|----------
+Adobe Dreamweaver | 私有   | [w] [m]      | ASP/ASP.NET/JSP/PHP  | [x]                      | 后端语言只有编辑功能
+Adobe Brackets    | MIT   | [w] [l] [m]  | [x]                  | LESS/Sass                | 快速编辑功能
+PyCharm           | 私有/Apache | [w] [l] [m]  | Python          | LESS/Sass/CoffeeScript   |
+PyDev (Eclipse)   | EPL   | [w] [l] [m]  | Python               | [x]                      | Eclipse 插件
+Aptana Studio     | GPL/私有 | [w] [l] [m] | PHP/Ruby/Python     | [x]                      | 有独立版本和 Eclipse 插件版
+Eclipse PDT       | EPL   | [w] [l] [m]  | PHP                  | [x]                      |
+PHPStorm          | 私有   | [w] [l] [m]  | PHP                  | LESS/Sass/CoffeeScript   |
+Zend Studio       | 私有   | [w] [l] [m]  | PHP                  | [x]                      |
+Eclipse DLTK Ruby Plugin | EPL | [w] [l] [m] | Ruby             | [x]                      |
+RubyMine          | 私有   | [w] [l] [m]  | Ruby                 | LESS/Sass/CoffeeScript   |
+WebStorm          | 私有   | [w] [l] [m]  | Node.js              | LESS/Sass/CoffeeScript   |
+
+* [这里](https://en.wikipedia.org/wiki/HTML_editor)有一个更详细的网页设计器列表。
+* PyCharm、PHPStorm、RubyMine、WebStorm 基于 IntelliJ IDEA。
+* Aptana Studio、Zend Studio 基于 Eclipse。
+
+## 其他
+
+* IDLE 是 Python 的官方 IDE。
+* Python Tools for Visual Studio 是 VS 的一个插件。
+
+# LaTeX
+
+LaTeX（含 XeLaTeX）的编辑器有很多种。下面是比较好用的、集成了编译调试功能的 LaTeX 编辑器：
+
+* WinEdt ([w])：WinEdt 是 CTEX 套装自带的编辑器，属于共享软件。由于 WinEdt 收费而且对 UTF-8 支持不好，因此不建议使用。
+* TexMaker ([w] [l] [m]) 和 TexStudio ([w] [l] [m])：这两个是功能比较全面的 LaTeX 编辑器。TexStudio 是 TexMaker 分支出来的项目。
+* TeXlipse ([w] [l] [m])：TeXlipse 是 Eclipse 的一个插件，功能比较全面。
+
+以下编辑器在安装插件后可以有较好的 LaTeX 支持：
+
+* Vim (vim-latexsuite)
+* GEdit
+* Sublime Text (LaTeXing)
+* Eclipse (TeXlipse)
+
+此外还有一个编辑器 LyX。LyX 不是源码编辑器，而是类似于 Word 的“可见即可得”的编辑器。
+
+# Pascal
+
+* 不带界面设计器的开发环境有 Free Pascal IDE ([w] [l] [m])。
+* 带界面设计器的开发环境有 Delphi ([w] [m]) 以及仿照 Delphi 的开源的 Lazarus ([w] [l] [m]) 等。
+
+# Basic
+
+事实上没有人愿意用 Basic 语言编程。如果只管 Windows 系统的话，倒是有一些用 Visual Basic 编程的。
+
+* 只管 Windows 的话，Visual Studio 当然是最好用的 IDE。
+* Gambas ([l])、Xojo ([w] [l] [m]) 都采用了类似 Basic 的语言。不过没有人愿意用。
+
+# 其他
+
+听说过“易语言” ([w]) 吗？
+
+<script type="text/javascript">
+(function() {
+  var ele = document.querySelector('article');
+  if (ele === undefined) return false;
+
+  var text = ele.innerHTML;
+  text = text.replace(/\[w\]/g, '<i class="fa fa-windows"></i>');
+  text = text.replace(/\[l\]/g, '<i class="fa fa-linux"></i>');
+  text = text.replace(/\[m\]/g, '<i class="fa fa-apple"></i>');
+
+  text = text.replace(/\[x\]/g, '<i class="fa fa-times"></i>');
+  text = text.replace(/\[v\]/g, '<i class="fa fa-check"></i>');
+
+  ele.innerHTML = text;
+})();
+</script>

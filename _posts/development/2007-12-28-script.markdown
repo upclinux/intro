@@ -1,26 +1,93 @@
 ---
 layout: post
-title:  "一定要听说过的脚本语言"
+title:  "系统自带的脚本语言 (Windows/Linux/OS X)"
 date:   2007-12-28 00:00:00
 ---
 * content
 {:toc}
 
-Linux/OS X 系统自带很多脚本语言 (解释器)。作为 Linux/Unix 用户，如果不会写几句脚本，那实在是说不过去啊……(Windows 用户笑了：“我们不写脚本。”)
+操作系统都应该支持一些脚本语言（除了那个和 Mac OS X 无关的 Mac OS，没有命令提示符），可以写写批处理之类的东西。
+
+所以说，作为已经成为，或者准备成为电脑高手的人，不会写几句脚本，怎么能说得过去呢？
+
+[% callout %]
+
+#### GitHub Gist
+
+本文的代码均存放在 GitHub Gist 中。因为 Gist 被墙，所以需要事先改一下 hosts：
+
+    192.30.252.142 gist.github.com
+    199.27.74.133 gist-assets.github.com
+
+具体位置可到搜索引擎上搜索，随便找个文本编辑器就能改过来了。
+
+[% endcallout %]
+
+[% callout %]
+
+#### 猜数字
+
+[这里](https://gist.github.com/vjudge1/4504eb8c1a280dec55c0)是用本文提到的大多数语言编写的“猜数字”。
+
+[% endcallout %]
+
+# Windows
+
+因为大多数 Windows 用户都是电脑新手，而且 DOS/Windows（在技术上与 Linux 比）确实不怎么地，所以 Linuxer 经常对 Windows 有偏见。本节文字要消除 Linuxer 的偏见。
+
+## Batch (批处理)
+
+很多人觉得 Windows 的批处理功能不够强大，实际上，确实不够强大（因为照那个伟大的 Unix “抄”的东西远远不够……）
+
+但是，Batch 又不像很多人想象的那样弱——只不过是因为语法比较生僻，或者需要一些 Trick，知道的人不够多而已。
+
+实在不行，还可以和 VBScript 配合完成工作，这样就好多了。
+
+例如，[这里](https://gist.github.com/vjudge1/8f802503ab360689569a)是一个和 VBScript 配合实现 sudo 功能的程序。
+
+## VBScript
+
+在网页设计领域，VBScript 是一个连亲爹 IE 都已经彻底放弃的脚本语言。
+
+在系统操作领域，VBScript 却是一个看起来没什么用，其实功能多到罄竹难书的脚本语言，不信你可以问问 slmgr.vbs。
+
+[% callout %]
+
+#### 黑历史
+
+VBScript 始终保持生命力，关键在于 CreateObject 函数。有了这个函数，你甚至可以只用记事本让 Excel 给你做点事儿（当然，脚本文件需要你自己双击运行）。不信的话看[这里](https://gist.github.com/vjudge1/3d84d0c41e69446f1607)。
+
+[% endcallout %]
+
+## PowerShell
+
+微软发现 Unix 的命令行太强大了，强大到那些用 Unix 的人都瞧不起 Windows，于是再次向 Unix 学习。因为现在软件开发都讲究“面向对象编程”。所以，微软顺便给 PowerShell 加了面向对象的功能。
+
+面向对象这一点，sh/bash/\*sh 就只能望尘莫及了，毕竟几十年前刚诞生的时候不会想到要加这个东西。
+
+因为 PowerShell 既面向对象，又和 .Net Framework 完美集成，所以 PowerShell 的功能更是多到罄竹难书。
+
+[这个程序](https://gist.github.com/vjudge1/d0018a0b0909636aaf93)可在黑暗之中冒出一个带有按钮的窗口。
+
+你看看，PowerShell 里的“$”、“ls”、“pwd”什么的，明显是照 Unix 学习过来的！
+
+# Linux/OS X
+
+Windows 用户可以不会写脚本，因为 Windows 就不是为写命令而设计的。不过，换成 Linux 和成功骗到 Unix 认证的 OS X……
 
 ## shell
 
-OS X 和多数 Linux 使用 bash。当然，shell 是可以换的。
+shell 相当于 Windows 的批处理。shell 种类有很多——sh、bash、ksh、csh……默认情况下，OS X 和 Linux 使用 bash。
 
-因为 shell 本身和操作系统没有太大关系，因此你甚至可以通过一本 Unix 系统的教材来学习。
+因为 shell 本身和操作系统没有太大关系，因此你可以随便借一本书来入门，Linux 和 Unix 的也可以，只要是敲 Unix 命令的都可以。
+
+使用 shell 语言的程序多到罄竹难书。不信你可以随便下载一个软件的源代码，里面的 configure 就是一个只有上帝才能一口气写出来的 shell 脚本。
 
 ### awk
 
-awk 以及后面提到的 grep、sed、bc 都是 Linux/Unix 系统的一个命令，而且都是一种语言。
+awk 以及后面提到的 grep、sed、bc 都是 Linux/Unix 系统的一个命令。不过它们潜伏得非常深——因为它们各属一种语言。
 
-awk 是三位著名计算机科学家 (Alfred Aho、Peter Weinberger、Brian Kernighan) 姓氏首字母的合称。
-
-awk 是一个强大的`文本处理工具`，也是一门编程语言。
+awk 是三位著名计算机科学家 (Alfred Aho、Peter Weinberger、Brian Kernighan) 姓氏首字母的合称，是一个强大的`文本处理工具`，也是一门编程语言。
 
 ### grep
 
@@ -50,21 +117,32 @@ Python 是流行的脚本语言，语法非常简单，功能很强大。
 
 Python 的设计哲学是“优雅”、“明确”、“简单”。Python 开发者的哲学是“用一种方法，最好是只有一种方法来做一件事”。
 
-Python 有两大类，一类是 Python 2，另一类是 Python 3。尽管 Python 2 已经很旧但是仍然被广泛使用。
-
-Linux 和 OS X 自带的 Python 是 Python 2。
+Python 有两大类，一类是 Python 2，另一类是 Python 3。尽管 Python 2 已经很旧但是仍然被广泛使用，Linux 和 OS X 自带的也是 Python 2。
 
 可以使用 `pip` 命令安装软件包 (OS X 需手动安装)。
 
 ## Ruby
 
-Ruby 也是一个脚本语言，受 Perl、Smalltalk 等语言启发，作者为松本行弘。
+Ruby 也是一个脚本语言，受 Perl、Smalltalk 等语言启发。
 
-Ruby 的理念是“减少编程时候的不必要的琐碎时间，令编写程序的人高兴”。
+Ruby 的理念是“减少编程时候的不必要的琐碎时间，令编写程序的人高兴”，不过，因为 Ruby 比 Python 慢，而且多人协作时不容易统一编码风格，所以只有用 Ruby on Rails（网站框架）的程序员才真正高兴。
 
-GitHub 最早是 Ruby 的社区。GitHub 本身有很多组件使用 Ruby 语言进行开发。
+GitHub 最早是 Ruby 的社区，GitHub 本身有很多组件使用 Ruby 语言进行开发。
 
-可以使用 `gem` 命令安装软件包。由于你懂得的网络原因，可能需要将软件源设置成[淘宝](http://ruby.taobao.org) (没错，就是淘宝搞的镜像) 才能正常下载。
+可以使用 `gem` 命令安装软件包。
+
+[% callout %]
+
+#### 你懂得
+
+由于你懂得的网络原因，你需要做点事儿才能正常安装软件包。
+
+* 第一种办法——将软件源设置成[淘宝](http://ruby.taobao.org) (没错，就是淘宝)。
+* 第二种办法
+
+      23.235.40.249 rubygems.global.ssl.fastly.net
+
+[% endcallout %]
 
 ## Perl
 
@@ -82,6 +160,8 @@ PHP 是流行的脚本语言，非常适合`网络开发`。它的语法和 C �
 
 OS X 自带 PHP。但是无论是 Linux 还是 OS X，都需要一些配置才能通过 Web Server 调用 PHP。
 
+PHP 和以上几种语言相比，还有一个区别——PHP 可以轻松地直接和网页混在一块儿运行，虽然成熟的程序员讨厌这样做。
+
 可以使用 `pear` 命令安装软件包 (需手动安装)。
 
 ## Makefile
@@ -89,6 +169,8 @@ OS X 自带 PHP。但是无论是 Linux 还是 OS X，都需要一些配置才�
 make 是一个`自动化构建软件`。虽然 IDE 可以轻松完成同样的事儿，但是在 Linux 中 make 仍然是一个常用的工具。
 
 在 Makefile 里面写好`规则`（依赖关系、编译器调用等），执行 make 命令后，make 会读取该文件并按照规则进行编译。
+
+如果觉得写 Makefile 没有意义，那是因为你的程序规模不够大。
 
 ## AppleScript
 
