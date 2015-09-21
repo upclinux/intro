@@ -7,11 +7,21 @@ faq: ["QQ!"]
 * content
 {:toc}
 
-某公司为了商业利益，放弃了 QQ for Linux 的开发。但是中国人又不得不用 QQ，于是 Linux 世界出现了三种解决方案：
+某公司为了商业利益，放弃了 QQ for Linux 的开发。但是中国人又不得不用 QQ，于是 Linux 世界出现了四种解决方案：
 
-# WebQQ
+# 虚拟机
+
+当然可以装个虚拟机，在里面跑 QQ。
+
+不过，除了模拟 Windows，我们也可以模拟 Android——安装 GenyMotion，然后通过“手机”登 QQ。[详情看这里]({{ site.baseurl }}/12/genymotion/)。
+
+# Smart QQ
 
 WebQQ 已停止开发。现在是 [Smart QQ](http://w.qq.com)。
+
+Smart QQ 可以被窗口化，从而看起来像是“原生”应用。Firefox、Chrome 均有窗口化插件。此外，在 Unity 桌面环境中，有一个叫 fogger 的程序也可以实现窗口化。
+
+事实上，Ubuntu 手机的 QQ 就是 Smart QQ 的“本地化”版本。
 
 # 分析协议并实现
 
