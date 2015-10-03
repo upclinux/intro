@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "［科普］你懂得的网络故障"
+---
+* content
+{:toc}
+
+既然有人作死地科普了有关知识，
+
+:cop:叔叔，就是[这篇文章](https://vjudge1.github.io/2015/09/26/g-f-w/)，快去:police_car:他！
