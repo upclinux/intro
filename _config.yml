@@ -11,47 +11,51 @@ github_username:  upclinux
 qqqun_name: "QQ 群 (279310694)"
 qqqun_idkey: e47c6b546d3373c09f7eaa8d4173728a513975ed2d0ec20106e83cfb11a3bf08
 
-host: 0.0.0.0 
+host: 0.0.0.0
 
 # force https
 force_https: upclinux.github.io
+
+# Gems
+gems:
+- jemoji
 
 # Build settings
 markdown: kramdown
 
 defaults:
-- 
+-
     scope:
         path: ""
         type: "posts"
     values:
         layout: "page"
         comments: "true"
-- 
+-
     scope:
         path: "novice"
     values:
         category: "我是新手"
         icon: "fa fa-github-alt"
-- 
+-
     scope:
         path: "try"
     values:
         category: "准备接触 Linux"
         icon: "fa fa-linux"
-- 
+-
     scope:
         path: "configuration"
     values:
         category: "配置系统"
         icon: "fa fa-cogs"
-- 
+-
     scope:
         path: "c"
     values:
         category: "just for C 语言"
         icon: "fa fa-bug"
-- 
+-
     scope:
         path: "work"
     values:
@@ -63,7 +67,7 @@ defaults:
     values:
         category: "娱乐"
         icon: "fa fa-gamepad"
-- 
+-
     scope:
         path: "development"
     values:
@@ -75,19 +79,19 @@ defaults:
     values:
         category: "网络"
         icon: "fa fa-wifi"
-- 
+-
     scope:
         path: "toy"
     values:
         category: "Linux 玩具"
         icon: "fa fa-puzzle-piece"
-- 
+-
     scope:
         path: "future"
     values:
         category: "深入学习"
         icon: "fa fa-book"
-- 
+-
     scope:
         path: "mac"
     values:
