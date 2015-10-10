@@ -78,7 +78,7 @@ themes文件夹下面有几个“不一定是什么的文件夹”，代表这�
 
 # 修复 GRUB
 
-如果你把GRUB玩坏了，那么恭喜你，你已经很接近Linux大法了（不作死不玩Linux :ghost: ）
+如果你把GRUB玩坏了，那么恭喜你，你已经很接近Linux大法了:ghost:<span class="blackout">不作死不玩Linux</span>
 
 ##Ubuntu下的简单方法
 
