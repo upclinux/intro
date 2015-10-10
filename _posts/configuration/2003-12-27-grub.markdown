@@ -1,14 +1,105 @@
 ---
 layout: post
-title:  "［未完成］GRUB"
+title:  "GRUB"
 ---
 * content
 {:toc}
 
 GRUB 2 是 Linux 系统的启动器。也就是说，那个紫色背景的（Ubuntu 是紫色，其他系统是黑色的）开机等多少秒选系统、选哪些系统、默认系统是哪个都是由 GRUB 控制的。
 
-# 改启动时间、顺序等
+#关于配置文件
 
-# 定制主题
+一般来说，配置文件是 `/boot/grub/grub.cfg`（有些是`/boot/grub2/grub.cfg`） 。但是，有些系统的grub“不按套路出牌”（例如Fedora）。因此，如果你没找到，可以试试像这样
+
+	find / -name grub.cfg
+
+不过呢，由于这个文件是自动生成的，因此，如果直接改这个文件的话，更新的时候会把你的修改“刷掉”，所以，你可以通过修改/etc/grub.d/下面的文件以及/etc/default/grub来改一些默认设定。
+
+接下来，你就可以按照自己的意愿，定制自己的配置了。
+
+**<span style="color:red;">友情提示：请一定在修改配置文件之前，先备份！备份！备份！！！</span>**
+
+#习惯看英文
+
+由于各种Linux发行版都是老外做出来的（Deepin除外），因此，各种好用的文档、配置文件、man手册，都是英文的。所以你必须习惯于看英文文档。
+
+# 改启动时间
+
+启动时间的参数在`/etc/default/grub`里，直接修改其中的GRUB_TIMEOUT参数，然后按照这个文件开头的说明，更新一下即可。
+
+#改启动顺序
+
+##简单的办法
+
+直接修改`grub.cfg`文件，找到里面的启动菜单项，它们看起来应该像这样：
+
+{% highlight bash %}
+menuentry 'Ubuntu' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-simple-3b52b7ed-7ed3-4c13-9b09-bd8f4d4d8356' {
+	recordfail
+	load_video
+	gfxmode $linux_gfx_mode
+	insmod gzio
+	insmod part_gpt
+	insmod ext2
+	set root='hd0,gpt6'
+	if [ x$feature_platform_search_hint = xy ]; then
+	  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt6 --hint-efi=hd0,gpt6 --hint-baremetal=ahci0,gpt6  91195ca7-f2eb-4681-a087-58e7f8fefa21
+	else
+	  search --no-floppy --fs-uuid --set=root 91195ca7-f2eb-4681-a087-58e7f8fefa21
+	fi
+	linux   /vmlinuz-linux root=UUID=3b52b7ed-7ed3-4c13-9b09-bd8f4d4d8356 ro  quiet splash $vt_handoff
+	initrd  /initramfs-linux.img
+}
+{% endhighlight %}
+
+如果想调换两个启动项的顺序，直接将菜单的位置对调即可。
+
+##缺点
+
+很显然，如果你执行了grub-mkconfig命令，你自己的修改就被系统覆盖掉了……
+
+# 关于主题
+
+##加载主题
+
+一般来说，默认的grub其实是有主题的。不过呢，默认并没有加载，需要手动添加代码。像这样：
+
+{% highlight bash %}
+loadfont ($root)/boot/grub/fonts/unicode.pf2
+set theme=($root)/boot/grub/themes/starfield/theme.txt
+export theme
+{% endhighlight %}
+
+一般来说，与主题相关的文件放在/boot/grub/themes下。如果没这个目录，可以按照上述方法，手动搜索一下themes文件夹即可。
+
+##定制主题
+
+themes文件夹下面有几个“不一定是什么的文件夹”，代表这里面放了什么主题。显然，这里面放了和主题相关的东西。当然，图片和文字怎么修改，就要发挥你个人的想象力了。而主题所使用的参数都在theme.txt里，想要改字体、颜色、位置等参数都在里面找即可。
 
 # 修复 GRUB
+
+如果你把GRUB玩坏了，那么恭喜你，你已经很接近Linux大法了（不作死不玩Linux :ghost: ）
+
+##Ubuntu下的简单方法
+
+如果你用的是ubuntu，有个工具叫boot-repair，可以方便地修复grub。
+
+在这之前，你需要有一个启动盘。关于启动盘如何制作，可以自己在百度上找找（此时百度基本够用了）。当然，如果你有兴趣，可以去制作一个“[万能盘](https://github.com/D-e-e-m-o/grub)”。
+利用启动盘进入Ubuntu的Livecd，然后按Ctrl+Alt+t打开终端，一次键入如下命令：
+
+{% highlight bash %}
+sudo add-apt-repository ppa:yannubuntu/boot-repair
+sudo apt-get update
+sudo apt-get install boot-repair
+sudo boot-repair
+{% endhighlight %}
+
+然后根据软件提示往下做就行了。
+
+##如果你用的是其他发行版
+
+你需要手动重装grub。同样地，你需要一个启动盘。进入Livecd之后，请参照[这里](https://github.com/D-e-e-m-o/grub/blob/master/install_grub_in_usb.md)重装grub。
+
+#学会搜索
+
+当然，上述并没有把所有的东西都交代了出来。如果你对于上面交代的东西有不明白的地方，欢迎询问<span class="blockout">传说中不存在的</span>搜索引擎。如果有错误，欢迎在下方留言或者直接提交issue。
