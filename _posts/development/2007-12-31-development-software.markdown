@@ -19,18 +19,18 @@ title:  "［就是这么简洁］常用编程软件"
 * 桌面程序：
     * 只管 Windows 的话，应用当然用 `Visual Studio`（可以选择 C# 或 Visual C++<span class="blackout">，不是 C++</span>）。不过 `Qt` 也不错。
     * 只管苹果的话，当然 `Xcode`。找教程的话要找“Swift”（推荐）或“Objective-C”，因为 Xcode 是软件的名字，这两个才是编程语言。
-    * 同时考虑三大系统，可以用 `Qt`（其实不考虑也可以用）。只不过在 Linux 里 Qt 程序经常敲不了汉字。
-    * Java：`Eclipse` 或 `IntelliJ IDEA`。
+    * `Qt`也是个基于 C++ 的框架，同样非常棒，并且同时支持三大系统。只不过，在 Linux 里 Qt 程序经常敲不了汉字。
+    * 如果用 Java：`IntelliJ IDEA` 或 `Eclipse`。
 * 移动应用：
-    * Android：`Android Studio`
-    * iOS：`Xcode`
+    * Android：当然`Android Studio`。官网被墙了，所以可以从[这里](http://www.androiddevtools.cn)下载。不过，更新 SDK 的时候是正常的。
+    * iOS：当然`Xcode`。如果没钱买苹果那就装黑苹果吧。
     * Windows Phone：`Visual Studio`（没有人会买 WP 的）
     * 如果做游戏，事实上已经有现成的跨平台框架，例如 Cocos2d-x 和 Unity。Unity 自带开发工具，而 Cocos2d-x 框架游戏一般用 Visual Studio 开发。
-    * 最近 M$ 也改变战略，支持用 C# 语言开发 Android/iOS 应用了，甚至可以在 Linux 或 Mac 中进行开发——这个编程软件叫做 `Xamarin`。
+    * 最近 M$ 也改变战略，支持用 C# 语言开发 Android/iOS 应用了，甚至可以在 Linux 或 Mac 中进行开发——这个编程软件叫做 `Xamarin Studio`。只不过要花点钱才能生成正式版本的应用。
 * 网站（前后端兼备）：
     * PHP（＋＋）：`PHPStorm`
     * Python（＋）：`PyCharm`（做网站一般用框架，例如 Django）
-    * Java（＋＋）：`Eclipse`（for EE）或 `IntelliJ IDEA`。
+    * Java（＋＋）：`IntelliJ IDEA` 或 `Eclipse`（for EE）。
     * Node.js（＋）：`WebStorm`
     * Ruby：`RubyMine`（做网站一般用 Ruby on Rails 框架）
 
@@ -69,5 +69,5 @@ title:  "［就是这么简洁］常用编程软件"
 * Windows：Dash 的 Windows 版叫 [Velocity](http://velocity.silverlakesoftware.com)。当然也要掏钱才行。
 * Linux：Dash 不出 Linux 版，所以有人开发了 [Zeal](http://zealdocs.org)。自由软件，与 Dash 文档兼容，不过功能稍微少点。<span class="blackout">可能是因为高手用不着这些东西。</span>
 * Android：[LovelyDocs](http://lovelydocs.io)，也要掏钱。
-* 在线：[DevDocs](http://devdocs.io)，免费。当然，Google 和 StackOverflow（一个开发者的问答网站）也免费。
+* 在线：[DevDocs](http://devdocs.io)，免费。
     * 如果在用 M$ 的编程语言和开发工具（Visual Studio），当然找 [MSDN](https://msdn.microsoft.com/library) 了。

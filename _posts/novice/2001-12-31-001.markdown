@@ -7,11 +7,31 @@ faq: ["我是新手，怎么开始？"]
 * content
 {:toc}
 
+![bluescreen]({{site.baseurl}}/images/novice/bluescreen.png)
+<br><small>Linux 从来不会蓝屏死机！<span class="blackout">Linux 崩溃叫 Kernel Panic</span></small>
+
+![ctrl-alt-delete]({{site.baseurl}}/images/novice/ctrl-alt-delete.jpg)
+<br><small>只有 Windows 才需要这个容易导致骨折的组合键</small>
+
+# 不知道 Linux
+
+[如何才能知道呢？点这里就知道怎样才能知道了！]({{site.baseurl}}/01/google/)
+
+# 试水 Linux
+
 以下是新人接触 Linux 之后可能产生的结果：
 
 1. “什么破东西”、“都是命令、代码”——直接放弃
 2. 虽然还在用 Windows，不过思想已经受 Linux 影响，用上了一些“新东西”。
 3. 除了特殊情况，已经不用 Windows 了。
+
+到底会出现哪些结果呢？这取决于你对电脑有多么大的兴趣了！
+
+## 女生
+
+一般情况下，女生根本不关心那些东西。那么，干嘛非要换系统呢？我们也可以尝试一些自由的软件嘛……<span class="blackout">即使这样也拦不住她们使用毁图秀秀</span>
+
+# 结论
 
 不管是工作需要，还是感兴趣，都需要改变一下自己的思维习惯，找到合适的入门教材，善于使用搜索引擎。
 

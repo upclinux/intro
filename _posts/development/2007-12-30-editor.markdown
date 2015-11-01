@@ -1,12 +1,16 @@
 ---
 layout: post
-title:  "文本编辑器"
+title:  "［大全］文本编辑器"
 date:   2007-12-30 00:00:00
 ---
 * content
 {:toc}
 
-本文介绍一些常用的、或多或少带些代码编辑功能的文本编辑器。如果犯了选择综合症，请到维基百科去[治疗](https://en.wikipedia.org/wiki/Comparison_of_text_editors)。
+[% callout %]
+选择综合症
+
+如果想马上选择一个感觉不错的，可以[看这里]({{site.baseurl}}/07/development-software/)。
+[% endcallout %]
 
 * 值得注意的是，像 Eclipse、Visual Studio 等软件包括了开发所需要的一系列工具链，应该算作 IDE（集成开发环境）。[这里]({{ site.baseurl }}/07/ide/)列举的是常见的 IDE。
 * 关于具有完整功能的网页编辑器，以及 LaTeX 编辑器，参见 IDE。

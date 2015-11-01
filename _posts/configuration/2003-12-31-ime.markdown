@@ -5,11 +5,43 @@ title:  "输入法"
 * content
 {:toc}
 
-在 Linux 系统中，中文输入是一个极大的问题，虽然自带拼音输入法，但是不如现代输入法好用，而且 Ubuntu 14.04 自带输入法有一个无法调全拼只能双拼的 bug。
+在 Linux 系统中，中文输入曾经是一个极大的问题，虽然自带拼音输入法，但是不如现代输入法好用，而且 Ubuntu 14.04 自带输入法有一个无法调全拼只能双拼的 bug（在后续版本得到了修复）。
 
-# 搜狗拼音输入法
+# 中州韵 (Rime)
 
-在搜狗团队的努力之下，这个问题得到了一定程度的改善。在 Ubuntu 系列系统中，可以按照下面方法安装搜狗拼音输入法：
+中州韵是一款非常适合极客的中文输入法，并且是开源软件。中州韵既支持 iBus 框架，也支持 Fcitx 框架。可以到[官网](http://rime.im)查看更多说明。
+
+[% callout %]
+Rime 的不同名称
+
+Rime 在不同系统中有不同名称，在 Windows 中叫做“小狼毫 (Weasel)”，在 Linux 中叫做“中州韵 (Rime)”，在 OS X 中叫做“鼠须管 (Squirrel)”。
+[% endcallout %]
+
+Rime [在文档中总结了](https://github.com/rime/home/wiki/RimeWithIBus)不同发行版的安装方法。
+
+以 Ubuntu 系统为例。如果系统不太旧，那么基于 iBus 平台的可以通过下面一条命令安装：
+
+    sudo apt-get install ibus-rime
+
+如果是 fcitx 平台，则为
+
+    sudo apt-get install fcitx-rime
+
+根据自己实际情况敲命令就行了，非常方便。
+
+此外也可以通过编译源码的方法来安装。
+
+# iBus 换 fcitx
+
+Ubuntu 和很多发行版默认的输入法平台都是 iBus（“中国化”的 UbuntuKylin 已经换成了 fcitx）。如果想从 iBus 改成 fcitx，可以按照以下步骤操作：
+
+    sudo apt-get install fcitx
+
+然后通过`im-switch`命令（其他系统可能叫im-config或imsettings-switch什么的）切换默认输入平台。注销之后更换成功。
+
+## 搜狗拼音输入法
+
+如果愿意支持国产，也可以尝试搜狗团队的搜狗输入法。在 Ubuntu 系列系统中，可以按照下面方法安装搜狗拼音输入法：
 
 1. 下载[搜狗拼音输入法](http://pinyin.sogou.com/linux/)安装包。注意处理器位数。
 2. 如果你的 Ubuntu 系统比较旧（12.04），按照下载页的说明更新软件源。
@@ -17,10 +49,8 @@ title:  "输入法"
 4. 如果原来的输入法是 iBus（原生 Ubuntu 默认是 iBus），在命令行中运行 `im-switch`，把默认输入法改成 `fcitx`。
 5. 注销之后即可使用。
 
-对于在非 Ubuntu 系统中安装的情况，或者想解决某些 Qt 程序可能存在无法输入中文的情况，可以参考[这篇文章](https://vjudge1.github.io/2014/04/02/type-chinese-in-linux/)来解决。
+对于在非 Ubuntu 系统中安装的情况，可以参考[这篇文章](https://vjudge1.github.io/2014/04/02/type-chinese-in-linux/)来解决。
 
-# 中州韵 (Rime)
+# Qt 程序无法输入中文
 
-中州韵也是一款非常好用的中文输入法，既支持 iBus 框架，也支持 Fcitx 框架。可以到[官网](http://rime.im)查看更多说明。
-
-备注：Rime 在不同系统中有不同名称，在 Windows 中叫做“小狼毫 (Weasel)”，在 Linux 中叫做“中州韵 (Rime)”，在 OS X 中叫做“鼠须管 (Squirrel)”。
+部分 Qt 应用可能会无法调出中文输入法，即无法输入中文。可以参考[这篇文章](https://vjudge1.github.io/2014/04/02/type-chinese-in-linux/)来解决。

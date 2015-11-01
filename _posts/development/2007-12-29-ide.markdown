@@ -1,10 +1,16 @@
 ---
 layout: post
-title:  "IDE"
+title:  "［大全］IDE"
 date:   2007-12-29 00:00:00
 ---
 * content
 {:toc}
+
+[% callout %]
+选择综合症
+
+如果想马上选择一个感觉不错的，可以[看这里]({{site.baseurl}}/07/development-software/)。
+[% endcallout %]
 
 本文介绍一些常用的 IDE（当然包括好用的 Visual Studio）。如果犯了选择综合症，请到维基百科去[治疗](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments)。
 
