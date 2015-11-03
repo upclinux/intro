@@ -1,19 +1,302 @@
 ---
 layout: post
-title:  "［未完成］Arduino 2048"
+title:  "［Arduino］2048"
 ---
 * content
 {:toc}
+
+本文将带你做一个小游戏机——2048。
 
 # 材料
 
 * Arduino、LCD12864 屏 (大约 30 块钱)、普通按钮x4、杜邦线若干
 
+因为四个按钮代表四个方向，所以也可以弄一个摇杆形的按钮。
+
+# 电路
+
+按照下图接线。
+
+![2048]({{site.baseurl}}/images/toy/arduino2048sketches.png)
+
+四个按钮从左到右分别是左、下、上、右（和 Vim 的 hjkl 是一致的）。可以按照自己意愿来改顺序。
+
 # 操作
 
 ## 安装 LCD 库
 
+有人把屏幕的操作封装好了，所以，直接拿来用就可以了。这个封装好的库叫做 U8glib，[点击这里](https://github.com/olikraus/U8glib_Arduino/releases)下载。
+
+下载之后，将其解压到“我的文档”（Linux/Mac 类似）里的 Arduino/libraries 目录中。假如“我的文档”目录为`~/Documents`，那么头文件的路径应该是`~/Documents/Arduino/libraries/U8glib/U8glib.h`。
+
 ## 编码
+
+源代码摘自[这里](https://vjudge1.github.io/2015/05/11/the-2048-game-on-arduino/)。如果发现 bug 记得评论一下。
+
+{% highlight c++ %}
+#include <U8glib.h>
+
+typedef unsigned char uchar;
+
+// SCK=3, MOSI=9, CS=8
+U8GLIB_ST7920_128X64_1X lcd(3, 9, 8);
+
+#define UP      6
+#define DOWN    5
+#define LEFT    4
+#define RIGHT   7
+
+uchar board[4][4] = {0};
+boolean gameOver = false;
+
+char number[][5] = {"", "2", "4", "8", "16", "32", "64", "128",
+    "256", "512", "1024", "2048", "4096", "8192", "####"    
+};
+
+void paintBoard()
+{
+    uchar left = 1;
+    uchar top = 5;
+    uchar spanV = 1, spanH = 1;
+    uchar textHeight = 10, textWidth = 7;
+
+    lcd.firstPage();
+    lcd.setFont(u8g_font_7x14);
+    lcd.setFontPosTop();
+    do {
+        // 绘制边框
+        for (uchar i=0; i<=4; i++)
+            lcd.drawHLine(left + spanH,
+                top + spanV*(2*i+1) + textHeight*i + 1*i,
+                10*spanH + 16*textWidth + 1*5 - spanH*2);
+        for (uchar i=0; i<=4; i++)
+            lcd.drawVLine(left + spanH*(2*i+1) + textWidth*4*i + 1*i,
+                top + spanV,
+                spanV*10 + textHeight*4 + 1*5 - spanV*2);
+
+        // 绘制文本
+        for (uchar i=0; i<4; i++)
+        {
+            for (uchar j=0; j<4; j++)
+            {
+                uchar x=left + spanH*2*(j+1) + textWidth*j*4 + 1*(j+1);
+                uchar y=top + spanV*2*(i+1) + textHeight*i + 1*(i+1) - 2;
+                lcd.drawStr(x, y, number[board[i][j]]);
+            }
+        }
+    } while (lcd.nextPage());
+}
+
+boolean move(uchar direction, boolean fake = false)
+{
+    uchar temp[4][4];
+    boolean changed = false;
+    memcpy(temp, board, sizeof(board));
+
+    switch (direction)
+    {
+        case UP:
+            for (char j=0; j<4; j++)
+            {
+                char p = 0, q = 0;
+                for (q=0; q<4; q++)
+                    if (temp[q][j])
+                    {
+                        if (p!=q) changed=true;
+                        temp[p++][j]=temp[q][j];
+                    }
+                for (; p<4; p++) temp[p][j] = 0;
+            }
+
+            for (char j=0; j<4; j++)
+                for (char i=0; i<3; i++)
+                    if (temp[i][j] && temp[i][j]==temp[i+1][j])
+                    {
+                        temp[i][j]++;
+                        temp[i+1][j]=0;
+                        changed=true;
+                    }
+
+            for (char j=0; j<4; j++)
+            {
+                char p = 0, q = 0;
+                for (q=0; q<4; q++) if (temp[q][j]) temp[p++][j]=temp[q][j];
+                for (; p<4; p++) temp[p][j] = 0;
+            }
+            break;
+
+        case DOWN:
+            for (char j=0; j<4; j++)
+            {
+                char p = 3, q = 0;
+                for (q=3; q>=0; q--)
+                    if (temp[q][j])
+                    {
+                        if (p!=q) changed=true;
+                        temp[p--][j]=temp[q][j];
+                    }
+                for (; p>=0; p--) temp[p][j] = 0;
+            }
+
+            for (char j=0; j<4; j++)
+                for (char i=3; i>0; i--)
+                    if (temp[i][j] && temp[i][j]==temp[i-1][j])
+                    {
+                        temp[i][j]++;
+                        temp[i-1][j]=0;
+                        changed=true;
+                    }
+
+            for (char j=0; j<4; j++)
+            {
+                char p = 3, q = 0;
+                for (q=3; q>=0; q--) if (temp[q][j]) temp[p--][j]=temp[q][j];
+                for (; p>=0; p--) temp[p][j] = 0;
+            }
+            break;
+
+        case LEFT:
+            for (char i=0; i<4; i++)
+            {
+                signed p = 0, q = 0;
+                for (q=0; q<4; q++)
+                    if (temp[i][q])
+                    {
+                        if (p!=q) changed=true;
+                        temp[i][p++]=temp[i][q];
+                    }
+                for (; p<4; p++) temp[i][p] = 0;
+            }
+
+            for (char i=0; i<4; i++)
+                for (char j=0; j<3; j++)
+                    if (temp[i][j] && temp[i][j]==temp[i][j+1])
+                    {
+                        temp[i][j]++;
+                        temp[i][j+1]=0;
+                        changed=true;
+                    }
+
+            for (char i=0; i<4; i++)
+            {
+                signed p = 0, q = 0;
+                for (q=0; q<4; q++) if (temp[i][q]) temp[i][p++]=temp[i][q];
+                for (; p<4; p++) temp[i][p] = 0;
+            }
+            break;
+
+        case RIGHT:
+            for (char i=0; i<4; i++)
+            {
+                signed p = 3, q = 0;
+                for (q=3; q>=0; q--)
+                    if (temp[i][q])
+                    {
+                        if (p!=q) changed=true;
+                        temp[i][p--]=temp[i][q];
+                    }
+                for (; p>=0; p--) temp[i][p] = 0;
+            }
+
+            for (char i=0; i<4; i++)
+                for (char j=3; j>0; j--)
+                    if (temp[i][j] && temp[i][j]==temp[i][j-1])
+                    {
+                        temp[i][j]++;
+                        temp[i][j-1]=0;
+                        changed=true;
+                    }
+
+            for (char i=0; i<4; i++)
+            {
+                signed p = 3, q = 0;
+                for (q=3; q>=0; q--) if (temp[i][q]) temp[i][p--]=temp[i][q];
+                for (; p>=0; p--) temp[i][p] = 0;
+            }
+            break;
+    }
+
+    if (!fake) memcpy(board, temp, sizeof(temp));
+    return changed;
+}
+
+void generateNumber()
+{
+    uchar emptyBlock[16], n;
+    n=0;
+    for (uchar i=0; i<4; i++)
+        for (uchar j=0; j<4; j++)
+            if (board[i][j] == 0)
+                emptyBlock[n++] = i*4+j;
+
+    if (n)
+    {
+        uchar p = random(0, n);
+        uchar x, y;
+        x = emptyBlock[p]/4;
+        y = emptyBlock[p]%4;
+        board[x][y] = 1;
+    }
+}
+
+void detectGameOver()
+{
+    if (move(LEFT, true) ||
+          move(RIGHT, true) ||
+          move(UP, true) ||
+          move(DOWN, true))
+        return;
+
+    gameOver = true;
+
+    lcd.firstPage();
+    lcd.setFont(u8g_font_ncenB14);
+    lcd.setFontPosTop();
+    do {
+        lcd.drawStr(3,23,"GAME OVER");
+    } while(lcd.nextPage());
+}
+
+void setup()
+{
+    pinMode(4, INPUT_PULLUP);
+    pinMode(5, INPUT_PULLUP);
+    pinMode(6, INPUT_PULLUP);
+    pinMode(7, INPUT_PULLUP);
+
+    memset(board, 0, sizeof(board));
+    gameOver = false;
+
+    randomSeed(analogRead(0));
+
+    generateNumber();
+    generateNumber();
+
+    lcd.begin();
+    paintBoard();
+}
+
+void loop()
+{
+    if (!gameOver)
+    {
+        for (uchar i=4; i<=7; i++)
+        {
+            if (digitalRead(i) == LOW)
+            {
+                if (move(i, true))
+                {
+                    move(i);
+                    generateNumber();
+                    paintBoard();
+                    detectGameOver();
+                    delay(200);
+                }
+           }
+        }
+    }
+}
+{% endhighlight %}
 
 # 延伸
 
