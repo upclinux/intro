@@ -1,95 +1,93 @@
 ---
 layout: post
-title:  "Web 后端语言比较"
+title:  "网站开发（后端）"
 date:   2007-12-23 00:00:00
 ---
 * content
 {:toc}
 
-本文简单介绍常见的 Web 服务器端语言、框架和常见应用引擎的支持情况。
+本文介绍一些常用的网站开发语言和框架。之所以介绍一些，而不是一个，是因为不同选择有不同的优缺点——没有一种能够“放之四海而皆准”的语言。
 
-# 语言
+# 1. PHP
 
-## PHP
+PHP 是最流行的 Web 服务器语言。PHP 语言最容易学习，也最容易部署，基于 PHP 的解决方案也最多——例如博客系统 WordPress、论坛系统 Discuz!、微信后台系统 WeiPHP……
 
-PHP 是最流行的 Web 服务器语言。
+很多时候你甚至都不需要再从头制作网站了，只要找到一个接近自身需求的，稍微改改代码，然后就可以拿去用了！这种行为叫做“二次开发”，所以只要不侵犯版权就不必觉得太内疚:smirk:——至于自由软件那就更不用说了。
 
-* 优点：语言简单且易于学习、可进行快速开发；实例多；易于部署
-* 缺点：代码不易维护，不适合大型系统；不支持多线程
-* 流行框架：Yii、Laravel、ThinkPHP 等。在特殊领域（例如微信公众号后台）也有大量解决方案。
+## 流行框架
 
-## Java
+### 解决方案
 
-Java 也是非常流行的 Web 服务器语言。
+既然有身经百战见得多了的应用，为什么不拿来稍微改改就投入生产呢？一般开源项目的安全性、功能和效率要比自己写的好多了。
 
-* 优点：可伸缩性强
-* 缺点：不易上手；速度慢
-* 流行框架：Spring
+* 博客：WordPress、Typecho
+* 论坛：Discuz!
+* CMS（内容管理系统）：Joomla!、Drupal（需要大量学习）等
+* 百科系统：MediaWiki
+* 微信后台：多到罄竹难书，随便捡一个都能用
 
-## ASP.Net
+### 起步
 
-ASP 和 ASP.Net 是微软推出的。ASP 技术已经过时，不建议使用。ASP.Net 一般用 C# 语言，一般部署在 Windows 服务器上。
+开发一个产品，纯粹从零开始，如果自身经验不足，为什么不用一些成熟的东西呢？
 
-因为 Mono 项目，事实上 ASP.Net 应用也可以在 Linux 或 OS X 系统上运行。
+常用的就是 MVC（模型-视图-控制器）架构的框架，例如 Lavarel、CodeIgniter、CakePHP 等。这些框架都吸收了其他设计模式的长处，适合敏捷开发。
 
-* 优点：易于学习、易于开发
-* 缺点：平台限于 Windows
+从零开始当然可以，不过一定要认真设计一下系统的结构，免得在扩展功能的时候瘫坐在地上哭。
 
-## Python
+## 缺点
 
-Python 和 Ruby 都是轻巧的脚本语言，都对网络功能有良好的支持，因此它们都可以被用于服务器端的开发。
+因为 PHP 非常容易上手，所以新手很容易写出能够实现功能，但存在安全漏洞并且难以维护的代码。因此**强烈建议新手**注意以下几个问题：
 
-* 优点：易于快速开发
-* 缺点：不如 PHP、Java 流行
-* 流行框架：Django
+1. 尽量使用经受检验的现有框架和应用。
+2. 如果自己开发，尽量学习如何写出一个前后端分离的程序。可以借鉴优秀作品的思路。
+3. 务必注意安全性问题。
 
-## Ruby on Rails
+PHP 本身不支持多线程，也不支持实时系统，有此类需求的应当使用其他语言。
 
-Ruby on Rails 是基于 Ruby 开发的框架。事实上，Ruby 不如其他语言流行。
+## 2. JSP
 
-* 优点：易于快速开发
-* 缺点：Ruby 语言速度慢；不容易部署（RubyGems 被墙干扰）
+Java 也非常流行——从桌面应用、网站、嵌入式设备（手机）都有 Java 的影子，可见 Java 无处不在。JSP 自然就是用 Java 开发了。
 
-[% callout style=warning %]
+基于 Java 的 MVC 框架有 Spring 等。
 
-#### 方校长出没
+Java 有一个重要缺点就是对硬件要求比较高，内存占用比较大，速度稍慢。但是 Java 伸缩性非常好，如果需要一个巨大的系统，不妨使用 Java 开发。
 
-由于方校长的原因，RubyGems 不能正常下载软件包。因此需要通过[淘宝镜像](https://ruby.taobao.org)来解决这个问题。
+因为 Java 支持 socket，所以可以用 Java 开发实时应用。
 
-[% endcallout %]
+## 3. ASP.NET
 
-## Node.js
+ASP 和 ASP.NET 是微软的东西（在有些人例如 Linuxer 眼里，微软的东西往往是"另类"）。ASP.NET 一般用 C# 语言开发。C# 是一个可以和 Java 竞争的语言，尤其是在 .Net 部分开源，以及 ASP.NET 开源之后……
 
-Node.js 是服务器端的 JavaScript。创造 Node.js 就是为了解决高并发的问题，因此 Node.js 更适合高并发的应用。
+ASP.NET 和 JSP 使用领域类似，而且 ASP.NET 也容易学习。
 
-* 优点：事件驱动，有良好的高并发支持；可用于开发实时系统
-* 缺点：不适合数据量大的系统，特别是处理时间较长的应用
-* 流行框架：Express.js
+ASP.NET 有一个致命缺点，就是它一般需要在 Windows 服务器上运行。即使有开源的 Mono，别忘了 SQL Server 还需要 Windows……
 
-[% callout style=warning %]
+## 4. Nodejs
 
-#### 方校长出没
+Nodejs 是服务器端的 JavaScript。创造 Node.js 就是为了解决高并发的问题，因此 Node.js 更适合高并发的应用。
 
-由于方校长的原因，npm 可能无法正常下载软件包。因此可能需要通过[淘宝镜像](https://npm.taobao.org)来解决这个问题。
+Nodejs 采用事件驱动、异步执行的模式。这种与众不同的设计方式使得它有良好的高并发支持。比较流行的框架有 ExpressJS 等。
 
-[% endcallout %]
+此外 Nodejs 也支持 socket，可用于开发实时系统。
 
-## 其他选择
+## 5. Python
 
-* Perl 语言也有一些解决方案。
-* OpenWrt 后端用 lua 语言写成。
-* 在嵌入式系统常用 C 语言（CGI）。
+Python 是轻巧的脚本语言，对网络功能有良好的支持，因此可以被用于服务器端的开发。
 
-# 应用引擎支持
+值得一提的是，Python 除了可以架网站，也适合用于执行一系列耗时的后台任务，例如抓取数据或者数据维护。因此可以使用其他语言制作网站，然后用 Python 脚本来“干活”。
 
-如果需要托管到应用引擎上面，建议使用 PHP、Java、Python。不过，由于 Java 对系统条件要求更高，所以 Java 的收费可能比其他语言高。
+流行的基于 Python 框架有 Django 等。
 
-## 国内
+## 6. Ruby on Rails
 
-* [SAE](http://sae.sina.com.cn): PHP (5.3/5.6)、Java (1.6/1.7)、Python (2.7)
-* [BAE](http://bce.baidu.com/product/bae.html): PHP (5.4)、Java (OpenJDK 7)、Python (2.7)、Node.js (0.10.21)
+Ruby on Rails 是基于 Ruby 语言开发的框架。虽然 Ruby on Rails 也比较火，但是在国内并不如其他语言流行，甚至很少有能够直接部署 Ruby on Rails 应用的应用引擎。
 
-## 国外（你懂得）
+Rails 是一个 MVC 框架，适合敏捷开发。
 
-* [GAE (Google App Engine)](https://appengine.google.com): PHP、Java、Python、Go。GAE 可免费使用但有一些限制（如流量限制）。
-* Microsoft Azure: ASP.NET、PHP、Node.js、Python
+不幸的是，Ruby 对 Windows 非常不友好——在 Windows 中安装 Rails 就是在浪费生命，而且很可能失败。因此不建议狂热的 Windows 爱好者使用 Ruby 开发应用。<span class="blackout">因为 Ruby 是日本人创造的东西，所以粪青们一定要抵制一切和 Ruby 有关的东西，包括在系统里预置了 Ruby 的苹果手机和苹果电脑。</span>
+
+## 7. CGI
+
+纯粹的 CGI 效率并不高，而且服务器解决方案那么多，什么时候会用纯 CGI 呢？答案：嵌入式系统。
+
+由于嵌入式设备本身的问题，网页后台甚至会用 C 语言开发。但是 C 语言的字符处理能力很差，并不适合处理这些不难但是比较麻烦的东西，所以有人开发了 cgic 库，可以节省不少精力。
