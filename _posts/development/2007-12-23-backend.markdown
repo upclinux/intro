@@ -44,7 +44,7 @@ PHP 是最流行的 Web 服务器语言。PHP 语言最容易学习，也最容�
 
 PHP 本身不支持多线程，也不支持实时系统，有此类需求的应当使用其他语言。
 
-## 2. JSP
+# 2. JSP
 
 Java 也非常流行——从桌面应用、网站、嵌入式设备（手机）都有 Java 的影子，可见 Java 无处不在。JSP 自然就是用 Java 开发了。
 
@@ -52,13 +52,13 @@ Java 也非常流行——从桌面应用、网站、嵌入式设备（手机）
 
 因为 Java 支持 socket，所以可以用 Java 开发实时应用。
 
-### 缺点
+## 缺点
 
 Java 有一个重要缺点就是对硬件要求比较高，内存占用比较大，速度稍慢。但是 Java 伸缩性非常好，如果需要一个巨大的系统，不妨使用 Java 开发。
 
 此外，JSP 新手也容易写出有一堆安全漏洞的东西。
 
-## 3. ASP.NET
+# 3. ASP.NET
 
 ASP 和 ASP.NET 是微软的东西（在有些人例如 Linuxer 眼里，微软的东西往往是"另类"）。ASP 已经过时，所以自然要用新一代的 ASP.NET。ASP.NET 一般用 C# 语言开发。C# 是一个可以和 Java 竞争的语言，尤其是在 .Net 部分开源，以及 ASP.NET 开源之后……
 
@@ -66,7 +66,7 @@ ASP.NET 和 JSP 功能都很强大，使用领域类似，而且 ASP.NET 也容�
 
 ASP.NET 有一个致命缺点，就是它一般需要在 Windows 服务器上运行。即使有开源的 Mono，别忘了 SQL Server 还需要 Windows……
 
-## 4. Nodejs
+# 4. Nodejs
 
 Nodejs 是服务器端的 JavaScript。创造 Node.js 就是为了解决高并发的问题，因此 Node.js 更适合高并发的应用。
 
@@ -74,7 +74,7 @@ Nodejs 采用事件驱动、异步执行的模式。这种与众不同的设计�
 
 此外 Nodejs 也支持 socket，可用于开发实时系统。
 
-## 5. Python
+# 5. Python
 
 Python 是轻巧的脚本语言，对网络功能有良好的支持，因此可以被用于服务器端的开发。
 
@@ -82,7 +82,7 @@ Python 是轻巧的脚本语言，对网络功能有良好的支持，因此可�
 
 流行的基于 Python 框架有 Django 等。
 
-## 6. Ruby on Rails
+# 6. Ruby on Rails
 
 Ruby on Rails 是基于 Ruby 语言开发的框架。虽然 Ruby on Rails 也比较火，但是在国内并不如其他语言流行，甚至很少有能够直接部署 Ruby on Rails 应用的应用引擎。
 
@@ -90,7 +90,7 @@ Rails 是一个 MVC 框架，适合敏捷开发。
 
 不幸的是，Ruby 对 Windows 非常不友好——在 Windows 中安装 Rails 就是在浪费生命，而且很可能失败。因此不建议狂热的 Windows 爱好者使用 Ruby 开发应用。<span class="blackout">因为 Ruby 是日本人创造的东西，所以粪青们一定要抵制一切和 Ruby 有关的东西，包括在系统里预置了 Ruby 的苹果手机和苹果电脑。</span>
 
-## 7. CGI
+# 7. CGI
 
 纯粹的 CGI 效率并不高，而且服务器解决方案那么多，什么时候会用纯 CGI 呢？答案：嵌入式系统。
 
