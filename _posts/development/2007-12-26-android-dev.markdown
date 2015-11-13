@@ -3,6 +3,8 @@ layout: post
 title:  "构建 Android 开发环境"
 date:   2007-12-26 00:00:00
 ---
+* content
+{:toc}
 
 iOS 应用只能用 Mac/Xcode 开发，Windows Phone 应用只能在 Windows/VS 下开发，所以它们没什么麻烦事儿。但是，因为 Android 本身就比较乱，而且是谷歌搞的，有一个你懂得的问题，所以……
 
