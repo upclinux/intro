@@ -1,16 +1,107 @@
 ---
 layout: post
 title:  "编写图形界面程序 (PC/Mac)"
-date:   2007-12-27 00:00:00
 ---
 * content
 {:toc}
 
-正常人如果想开发一个图形界面程序，应该选择一个现有框架，除非你想按照 X 协议自己去画一个窗口对话框。
+虽然现在 Web 应用非常火，但是有的时候，一个本地的应用程序还是很有用处的，例如一个小工具或者一个大项目。
 
-本文以 Linux 系统为中心。
+在若干年前，如果想快速地写一个图形界面程序，VB6 和易语言都是不错的选择。很可惜，本文是 2015 年写的，那些东西早就过时了。为了能在新的操作系统上跑起来，我们也该与时俱进。
 
-# 框架
+# 很“重”的框架
+
+“重”只是一种大致的感觉——或者是体积太大，或者“工程味儿”太重，不见得适合写一个随手就能用的小程序。
+
+## MFC
+
+编程软件：Visual Studio
+
+VS 有商业版和免费的社区版。如果是个人或小团队，不打算开发商业软件，用社区版足矣。
+
+写 Windows 桌面应用，首选 Visual C++，毕竟是官方的东西。
+
+[% callout %]
+VC6 还是有用途的
+
+某气功组织开发了两个著名的软件。为了兼容更多的系统，包括 Wine，他们就一直在用 VC6。
+[% endcallout %]
+
+## Cocoa
+
+编程软件：Xcode
+
+果粉专用，而且 Xcode 也是个用起来很舒服的 IDE。当然，别去百度云上下载那个藏有病毒的 Xcode。
+
+## .Net（Windows Forms / WPF）
+
+编程软件：Visual Studio
+
+C#/VB 都是不错的选择——Visual Studio 功能强大，当然适合项目开发，也适合随手写个小程序。
+
+当然写完了只能在 Windows 系统里头跑。不过要是目标受众的系统都在 Windows 7 以上，那么就可以放心地用 VS 写程序了。
+
+## Qt
+
+编程软件：Qt Creator
+
+*跨平台*
+
+Qt 分为商业版本和社区版本。
+
+Qt 也是一个强大的 C++ 框架，而且 Qt 是跨平台的——甚至连嵌入式设备都在广泛使用。Qt 自带一套集成开发环境，既适合大型项目，又适合小型程序。
+
+# 不太重
+
+## AWT/Swing
+
+Java 是*跨平台*的，用 Java 写的 GUI 程序也是。
+
+值得注意的是，Java 的 IDE 非常多，但是并不是所有 IDE 都有界面设计器。如果需要界面设计器，可以考虑 NetBeans 或 MyEclipse。
+
+## Gtk#
+
+编程软件：Xamarin Studio（MonoDevelop）
+
+*跨平台*
+
+既然 C# 是个优秀的语言，当然不能只让它在 Windows 上面跑——Mono 项目。
+
+虽然 C# 和 .Net 是开源的，但是 Windows Forms 等是针对 Windows 而且还不开源，因此即使用 C# 编程也需要用其他框架。
+
+## Lazarus
+
+编程软件：Lazarus IDE
+
+*跨平台*
+
+若干年前，Delphi 是一个很火的编程软件，可惜后来淡出了人们的视线（不过 Delphi 一直在开发）。
+
+Lazarus 是社区开发的编程软件和框架，也处于活跃状态，而且是自由软件。而且 Lazarus 尽量兼容 Delphi，所以直接找本 Delphi 的教材就可以进行学习了。
+
+Lazarus 和 Delphi 都是快速开发工具，就像 VB 和易语言那样。
+
+## PyQt/PySide
+
+*跨平台*
+
+PyQt = Python + Qt
+
+除了把编程语言换成了 Python 以外，其他东西都是一样的。
+
+# zenity
+
+在 Linux 系统中，可以通过 `zenity` (基于 GTK+ 的桌面环境) 和 `kdialog` (KDE 桌面环境) 命令来编写带有对话框的脚本。如果在写脚本，而且只是需要一些简单的交互界面，这两个就够用了。
+
+# 其他
+
+目前 Web 开发非常火，有人就把同样的东西搬到了桌面系统上——
+
+例如 Atom 编辑器，把 Node.js 作为后端，精简的浏览器作为主体，界面和功能就可以像开发 Web 应用一样进行开发了。
+
+这样的框架也有很多，不妨到 Google 上面搜一搜。
+
+以下是一个简单的总结：
 
 框架/库     | 编程软件          | 编程语言     | 跨平台支持 | 界面设计器
 -----------|------------------|-------------|----------------|---------------
@@ -20,23 +111,11 @@ AWT/Swing  | Eclipse          | Java        | 是      | 需要插件**
 wxWidgets  |                  | C++         | 是      | 有 (wxGlade 等)
 Gtk#       | MonoDevelop、<br>Xamarin Studio | C# | 是 | 内置
 Free Pascal| Lazarus          | Pascal      | 是      | 内置
-Electron   |                  | node.js、前端*** | 是  | N/A
 Gambas     | Gambas           | Basic       | 否      | 内置
+PyQt       |                  | Python      | 是      | 附带 Qt Designer
+PyGTK      |                  | Python      | 是      | Glade
 
 <small>
 \* 经过封装，Python、Perl、PHP 等语言也可以使用 GTK+ 库。<br>
 ** 有些 Java 的 IDE，例如 NetBeans 或 MyEclipse 自带界面设计器。<br>
-*** 前端：指图形界面使用网页前端语言，即 HTML、CSS、JavaScript 等语言实现。
 </small>
-
-# Python
-
-以下是把一些框架用 Python 语言封装之后的产物，它们都是跨平台的：
-
-* PyQt (Qt)
-* PyGTK (GTK+)
-* wxPython (wxWidgets)
-
-# shell
-
-shell (bash/zsh/ksh...) 当然不能用来开发图形界面程序，但是在 Linux 里可以通过 `zenity` (基于 GTK+ 的桌面环境) 和 `kdialog` (KDE 桌面环境) 命令来编写带有对话框的脚本。
