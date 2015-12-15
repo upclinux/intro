@@ -22,33 +22,21 @@ Android Studio 基于 IDEA 平台，因此用过 IntelliJ IDEA、WebStorm、PyCh
 
 截止到这里，只下载一个 Android Studio 就可以了，其他组件我们可以通过 Android Studio 来安装。
 
-## 安装组件
-
 [% callout %]
 网络测试
 
 打开命令提示符，输入：
 
-    ping dl.l.google.com
+    ping dl.google.com
 
 如果能 Ping 得通（IP 可能是 203.208.41.\*），那么我们就可以直接通过官方源来安装组件了。
 [% endcallout %]
 
-第一次启动 Android Studio 时，软件会提醒你安装 Android SDK。如果 dl.l.google.com 没有被墙，那么直接“下一步”就可以了。如果被墙，软件当然会提示“无法下载”。
+## 安装组件
 
-[% callout %]
-如果被墙……
+### 如果 dl.google.com 没被墙
 
-实际上它没被墙。如果你不嫌麻烦，你也可以手动下载和解压以下组件：
-
-1. SDK Tools
-2. SDK Platform-Tools
-3. Build-Tools
-4. SDK（注意 API 版本）
-5. Android SDK Extras 和 Support Library
-
-把它们放到同一个目录中，然后到 Android Studio 的设置中把 Android SDK 的目录指定成你刚解压的位置。
-[% endcallout %]
+第一次启动 Android Studio 时，软件会提醒你安装 Android SDK。既然 dl.l.google.com（dl.google.com） 没有被墙，那么直接“下一步”就可以了。如果被墙，软件当然会提示“无法下载”。
 
 [% callout %]
 2015年11月3日的情况
@@ -59,19 +47,34 @@ Android Studio 基于 IDEA 平台，因此用过 IntelliJ IDEA、WebStorm、PyCh
 虽然事实上很多 Google IP 都能保证网站正常访问，但是 Android Studio 会认为证书不正确（事实上是正确的）从而拒绝下载。
 [% endcallout %]
 
-## 下载不同版本 SDK
+确保你安装了以下组件：
 
-因为绝大多数人的手机还处于 4.x（有的人甚至是 2.x），所以要下载低版本 SDK 来保证大多数人能够正常使用。
+1. SDK：因为 SDK 是向下兼容的，所以只装一个最新版就可以了。
+2. Android SDK Build Tools
+3. Android SDK Tools
+4. Android SDK Platform-Tools
 
-如果希望照顾多数人，推荐下载 API 17（4.2.2）。如果希望照顾绝大多数<span class="blackout">山寨机</span>，那么就要下载 API 10 了（2.3.3）。
+如果没装全，可以进入“设置”，找到“System Settings”->“Android SDK”然后下载安装。
 
-在第一次启动时，如果它能够顺利地从官方源下载文件，那么直接去系统设置，把低版本 SDK 打勾，然后软件会下载低版本 SDK。如果被墙了，那么你需要自己手动下载低版本 SDK 然后手动解压了。
+### 如果被墙……
+
+如果被墙，你需要手动下载以下组件：
+
+1. SDK Tools
+2. SDK Platform-Tools
+3. Build-Tools
+4. SDK（只需选最高的那个版本）
+5. Android SDK Extras 和 Support Library
+
+把它们放到同一个目录中，然后到 Android Studio 的设置中把 Android SDK 的目录指定成你刚解压的位置。
 
 ## 模拟器
 
-GenyMotion 是一个比较好用的模拟器。详细说明可以看[这里]({{site.baseurl}}/12/genymotion/)。
+Android SDK 自带模拟器，只要你不嫌卡，当然可以随便用。
 
-因为我们是要调试程序，所以不光要下载模拟器和 VirtualBox（没有它模拟器无法运行），还要在 Android Studio 中安装 GenyMotion 插件。当然，因为 Android Studio 本身就可以在线查找下载安装插件，所以一点都不麻烦，更不用自己跑官网上去下载。
+此外再推荐一个——GenyMotion。详细说明可以看[这里]({{site.baseurl}}/12/genymotion/)。
+
+除了模拟器，必须安装 VirtualBox 才能启动。为了方便，可以在 Android Studio 中安装 GenyMotion 插件。当然，因为 Android Studio 本身就可以在线查找下载安装插件，所以一点都不麻烦，更不用自己跑官网上去下载。
 
 虽然 GenyMotion 也可以免费用（当然功能少很多），但是用于商业用途的话是需要掏钱的。
 
@@ -81,7 +84,6 @@ GenyMotion 是一个比较好用的模拟器。详细说明可以看[这里]({{s
 
 新建一个项目，命名为 HelloAndroid。
 
-* API 选多少呢——最起码得让你自己手机能跑起来吧。
 * 带不带 Activity 呢？当然要带一个了。
 
 打开 res/layout/activity_main.xml，应该能看到一个可视化编辑器。我们往里面添一个 Plain Text 和一个 Button，分别把 id 设置为 nameText 和 helloButton。

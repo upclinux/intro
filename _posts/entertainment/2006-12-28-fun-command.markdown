@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "有点意思的命令"
-date:   2006-12-28 00:00:00
 ---
 * content
 {:toc}
@@ -25,6 +24,8 @@ ls 是一个非常常用的命令。因为经常敲，所以很有可能就敲�
 ## tac
 
 cat 是显示文件内容的命令。那么，既然 tac 是把 cat 倒着写的，那么这个命令当然就会把文件内容倒着输出了。
+
+（这不是恶搞——把日志倒着输出就非常有用）
 
 ## dd
 
@@ -50,14 +51,16 @@ cat 是显示文件内容的命令。那么，既然 tac 是把 cat 倒着写的
 
 如果自己想仿写一个，那也很简单：
 
-    #include <stdio.h>
+{% highlight c %}
+#include <stdio.h>
 
-    int main(int argc, char *argv[])
-    {
-        char *s = (argc>1) ? argv[1] : "y";
-        while (1) printf("%s\n", s);
-        return 0;
-    }
+int main(int argc, char *argv[])
+{
+    char *s = (argc>1) ? argv[1] : "y";
+    while (1) printf("%s\n", s);
+    return 0;
+}
+{% endhighlight %}
 
 ## xeyes
 
@@ -77,7 +80,7 @@ cat 是显示文件内容的命令。那么，既然 tac 是把 cat 倒着写的
 
 （备注：因为是 X 的程序，所以在 OS X 中只对 X11 环境的应用有效。）
 
-## fuck
+## thefuck
 
 人类是机器的主人。不小心输了错误的命令，但是机器不客气地回复错误信息，我们当然生气了。
 
@@ -96,6 +99,8 @@ cat 是显示文件内容的命令。那么，既然 tac 是把 cat 倒着写的
 直接输入：`apt-get moo`
 
 还有一个：`apt-build moo`
+
+“本 APT 有超级牛力！”
 
 ## 没有彩蛋
 
@@ -181,7 +186,7 @@ ASCII 水族馆
 
 ![lolcat]({{ site.baseurl }}/images/entertainment/fun/lolcat.png)
 
-lolcat 是 Gem 包，因此用 gem 命令安装。由于墙的原因，你需要换一下[软件源](https://ruby.taobao.org)才能正常安装。
+lolcat 是 Gem 包，因此用 gem 命令安装。如果遭遇墙的错误（超时/连接重置），可以换一下[软件源](https://ruby.taobao.org)。
 
 # 其他
 
@@ -197,6 +202,6 @@ lolcat 是 Gem 包，因此用 gem 命令安装。由于墙的原因，你需要
 
 不用学编程，只需要：
 
-    python -m SimpleHTTPSerever
+    python -m SimpleHTTPServer
 
 如果想通过局域网分享个大文件，这是个又快又省事儿的方法……当然别忘了先 cd 到文件所在的目录里去。
