@@ -8,6 +8,14 @@ date:   2007-12-23 00:00:00
 
 本文介绍一些常用的网站开发语言和框架。之所以介绍一些，而不是一个，是因为不同选择有不同的优缺点——没有一种能够“放之四海而皆准”的语言。
 
+[% callout %]
+建立一个干净的开发环境
+
+如果想建立一个干净的开发环境，可以使用虚拟机。幸运的是，有人开发了一个基于虚拟机的构建软件 [Vagrant](https://www.vagrantup.com)，这样就可以轻松构建干净的开发环境，甚至在团队中使用相同开发环境了。
+
+该软件有 for VirtualBox 和 for VMware 两个版本。因为 VMware 和 Vagrant for VMware 都是要掏钱的，所以建议用 VirtualBox。
+[% endcallout %]
+
 # 1. PHP
 
 PHP 是最流行的 Web 服务器语言。PHP 语言最容易学习，也最容易部署，基于 PHP 的解决方案也最多——例如博客系统 WordPress、论坛系统 Discuz!、微信后台系统 WeiPHP……
@@ -24,7 +32,7 @@ PHP 是最流行的 Web 服务器语言。PHP 语言最容易学习，也最容�
 * 论坛：Discuz!
 * CMS（内容管理系统）：Joomla!、Drupal（需要大量学习）等
 * 百科系统：MediaWiki
-* 微信后台：多到罄竹难书，随便捡一个都能用
+* 微信后台：多到罄竹难书，随便捡一个都能用。**决定使用之前先考察一下安全性如何，免得因为漏洞被爆！**
 
 ### 起步
 
@@ -64,15 +72,25 @@ ASP 和 ASP.NET 是微软的东西（在有些人例如 Linuxer 眼里，微软�
 
 ASP.NET 和 JSP 功能都很强大，使用领域类似，而且 ASP.NET 也容易学习。
 
-ASP.NET 有一个致命缺点，就是它一般需要在 Windows 服务器上运行。即使有开源的 Mono，别忘了 SQL Server 还需要 Windows……
+ASP.NET 有一个致命缺点，就是它一般需要在 Windows 服务器上运行。虽然它开源了，别忘了 SQL Server 还需要 Windows……
 
-# 4. Nodejs
+# 4. Node.js
 
-Nodejs 是服务器端的 JavaScript。创造 Node.js 就是为了解决高并发的问题，因此 Node.js 更适合高并发的应用。
+Node.js 是服务器端的 JavaScript。创造 Node.js 就是为了解决高并发的问题，因此 Node.js 更适合高并发的应用。
 
-Nodejs 采用事件驱动、异步执行的模式。这种与众不同的设计方式使得它有良好的高并发支持。比较流行的框架有 ExpressJS 等。
+Node.js 采用事件驱动、异步执行的模式。这种与众不同的设计方式使得它有良好的高并发支持。
 
-此外 Nodejs 也支持 socket，可用于开发实时系统。
+Node.js 擅长的领域有：
+
+1. JSON API
+2. 实时系统（如聊天室）
+3. I/O 密集应用
+4. 单页应用
+5. 工具
+
+比较流行的框架有 ExpressJS 等。
+
+此外 Node.js 也可以用于基于浏览器的桌面应用的开发——例如 Atom 编辑器就是一个基于浏览器的桌面应用。
 
 # 5. Python
 
@@ -86,12 +104,22 @@ Python 是轻巧的脚本语言，对网络功能有良好的支持，因此可�
 
 Ruby on Rails 是基于 Ruby 语言开发的框架。虽然 Ruby on Rails 也比较火，但是在国内并不如其他语言流行，甚至很少有能够直接部署 Ruby on Rails 应用的应用引擎。
 
-Rails 是一个 MVC 框架，适合敏捷开发。
+Rails 是一个 MVC 框架，适合敏捷开发。正是因为 Rails 的出现，带动了 Ruby 使用者的增长。
 
-不幸的是，Ruby 对 Windows 非常不友好——在 Windows 中安装 Rails 就是在浪费生命，而且很可能失败。因此不建议狂热的 Windows 爱好者使用 Ruby 开发应用。<span class="blackout">因为 Ruby 是日本人创造的东西，所以粪青们一定要抵制一切和 Ruby 有关的东西，包括在系统里预置了 Ruby 的苹果手机和苹果电脑。</span>
+不幸的是，Ruby 对 Windows 非常不友好——在 Windows 中安装 Rails 就是在浪费生命，而且很可能失败。即使安装成功，运行速度也让人难以忍受。因此不建议狂热的 Windows 爱好者使用 Ruby 开发应用。<span class="blackout">因为 Ruby 是日本人创造的东西，所以粪青们一定要抵制一切和 Ruby 有关的东西，包括在系统里预置了 Ruby 的苹果手机和苹果电脑。</span>
 
-# 7. CGI
+# 7. Go
+
+Go 是谷歌创造的一门编译型语言，它的特点是开发快、性能高、稳定性好，适合分布式系统。有人说 Go 是“网络时代的 C 语言”。
+
+Go 比较适合 API 类应用的开发。
+
+常用的框架有 Revel、beego 等。
+
+# 8. CGI
 
 纯粹的 CGI 效率并不高，而且服务器解决方案那么多，什么时候会用纯 CGI 呢？答案：嵌入式系统。
 
 由于嵌入式设备本身性能不高，网页后台甚至会用 C 语言开发。但是 C 语言的字符处理能力很差，并不适合处理这些不难但是比较麻烦的东西，所以有人开发了 cgic 库，可以节省不少精力。
+
+除了 C 语言之外，也可使用 lua 开发。典型的例子是 OpenWrt 的设置页面。
